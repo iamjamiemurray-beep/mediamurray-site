@@ -395,17 +395,23 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="gradient-bg py-20">
+      <section className="gradient-bg py-24">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-black mb-4 text-white">Ready to start your project?</h2>
-          <p className="text-white/80 mb-8 text-lg">
-            Broadcast quality. Experienced hands. Fast delivery.
+          <h2 className="text-4xl font-black mb-6 text-white">Ready to start your project?</h2>
+          <p className="text-white/90 mb-3 text-lg font-medium">
+            170+ projects delivered across Scotland — corporate, events, public sector, small business.
+          </p>
+          <p className="text-white/75 mb-3 text-base leading-relaxed">
+            No agency fees, no hand-offs, no generic output. If you&apos;ve been let down by content that never got used, or suppliers who don&apos;t deliver — this is the alternative.
+          </p>
+          <p className="text-white/75 mb-10 text-base leading-relaxed">
+            One call, a clear brief, work that&apos;s on time and worth putting out. Let&apos;s get started.
           </p>
           <Link
             href="/contact"
             className="bg-white text-[#0052D4] font-black px-10 py-4 rounded-sm hover:bg-white/90 transition-colors text-sm uppercase tracking-wider inline-block"
           >
-            Get in Touch
+            Get a Free Quote
           </Link>
         </div>
       </section>

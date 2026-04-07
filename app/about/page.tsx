@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import ImageGallery from '@/components/ImageGallery'
 
 const clientLogos = [
   { src: '/MM_Client_Logo_01_BBC_Scotland.avif', alt: 'BBC Scotland' },
@@ -187,7 +186,19 @@ export default function About() {
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Behind the Scenes</p>
           <h2 className="text-3xl font-black mb-12 text-gray-900 dark:text-white">On Location</h2>
-          <ImageGallery images={btsImages} />
+          <div className="columns-2 sm:columns-3 lg:columns-4 gap-3">
+            {btsImages.map((img, i) => (
+              <div key={i} className="break-inside-avoid mb-3 overflow-hidden rounded-sm group">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={600}
+                  height={900}
+                  className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
