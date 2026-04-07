@@ -8,13 +8,13 @@ const statItems = [
   { value: '4K', label: 'Premium Footage, Every Shoot' },
   { value: '48hr', label: 'Express Turnaround Available' },
   { value: 'Sony', label: 'Professional Full-Frame Cameras' },
-  { value: 'Promo', label: 'Films & Commercials' },
-  { value: 'Events', label: 'Coverage Specialist' },
-  { value: 'Scot', label: 'Parliament Client' },
   { value: '5,000+', label: 'Hours in the Edit Suite' },
+  { value: 'Promo', label: 'Promotional Films' },
+  { value: 'Events', label: 'Event Coverage' },
+  { value: 'Corp.', label: 'Corporate Video' },
+  { value: 'SME', label: 'Small Business' },
+  { value: 'Public', label: 'Sector & Charities' },
   { value: 'Adobe', label: 'Full Suite Post-Production' },
-  { value: 'Scotland', label: 'Wide Coverage' },
-  { value: 'Content', label: 'Day Packages' },
   { value: 'BBC', label: 'Scotland Client' },
 ]
 
