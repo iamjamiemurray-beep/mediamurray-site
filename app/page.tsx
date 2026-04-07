@@ -248,6 +248,7 @@ export default function Home() {
               { value: 'on Facebook', label: '' },
             ]}
           />
+        </div>
         </ScrollReveal>
       </section>
 
