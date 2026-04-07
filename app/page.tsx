@@ -380,7 +380,7 @@ export default function Home() {
                     <div className="flex-1 bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 p-6 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.02] cursor-default">
                       <Stars />
                       <p className="text-gray-600 dark:text-white/70 leading-relaxed text-sm flex-1">&ldquo;This is brilliant, thanks so much.&rdquo;</p>
-                      <AttrDark name="Louise Davies" org="Scottish Fair Trade Forum" project="Youth Collective Film & Social Media Ads" projectUrl="/work/video/j0-VaJFpdc8" />
+                      <AttrDark name="Louise Davies" org="Scottish Fair Trade Forum" project="Youth Collective Film & Social Media Ads" projectUrl="/work/video/PII_t68w8Jg" />
                     </div>
                   </div>
                 </div>
