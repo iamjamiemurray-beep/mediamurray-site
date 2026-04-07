@@ -274,16 +274,30 @@ export default function Home() {
                 ))}
               </div>
             )
-            const Attr = ({ name, org }: { name: string; org: string }) => (
+            const ProjectTag = ({ label, url, light = false }: { label: string; url?: string; light?: boolean }) => (
+              <div className="mt-3">
+                {url ? (
+                  <a href={url} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest border rounded-full px-3 py-1 transition-colors ${light ? 'border-white/20 text-white/50 hover:text-white hover:border-white/50' : 'border-[#0052D4]/30 text-[#0052D4] hover:border-[#0052D4] dark:border-white/20 dark:text-white/50 dark:hover:text-white'}`}>
+                    {label}
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  </a>
+                ) : (
+                  <span className={`inline-flex items-center text-xs font-bold uppercase tracking-widest ${light ? 'text-white/30' : 'text-gray-400 dark:text-white/30'}`}>{label}</span>
+                )}
+              </div>
+            )
+            const Attr = ({ name, org, project, projectUrl }: { name: string; org: string; project?: string; projectUrl?: string }) => (
               <div className="mt-auto pt-4">
                 <p className="font-bold text-white text-sm">{name}</p>
                 <p className="text-xs text-white/40 uppercase tracking-wider mt-0.5">{org}</p>
+                {project && <ProjectTag label={project} url={projectUrl} light />}
               </div>
             )
-            const AttrDark = ({ name, org }: { name: string; org: string }) => (
+            const AttrDark = ({ name, org, project, projectUrl }: { name: string; org: string; project?: string; projectUrl?: string }) => (
               <div className="mt-auto pt-4">
                 <p className="font-bold text-gray-900 dark:text-white text-sm">{name}</p>
                 <p className="text-xs text-gray-400 dark:text-white/40 uppercase tracking-wider mt-0.5">{org}</p>
+                {project && <ProjectTag label={project} url={projectUrl} />}
               </div>
             )
             return (
@@ -295,20 +309,20 @@ export default function Home() {
                   <p className="text-white text-xl leading-relaxed mb-0 font-light max-w-4xl">
                     From start to finish, Jamie was a pleasure to work with. He made our young people feel at ease and slotted right into our event, really capturing the energy of the day and truly bringing our work to life. He turned around our images in record time. We would thoroughly recommend his services to prospective clients.
                   </p>
-                  <Attr name="Ryan Coelho" org="Scottish Youth Parliament" />
+                  <Attr name="Ryan Coelho" org="Scottish Youth Parliament" project="Event & Portrait Photography" />
                 </div>
 
                 {/* Row 2: Three short punchy cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {[
-                    { quote: "Professional, highly skilled and friendly. Far exceeded our expectations!", name: 'Annie McAllister', org: 'AniMac Design' },
-                    { quote: "Professional, approachable and very likeable. Five out of five all round!", name: 'Scott Fleming', org: 'The Highways Band' },
-                    { quote: "No hesitation in recommending! Surpassed my expectations and significantly eased the process for me.", name: 'Jonathan Reid', org: 'Reid Financial Planning' },
+                    { quote: "Professional, highly skilled and friendly. Far exceeded our expectations!", name: 'Annie McAllister', org: 'AniMac Design', project: 'Promotional Films' },
+                    { quote: "Professional, approachable and very likeable. Five out of five all round!", name: 'Scott Fleming', org: 'The Highways Band', project: 'Music Video', url: 'https://youtu.be/MuUrZOhwSAQ' },
+                    { quote: "No hesitation in recommending! Surpassed my expectations and significantly eased the process for me.", name: 'Jonathan Reid', org: 'Reid Financial Planning', project: 'Portrait Photography' },
                   ].map((t) => (
                     <div key={t.name} className="bg-[#0a0a0a] border border-white/10 p-7 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.02] cursor-default">
                       <Stars />
                       <p className="text-white/80 leading-relaxed text-sm flex-1">&ldquo;{t.quote}&rdquo;</p>
-                      <Attr name={t.name} org={t.org} />
+                      <Attr name={t.name} org={t.org} project={t.project} projectUrl={t.url} />
                     </div>
                   ))}
                 </div>
@@ -318,18 +332,18 @@ export default function Home() {
                   <div className="sm:col-span-2 bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 p-8 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.01] cursor-default">
                     <Stars />
                     <p className="text-gray-600 dark:text-white/70 leading-relaxed text-base flex-1">&ldquo;Really enjoyed the process and working with MediaMurray. Incredibly professional and friendly. The final materials far exceeded expectations! Really appreciated the patience shown with figuring out a schedule and working through the ideas before filming. Definitely recommend MediaMurray.&rdquo;</p>
-                    <AttrDark name="Eve McArthur" org="Argyll & Bute Council" />
+                    <AttrDark name="Eve McArthur" org="Argyll & Bute Council" project="Ross Age on Campus — Promotional Film" />
                   </div>
                   <div className="flex flex-col gap-4">
                     <div className="flex-1 bg-[#0052D4] p-6 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.02] cursor-default">
                       <Stars />
                       <p className="text-white leading-relaxed text-sm flex-1">&ldquo;It&rsquo;s amazing!! We shared it with the team and even had a few people a bit emotional.&rdquo;</p>
-                      <Attr name="Emily Beever" org="Scottish Youth Parliament" />
+                      <Attr name="Emily Beever" org="Scottish Youth Parliament" project="Dear Scotland's Future — SYP Manifesto Film" projectUrl="https://youtu.be/kg3wpo3TTL0" />
                     </div>
                     <div className="flex-1 bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 p-6 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.02] cursor-default">
                       <Stars />
                       <p className="text-gray-600 dark:text-white/70 leading-relaxed text-sm flex-1">&ldquo;This is brilliant, thanks so much.&rdquo;</p>
-                      <AttrDark name="Louise Davies" org="Scottish Fair Trade Forum" />
+                      <AttrDark name="Louise Davies" org="Scottish Fair Trade Forum" project="Youth Collective Film & Social Media Ads" projectUrl="https://youtu.be/j0-VaJFpdc8" />
                     </div>
                   </div>
                 </div>
@@ -339,12 +353,12 @@ export default function Home() {
                   <div className="bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 p-8 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.01] cursor-default">
                     <Stars />
                     <p className="text-gray-600 dark:text-white/70 leading-relaxed text-sm flex-1">&ldquo;A pleasure to work with. Clear, understanding and supportive. Exceptional in terms of the final product. The promotional video has helped reach international audiences with our Art &amp; Climate Change message.&rdquo;</p>
-                    <AttrDark name="Richard Whitcomb" org="Bute Community Forest" />
+                    <AttrDark name="Richard Whitcomb" org="Bute Community Forest" project="Exhibition Promotional Film" projectUrl="https://youtu.be/v4sbb5wXikU" />
                   </div>
                   <div className="bg-[#0a0a0a] border border-white/10 p-8 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.01] cursor-default">
                     <Stars />
                     <p className="text-white/80 leading-relaxed text-sm flex-1">&ldquo;Working with Jamie was excellent. He was very open to my ideas and we collaborated creatively. He very much put me at ease — I&rsquo;m not one for being in front of the camera. The service he provides is 10/10 and he got the images back to me very quickly. Highly recommend.&rdquo;</p>
-                    <Attr name="Kevin Lawrence" org="Kev Lawrence Design" />
+                    <Attr name="Kevin Lawrence" org="Kev Lawrence Design" project="Promotional Film & Portrait Photography" />
                   </div>
                 </div>
               </div>
