@@ -19,6 +19,7 @@ const videoMeta: Record<string, { title: string; category: string }> = {
   'fVm0VBWuyt8': { title: 'Rita Rusk Promo (Socially Creative)', category: 'Commercial' },
   '9zONKRiBPm0': { title: 'Warrior In Training — Pilates Promo', category: 'Commercial' },
   'VVGPcQIk0cY': { title: 'An Evening with Graeme Souness — BTS', category: 'Event' },
+  'acscOlaQAcA': { title: 'All Sewn Up — Content Day Film', category: 'Commercial' },
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {

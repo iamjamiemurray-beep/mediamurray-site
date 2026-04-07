@@ -99,7 +99,8 @@ export default function ContentDay() {
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Example Work</p>
           <h2 className="text-3xl font-black mb-12 text-gray-900 dark:text-white">Content Day Films</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <VideoCard id="acscOlaQAcA" title="All Sewn Up — Content Day Film" category="Commercial" />
             <VideoCard id="fVm0VBWuyt8" title="Rita Rusk Promo (Socially Creative)" category="Commercial" />
             <VideoCard id="9zONKRiBPm0" title="Warrior In Training — Pilates Promo" category="Commercial" />
           </div>
