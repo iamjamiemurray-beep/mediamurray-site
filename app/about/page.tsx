@@ -119,8 +119,8 @@ export default function About() {
             </div>
             {/* Isle of Bute origin */}
             <div className="mt-5 flex items-center gap-3">
-              <svg viewBox="0 0 80 160" className="w-8 h-auto flex-shrink-0 fill-[#0052D4] opacity-70" xmlns="http://www.w3.org/2000/svg">
-                <path d="M40 4 C46 6 56 12 60 22 C65 34 64 46 62 56 C60 66 58 74 60 82 C62 92 66 100 64 112 C62 124 56 136 48 148 C44 154 40 158 38 156 C34 150 28 138 26 126 C24 114 28 104 30 94 C32 84 32 76 28 66 C24 56 20 46 22 34 C24 22 32 10 40 4 Z" />
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 flex-shrink-0 text-[#0052D4]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
               </svg>
               <p className="text-xs text-gray-400 dark:text-white/40 leading-tight">
                 Originally from the<br />
