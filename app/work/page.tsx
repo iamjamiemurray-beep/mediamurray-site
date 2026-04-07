@@ -85,6 +85,8 @@ export default function Work() {
           <VideoCard id="VVGPcQIk0cY" title="An Evening with Graeme Souness — BTS" category="Event" />
           <VideoCard id="MuUrZOhwSAQ" title="The Highways — Stand Up And Be Counted" category="Music Video" />
           <VideoCard id="v4sbb5wXikU" title="Bute Community Forest — Exhibition Promo" category="Charity" />
+          <VideoCard id="oSzIU5z1QFI" title="Awake @ Roots Exhibition — Bute Community Forest" category="Charity" />
+          <VideoCard id="7eQSVwN0oBU" title="IBAC — Promotional Film" category="Community" />
           <VideoCard id="yb2cLMMuMdQ" title="IBAC — Isle of Bute's Artists' Collective" category="Community" />
         </div>
       </section>

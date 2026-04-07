@@ -2,7 +2,8 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 const videoMeta: Record<string, { title: string; category: string }> = {
-  '7eQSVwN0oBU': { title: 'Annie McAllister — Promotional Film', category: 'Commercial' },
+  '7eQSVwN0oBU': { title: 'IBAC — Promotional Film', category: 'Community' },
+  'oSzIU5z1QFI': { title: 'Awake @ Roots Exhibition — Bute Community Forest', category: 'Charity' },
   'MuUrZOhwSAQ': { title: 'The Highways — Stand Up And Be Counted', category: 'Music Video' },
   'kg3wpo3TTL0': { title: '2026–2031 SYP Manifesto: Dear Scotland\'s Future', category: 'Public Sector' },
   'PII_t68w8Jg': { title: 'Scottish Fair Trade — Youth Collective Film', category: 'Public Sector' },
