@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import VideoCard from '@/components/VideoCard'
+import ScrollReveal from '@/components/ScrollReveal'
 
 const statItems = [
   { value: '170+', label: 'Client Projects' },
@@ -109,19 +110,19 @@ export default function Home() {
         <div className="absolute inset-0 bg-gray-50 dark:bg-[#0a0a0a]" />
         <div className="absolute inset-0 bg-gradient-to-br from-[#0052D4]/10 via-transparent to-[#00C6FF]/10" />
 
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-24 pb-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-gray-400 dark:text-white/40 mb-6">
+            <p className="hero-animate hero-animate-delay-1 text-xs font-bold uppercase tracking-[0.25em] text-gray-400 dark:text-white/40 mb-6">
               Based in Scotland, United Kingdom
             </p>
-            <h1 className="text-5xl sm:text-6xl font-black leading-none tracking-tight mb-6 text-gray-900 dark:text-white">
+            <h1 className="hero-animate hero-animate-delay-2 text-5xl sm:text-6xl font-black leading-none tracking-tight mb-6 text-gray-900 dark:text-white">
               Professional video production &{' '}
               photography in <span className="gradient-text">Scotland.</span>
             </h1>
-            <p className="text-lg text-gray-600 dark:text-white/60 max-w-xl mb-10 font-light">
+            <p className="hero-animate hero-animate-delay-3 text-lg text-gray-600 dark:text-white/60 max-w-xl mb-10 font-light">
               Videography, photography and editing for businesses, events and organisations across Scotland and the United Kingdom.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="hero-animate hero-animate-delay-4 flex flex-col sm:flex-row gap-4">
               <Link
                 href="/work"
                 className="gradient-bg text-white font-bold px-8 py-4 rounded-sm hover:opacity-90 transition-opacity text-sm uppercase tracking-wider"
@@ -136,7 +137,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="relative hidden lg:block">
+          <div className="hero-animate hero-animate-delay-3 relative hidden lg:block">
             <Image
               src="/jamie-portrait.png"
               alt="Jamie Murray — MediaMurray videographer"
@@ -151,15 +152,19 @@ export default function Home() {
       </section>
 
       {/* Trusted By — Client Faces */}
-      <section className="bg-[#0a0a0a] py-10 border-b border-white/10">
+      <section className="bg-[#0a0a0a] py-8 border-b border-white/10">
         <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-8">
           <div className="text-center sm:text-left">
             <p className="text-2xl sm:text-3xl font-light text-white">
-              Trusted by <span className="font-black gradient-text">170+</span> clients
+              Trusted by <span className="font-black gradient-text">170+</span> clients across Scotland
             </p>
-            <p className="text-white/40 text-sm mt-2 uppercase tracking-[0.15em]">
-              Corporate · Events · Public Sector · Charities · Small Business
-            </p>
+            <div className="flex flex-wrap gap-2 mt-3 justify-center sm:justify-start">
+              {['Corporate', 'Events', 'Public Sector', 'Charities', 'Small Business'].map((tag) => (
+                <span key={tag} className="text-[10px] font-bold uppercase tracking-[0.15em] border border-white/20 text-white/50 px-3 py-1 rounded-full">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
           <div className="flex -space-x-5 flex-shrink-0">
             {clientFaces.map((src, i) => (
@@ -176,21 +181,21 @@ export default function Home() {
       </section>
 
       {/* Clients Logo Marquee */}
-      <section className="py-16 overflow-hidden border-b border-gray-200 dark:border-white/10">
-        <div className="max-w-6xl mx-auto px-6 mb-10 text-center">
+      <section className="py-14 overflow-hidden border-b border-gray-200 dark:border-white/10">
+        <div className="max-w-6xl mx-auto px-6 mb-8 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Trusted By</p>
           <h2 className="text-2xl font-black text-gray-900 dark:text-white">Clients & Organisations</h2>
         </div>
-        <div className="flex animate-marquee-slow whitespace-nowrap">
+        <div className="flex animate-marquee-medium whitespace-nowrap">
           {[...clientLogos, ...clientLogos].map((logo, i) => (
-            <div key={i} className="inline-flex items-center px-6 flex-shrink-0">
-              <div className="h-16 w-40 flex items-center justify-center">
+            <div key={i} className="inline-flex items-center px-8 flex-shrink-0">
+              <div className="h-20 w-48 flex items-center justify-center">
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={112}
-                  height={48}
-                  className="h-full w-full object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+                  width={140}
+                  height={56}
+                  className="h-full w-full object-contain opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
                 />
               </div>
             </div>
@@ -209,8 +214,8 @@ export default function Home() {
             View All →
           </Link>
         </div>
-        {/* Featured — RJC full width */}
-        <div className="mb-4">
+        {/* Featured — RJC */}
+        <div className="mb-4 max-w-4xl mx-auto">
           <VideoCard
             id="APrjtZ7kTGk"
             title="Working at Rothesay Joint Campus — Full Promo"
@@ -247,7 +252,7 @@ export default function Home() {
 
       {/* Stats Ticker */}
       <section className="border-y border-gray-200 dark:border-white/10 py-5 overflow-hidden bg-white dark:bg-[#0a0a0a]">
-        <div className="flex animate-marquee whitespace-nowrap">
+        <div className="flex animate-marquee-fast whitespace-nowrap">
           {[...statItems, ...statItems].map((s, i) => (
             <div key={i} className="inline-flex items-center gap-2 px-8">
               <span className="text-2xl font-black gradient-text">{s.value}</span>
@@ -301,18 +306,21 @@ export default function Home() {
                 ))}
               </div>
             )
-            const ProjectTag = ({ label, url, light = false }: { label: string; url?: string; light?: boolean }) => (
-              <div className="mt-3">
-                {url ? (
-                  <a href={url} target="_blank" rel="noopener noreferrer" className={`inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest border rounded-full px-3 py-1 transition-colors ${light ? 'border-white/20 text-white/50 hover:text-white hover:border-white/50' : 'border-[#0052D4]/30 text-[#0052D4] hover:border-[#0052D4] dark:border-white/20 dark:text-white/50 dark:hover:text-white'}`}>
-                    {label}
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                  </a>
-                ) : (
-                  <span className={`inline-flex items-center text-xs font-bold uppercase tracking-widest ${light ? 'text-white/30' : 'text-gray-400 dark:text-white/30'}`}>{label}</span>
-                )}
-              </div>
-            )
+            const ProjectTag = ({ label, url, light = false }: { label: string; url?: string; light?: boolean }) => {
+              const cls = `inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest border rounded-full px-3 py-1 transition-colors ${light ? 'border-white/20 text-white/50 hover:text-white hover:border-white/50' : 'border-[#0052D4]/30 text-[#0052D4] hover:border-[#0052D4] dark:border-white/20 dark:text-white/50 dark:hover:text-white'}`
+              const icon = <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              return (
+                <div className="mt-3">
+                  {url ? (
+                    <Link href={url} className={cls}>
+                      {label}{icon}
+                    </Link>
+                  ) : (
+                    <span className={`inline-flex items-center text-xs font-bold uppercase tracking-widest ${light ? 'text-white/30' : 'text-gray-400 dark:text-white/30'}`}>{label}</span>
+                  )}
+                </div>
+              )
+            }
             const Attr = ({ name, org, project, projectUrl }: { name: string; org: string; project?: string; projectUrl?: string }) => (
               <div className="mt-auto pt-4">
                 <p className="font-bold text-white text-sm">{name}</p>
@@ -342,8 +350,8 @@ export default function Home() {
                 {/* Row 2: Three short punchy cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {[
-                    { quote: "Professional, highly skilled and friendly. Far exceeded our expectations!", name: 'Annie McAllister', org: 'AniMac Design', project: 'Promotional Films' },
-                    { quote: "Professional, approachable and very likeable. Five out of five all round!", name: 'Scott Fleming', org: 'The Highways Band', project: 'Music Video', url: 'https://youtu.be/MuUrZOhwSAQ' },
+                    { quote: "Professional, highly skilled and friendly. Far exceeded our expectations!", name: 'Annie McAllister', org: 'AniMac Design', project: 'Promotional Films', url: '/work/video/7eQSVwN0oBU' },
+                    { quote: "Professional, approachable and very likeable. Five out of five all round!", name: 'Scott Fleming', org: 'The Highways Band', project: 'Music Video', url: '/work/video/MuUrZOhwSAQ' },
                     { quote: "No hesitation in recommending! Surpassed my expectations and significantly eased the process for me.", name: 'Jonathan Reid', org: 'Reid Financial Planning', project: 'Portrait Photography' },
                   ].map((t) => (
                     <div key={t.name} className="bg-[#0a0a0a] border border-white/10 p-7 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.02] cursor-default">
@@ -359,18 +367,18 @@ export default function Home() {
                   <div className="sm:col-span-2 bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 p-8 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.01] cursor-default">
                     <Stars />
                     <p className="text-gray-600 dark:text-white/70 leading-relaxed text-base flex-1">&ldquo;Really enjoyed the process and working with MediaMurray. Incredibly professional and friendly. The final materials far exceeded expectations! Really appreciated the patience shown with figuring out a schedule and working through the ideas before filming. Definitely recommend MediaMurray.&rdquo;</p>
-                    <AttrDark name="Eve McArthur" org="Argyll & Bute Council" project="Ross Age on Campus — Promotional Film" />
+                    <AttrDark name="Eve McArthur" org="Argyll & Bute Council" project="Portrait Photography" />
                   </div>
                   <div className="flex flex-col gap-4">
                     <div className="flex-1 bg-[#0052D4] p-6 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.02] cursor-default">
                       <Stars />
                       <p className="text-white leading-relaxed text-sm flex-1">&ldquo;It&rsquo;s amazing!! We shared it with the team and even had a few people a bit emotional.&rdquo;</p>
-                      <Attr name="Emily Beever" org="Scottish Youth Parliament" project="Dear Scotland's Future — SYP Manifesto Film" projectUrl="https://youtu.be/kg3wpo3TTL0" />
+                      <Attr name="Emily Beever" org="Scottish Youth Parliament" project="Dear Scotland's Future — SYP Manifesto Film" projectUrl="/work/video/kg3wpo3TTL0" />
                     </div>
                     <div className="flex-1 bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 p-6 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.02] cursor-default">
                       <Stars />
                       <p className="text-gray-600 dark:text-white/70 leading-relaxed text-sm flex-1">&ldquo;This is brilliant, thanks so much.&rdquo;</p>
-                      <AttrDark name="Louise Davies" org="Scottish Fair Trade Forum" project="Youth Collective Film & Social Media Ads" projectUrl="https://youtu.be/j0-VaJFpdc8" />
+                      <AttrDark name="Louise Davies" org="Scottish Fair Trade Forum" project="Youth Collective Film & Social Media Ads" projectUrl="/work/video/j0-VaJFpdc8" />
                     </div>
                   </div>
                 </div>
@@ -380,7 +388,7 @@ export default function Home() {
                   <div className="bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 p-8 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.01] cursor-default">
                     <Stars />
                     <p className="text-gray-600 dark:text-white/70 leading-relaxed text-sm flex-1">&ldquo;A pleasure to work with. Clear, understanding and supportive. Exceptional in terms of the final product. The promotional video has helped reach international audiences with our Art &amp; Climate Change message.&rdquo;</p>
-                    <AttrDark name="Richard Whitcomb" org="Bute Community Forest" project="Exhibition Promotional Film" projectUrl="https://youtu.be/v4sbb5wXikU" />
+                    <AttrDark name="Richard Whitcomb" org="Bute Community Forest" project="Exhibition Promotional Film" projectUrl="/work/video/v4sbb5wXikU" />
                   </div>
                   <div className="bg-[#0a0a0a] border border-white/10 p-8 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.01] cursor-default">
                     <Stars />
