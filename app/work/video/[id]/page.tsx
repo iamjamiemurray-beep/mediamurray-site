@@ -21,19 +21,20 @@ const videoMeta: Record<string, { title: string; category: string }> = {
   'fVm0VBWuyt8': { title: 'Rita Rusk Promo (Socially Creative)', category: 'Commercial' },
   '9zONKRiBPm0': { title: 'Warrior In Training — Pilates Promo', category: 'Commercial' },
   'VVGPcQIk0cY': { title: 'An Evening with Graeme Souness — BTS', category: 'Event' },
-  'yb2cLMMuMdQ': { title: 'Promotional Film', category: 'Commercial' },
 }
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const meta = videoMeta[params.id]
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params
+  const meta = videoMeta[id]
   return {
     title: meta?.title ?? 'Video',
     description: `Watch ${meta?.title ?? 'this project'} — produced by MediaMurray, Scotland.`,
   }
 }
 
-export default function VideoPage({ params }: { params: { id: string } }) {
-  const meta = videoMeta[params.id] ?? { title: 'Project Film', category: 'Video' }
+export default async function VideoPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
+  const meta = videoMeta[id] ?? { title: 'Project Film', category: 'Video' }
 
   return (
     <div className="pt-24 min-h-screen bg-gray-50 dark:bg-[#0a0a0a]">
@@ -47,7 +48,7 @@ export default function VideoPage({ params }: { params: { id: string } }) {
 
         <div className="aspect-video w-full bg-black rounded-sm overflow-hidden mb-12">
           <iframe
-            src={`https://www.youtube.com/embed/${params.id}?rel=0&modestbranding=1`}
+            src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`}
             title={meta.title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen

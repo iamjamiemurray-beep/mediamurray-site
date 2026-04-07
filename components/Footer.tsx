@@ -31,7 +31,7 @@ export default function Footer() {
             Based in Edinburgh — available across Scotland and the United Kingdom.
           </p>
           <p className="mt-2 text-xs text-gray-400 dark:text-white/30">
-            Trusted by over 170 clients across Scotland and the UK.
+            Trusted by over 100 clients across Scotland and the UK.
           </p>
           <p className="mt-4 text-sm text-gray-400 dark:text-white/40">
             <a href="mailto:mail@mediamurray.com" className="hover:text-gray-900 dark:hover:text-white transition-colors">
