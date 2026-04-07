@@ -131,6 +131,18 @@ export default function About() {
         </div>
       </section>
 
+      {/* Broadcast Feature Strip */}
+      <section className="border-t border-gray-200 dark:border-white/10 py-10 bg-gray-50 dark:bg-white/[0.02]">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center gap-6 sm:gap-12">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 whitespace-nowrap">You may have seen my footage on</p>
+          <div className="flex flex-wrap items-center gap-6">
+            {['BBC Sport', 'BBC Scotland', 'BBC Alba'].map((name) => (
+              <span key={name} className="font-black text-lg text-gray-700 dark:text-white/70">{name}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* How I Work */}
       <section className="border-t border-gray-200 dark:border-white/10 py-20">
         <div className="max-w-6xl mx-auto px-6">
