@@ -83,7 +83,7 @@ const services = [
 ]
 
 
-const clientFaces = Array.from({ length: 16 }, (_, i) => `/Client%20${i + 1}.png`)
+const clientFaces = Array.from({ length: 16 }, (_, i) => `/client${i + 1}.png`)
 
 const clientLogos = [
   { src: '/MM_Client_Logo_01_BBC_Scotland.avif', alt: 'BBC Scotland' },
@@ -165,10 +165,10 @@ export default function Home() {
             {clientFaces.map((src, i) => (
               <div
                 key={i}
-                className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border-[3px] border-[#0a0a0a]"
+                className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border-[3px] border-[#0a0a0a] flex-shrink-0"
                 style={{ zIndex: clientFaces.length - i }}
               >
-                <Image src={src} alt="MediaMurray client" fill className="object-cover" sizes="64px" />
+                <Image src={src} alt="MediaMurray client" width={64} height={64} className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
