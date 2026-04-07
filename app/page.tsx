@@ -152,25 +152,25 @@ export default function Home() {
 
       {/* Trusted By — Client Faces */}
       <section className="bg-[#0a0a0a] py-10 border-b border-white/10">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
-          <div className="flex -space-x-2 sm:-space-x-3 flex-shrink-0">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-8">
+          <div className="text-center sm:text-left">
+            <p className="text-2xl sm:text-3xl font-light text-white">
+              Trusted by <span className="font-black gradient-text">170+</span> clients
+            </p>
+            <p className="text-white/40 text-sm mt-2 uppercase tracking-[0.15em]">
+              Corporate · Events · Public Sector · Charities · Small Business
+            </p>
+          </div>
+          <div className="flex -space-x-5 flex-shrink-0">
             {clientFaces.map((src, i) => (
               <div
                 key={i}
-                className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-[#0a0a0a]"
+                className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border-[3px] border-[#0a0a0a]"
                 style={{ zIndex: clientFaces.length - i }}
               >
-                <Image src={src} alt="MediaMurray client" fill className="object-cover" sizes="48px" />
+                <Image src={src} alt="MediaMurray client" fill className="object-cover" sizes="64px" />
               </div>
             ))}
-          </div>
-          <div className="text-center sm:text-left">
-            <p className="text-xl sm:text-2xl font-black text-white">
-              Trusted by <span className="gradient-text">170+ clients</span> across Scotland
-            </p>
-            <p className="text-white/40 text-sm mt-1 uppercase tracking-[0.15em]">
-              Corporate · Events · Public Sector · Charities · Small Business
-            </p>
           </div>
         </div>
       </section>
