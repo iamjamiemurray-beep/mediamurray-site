@@ -83,6 +83,8 @@ const services = [
 ]
 
 
+const clientFaces = Array.from({ length: 16 }, (_, i) => `/Client%20${i + 1}.png`)
+
 const clientLogos = [
   { src: '/MM_Client_Logo_01_BBC_Scotland.avif', alt: 'BBC Scotland' },
   { src: '/MM_Client_Logo_11_Scottish_Parliament.avif', alt: 'Scottish Parliament' },
@@ -146,6 +148,31 @@ export default function Home() {
           </div>
         </div>
 
+      </section>
+
+      {/* Trusted By — Client Faces */}
+      <section className="bg-[#0a0a0a] py-10 border-b border-white/10">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
+          <div className="flex -space-x-2 sm:-space-x-3 flex-shrink-0">
+            {clientFaces.map((src, i) => (
+              <div
+                key={i}
+                className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-[#0a0a0a]"
+                style={{ zIndex: clientFaces.length - i }}
+              >
+                <Image src={src} alt="MediaMurray client" fill className="object-cover" sizes="48px" />
+              </div>
+            ))}
+          </div>
+          <div className="text-center sm:text-left">
+            <p className="text-xl sm:text-2xl font-black text-white">
+              Trusted by <span className="gradient-text">170+ clients</span> across Scotland
+            </p>
+            <p className="text-white/40 text-sm mt-1 uppercase tracking-[0.15em]">
+              Corporate · Events · Public Sector · Charities · Small Business
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Clients Logo Marquee */}
