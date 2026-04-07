@@ -180,7 +180,7 @@ export default function About() {
                 </div>
                 <div>
                   <p className="text-3xl font-black gradient-text">6+</p>
-                  <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-white/40 mt-1">Years freelance</p>
+                  <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-white/40 mt-1">Years professional freelance</p>
                 </div>
               </div>
             </div>
