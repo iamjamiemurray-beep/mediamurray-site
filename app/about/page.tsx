@@ -166,26 +166,30 @@ export default function About() {
       <section className="border-t border-gray-200 dark:border-white/10 py-20">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Experience</p>
-          <h2 className="text-3xl font-black mb-4 text-gray-900 dark:text-white">Since Going Freelance</h2>
-          <p className="text-gray-600 dark:text-white/60 leading-relaxed max-w-3xl mb-10">
-            Projects have grown in scale consistently year on year. I&apos;ve taken on more work, more varied clients, and more ambitious briefs each year since graduating. The variety is a big part of what I enjoy — I&apos;m often working with new people and on projects that are genuinely different from one another, which keeps the standard high. I collaborate well and I&apos;m happy working on something for a number of months, as long as there&apos;s a clear goal and we both care about the outcome.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-10">
-            <div className="space-y-4 text-gray-600 dark:text-white/60 leading-relaxed">
-              <div className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-full gradient-bg mt-2 flex-shrink-0" />
-                <span>170+ projects delivered</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-full gradient-bg mt-2 flex-shrink-0" />
-                <span>Regular work across public sector, business, creative and charity projects</span>
+          <h2 className="text-3xl font-black mb-6 text-gray-900 dark:text-white">Since Going Freelance</h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-10">
+            <div>
+              <p className="text-gray-600 dark:text-white/60 leading-relaxed mb-6">
+                Projects have grown in scale consistently year on year. More varied clients, more ambitious briefs, and more work each year since graduating. The variety is a big part of what I enjoy — working with new people on projects that are genuinely different from one another keeps the standard high.
+              </p>
+              <div className="flex gap-8">
+                <div>
+                  <p className="text-3xl font-black gradient-text">170+</p>
+                  <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-white/40 mt-1">Projects delivered</p>
+                </div>
+                <div>
+                  <p className="text-3xl font-black gradient-text">5+</p>
+                  <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-white/40 mt-1">Years freelance</p>
+                </div>
               </div>
             </div>
-            <div className="text-gray-600 dark:text-white/60 leading-relaxed text-sm">
-              <p className="mb-3">Organisations I&apos;ve worked with include:</p>
-              <p>BBC Scotland, The Scottish Parliament, RangersTV, Scottish Youth Parliament, North Lanarkshire Council, Argyll &amp; Bute Council, Scottish Fair Trade, Inverclyde Whisky Festival, Scottish Women&apos;s Wellbeing Summit, Visit Bute, Frame Group, Talking Fly Films, Maison Dieu Coffee Roasters, Reid Financial Planning, LowlandRFCA, and others.</p>
+            <div className="text-gray-600 dark:text-white/60 text-sm leading-relaxed">
+              <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-white/40 mb-3">Recent organisations</p>
+              <p>LowlandRFCA, West Lowland Battalion ACF, Scottish Youth Parliament, Scottish Fair Trade, International Fair Trade Towns Conference, Scottish Women&apos;s Wellbeing Summit, Rothesay Joint Campus, Visit Bute, Ember Clyde Whisky Festival, The Whisky Journal, Socially Creative, Isle of Bute Artists&apos; Collective, and others.</p>
             </div>
           </div>
+
           <div className="bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 p-6 rounded-sm max-w-2xl">
             <p className="text-gray-600 dark:text-white/60 leading-relaxed text-sm">
               If you&apos;re looking for experience, reliability, and someone who&apos;s easy to work with, takes the work seriously, and delivers what&apos;s agreed — we are likely a good fit.
