@@ -153,7 +153,7 @@ export default function Home() {
 
       {/* Trusted By — Client Faces */}
       <section className="bg-[#0a0a0a] py-8 border-b border-white/10">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-8">
+        <ScrollReveal className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-8">
           <div className="text-center sm:text-left">
             <p className="text-2xl sm:text-3xl font-light text-white">
               Trusted by <span className="font-black gradient-text">170+</span> clients across Scotland
@@ -177,7 +177,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Clients Logo Marquee */}
@@ -205,6 +205,7 @@ export default function Home() {
 
       {/* Featured Work */}
       <section className="max-w-6xl mx-auto px-6 py-24">
+        <ScrollReveal>
         <div className="flex items-end justify-between mb-12">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Portfolio</p>
@@ -247,7 +248,7 @@ export default function Home() {
               { value: 'on Facebook', label: '' },
             ]}
           />
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Stats Ticker */}
@@ -265,7 +266,7 @@ export default function Home() {
 
       {/* Services */}
       <section className="bg-gray-50 dark:bg-white/[0.02] border-y border-gray-200 dark:border-white/10 py-24">
-        <div className="max-w-6xl mx-auto px-6">
+        <ScrollReveal className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">What I Do</p>
           <h2 className="text-4xl font-black mb-12 text-gray-900 dark:text-white">Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 dark:bg-white/10">
@@ -286,12 +287,12 @@ export default function Home() {
               </Link>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* Testimonials */}
       <section className="py-24 border-b border-gray-200 dark:border-white/10">
-        <div className="max-w-6xl mx-auto px-6">
+        <ScrollReveal className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Reviews</p>
           <h2 className="text-4xl font-black mb-12 text-gray-900 dark:text-white">What Clients Say</h2>
 
@@ -399,12 +400,12 @@ export default function Home() {
               </div>
             )
           })()}
-        </div>
+        </ScrollReveal>
       </section>
 
       {/* CTA */}
       <section className="gradient-bg py-24">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <ScrollReveal className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-black mb-6 text-white">Ready to start your project?</h2>
           <p className="text-white/90 mb-3 text-lg font-medium">
             170+ projects delivered across Scotland — corporate, events, public sector, small business.
@@ -421,7 +422,7 @@ export default function Home() {
           >
             Get a Free Quote
           </Link>
-        </div>
+        </ScrollReveal>
       </section>
     </>
   )
