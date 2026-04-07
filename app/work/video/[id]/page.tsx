@@ -7,6 +7,7 @@ const videoMeta: Record<string, { title: string; category: string }> = {
   'MuUrZOhwSAQ': { title: 'The Highways — Stand Up And Be Counted', category: 'Music Video' },
   'kg3wpo3TTL0': { title: '2026–2031 SYP Manifesto: Dear Scotland\'s Future', category: 'Public Sector' },
   'PII_t68w8Jg': { title: 'Scottish Fair Trade — Youth Collective Film', category: 'Public Sector' },
+  'b9phaKPVKxY': { title: 'Youth Collective — Scottish Fair Trade Film', category: 'Public Sector' },
   'v4sbb5wXikU': { title: 'Bute Community Forest — Exhibition Promo', category: 'Charity' },
   'yb2cLMMuMdQ': { title: 'IBAC — Isle of Bute\'s Artists\' Collective', category: 'Community' },
   'APrjtZ7kTGk': { title: 'Working at Rothesay Joint Campus — Full Promo', category: 'Corporate' },

@@ -28,7 +28,10 @@ export default function Footer() {
           />
           <p className="text-gray-500 dark:text-white/50 text-sm leading-relaxed">
             Professional videography, photography and editing.<br />
-            Based in Edinburgh — available across Scotland.
+            Based in Edinburgh — available across Scotland and the United Kingdom.
+          </p>
+          <p className="mt-2 text-xs text-gray-400 dark:text-white/30">
+            Trusted by over 170 clients across Scotland and the UK.
           </p>
           <p className="mt-4 text-sm text-gray-400 dark:text-white/40">
             <a href="mailto:mail@mediamurray.com" className="hover:text-gray-900 dark:hover:text-white transition-colors">

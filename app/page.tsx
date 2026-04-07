@@ -380,7 +380,7 @@ export default function Home() {
                     <div className="flex-1 bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 p-6 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.02] cursor-default">
                       <Stars />
                       <p className="text-gray-600 dark:text-white/70 leading-relaxed text-sm flex-1">&ldquo;This is brilliant, thanks so much.&rdquo;</p>
-                      <AttrDark name="Louise Davies" org="Scottish Fair Trade Forum" project="Youth Collective Film & Social Media Ads" projectUrl="/work/video/PII_t68w8Jg" />
+                      <AttrDark name="Louise Davies" org="Scottish Fair Trade Forum" project="Youth Collective Film & Social Media Ads" projectUrl="/work/video/b9phaKPVKxY" />
                     </div>
                   </div>
                 </div>
@@ -408,14 +408,14 @@ export default function Home() {
       <section className="gradient-bg py-24">
         <ScrollReveal className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-black mb-6 text-white">Ready to start your project?</h2>
-          <p className="text-white/90 mb-3 text-lg font-medium">
-            170+ projects delivered across Scotland — corporate, events, public sector, small business.
+          <p className="text-white/90 mb-4 text-lg font-medium">
+            170+ projects. Clients across Scotland and the United Kingdom.
           </p>
-          <p className="text-white/75 mb-3 text-base leading-relaxed">
-            No agency fees, no hand-offs, no generic output. If you&apos;ve been let down by content that never got used, or suppliers who don&apos;t deliver — this is the alternative.
+          <p className="text-white/75 mb-4 text-base leading-relaxed">
+            If you&apos;ve been let down by content you&apos;d never want to share, or by suppliers who didn&apos;t deliver — this is the alternative. Trusted results from someone experienced, with countless clients who can testify to that.
           </p>
           <p className="text-white/75 mb-10 text-base leading-relaxed">
-            One call, a clear brief, work that&apos;s on time and worth putting out. Let&apos;s get started.
+            You deserve work that represents you properly, delivered on time, and worth sharing with the world. Let&apos;s get started.
           </p>
           <Link
             href="/contact"
