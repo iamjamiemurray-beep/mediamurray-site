@@ -156,7 +156,7 @@ export default function Home() {
         <ScrollReveal className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-8">
           <div className="text-center sm:text-left">
             <p className="text-2xl sm:text-3xl font-light text-white">
-              Trusted by <span className="font-black gradient-text">over 100</span> clients across Scotland
+              Trusted by <span className="font-black gradient-text">over 100</span> clients
             </p>
             <div className="flex flex-wrap gap-2 mt-3 justify-center sm:justify-start">
               {['Corporate', 'Events', 'Public Sector', 'Charities', 'Small Business'].map((tag) => (
