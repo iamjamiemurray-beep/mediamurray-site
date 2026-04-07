@@ -265,23 +265,48 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
               {
-                quote: "MediaMurray proved to be very professional and managed to get a slot booked in within a week to take my headshots. The pre-planned photography locations worked perfectly on the shoot day, surpassing my expectations and significantly easing the process for me. I was particularly impressed with how quickly MediaMurray was able to produce and return the pictures back to me. I would have no hesitation recommending MediaMurray's services to anyone with photography/videography needs.",
-                name: 'Jonathan',
+                quote: "From start to finish, Jamie was a pleasure to work with. He made our young people feel at ease and slotted right into our event, really capturing the energy of the day and truly bringing our work to life. He managed to turn around our images in record time. We would thoroughly recommend his photography and videography services to prospective clients.",
+                name: 'Ryan Coelho',
+                org: 'Scottish Youth Parliament',
+              },
+              {
+                quote: "Professional, highly skilled and friendly. Far exceeded our expectations!",
+                name: 'Annie McAllister',
+                org: 'AniMac Design',
+              },
+              {
+                quote: "No hesitation in recommending! Surpassed my expectations and significantly eased the process for me.",
+                name: 'Jonathan Reid',
                 org: 'Reid Financial Planning',
               },
               {
                 quote: "Really enjoyed the process and working with MediaMurray. Incredibly professional and friendly. The overall process and final materials far exceeded expectations! Really appreciated the patience shown with figuring out a schedule and working through the ideas before filming. Definitely recommend MediaMurray.",
-                name: 'Eve',
+                name: 'Eve McArthur',
                 org: 'Argyll & Bute Council',
               },
               {
-                quote: "MediaMurray's work was exceptional in terms of the final product, which really showcased the artists and its location here on the Isle of Bute in a very positive light. More than this, MediaMurray were a pleasure to work with. Professional, clear, understanding and supportive. The promotional video has helped to reach international audiences with our Art & Climate Change message — and we would have no hesitation in working with MediaMurray in the future.",
-                name: 'Richard',
+                quote: "A pleasure to work with. Clear, understanding and supportive. Exceptional in terms of the final product.",
+                name: 'Richard Whitcomb',
                 org: 'Bute Community Forest',
               },
               {
+                quote: "Professional, approachable and very likeable. Five out of five all round!",
+                name: 'Scott Fleming',
+                org: 'The Highways Band',
+              },
+              {
+                quote: "It's amazing!! We shared it with the team this morning and even had a few people a bit emotional.",
+                name: 'Emily Beever',
+                org: 'Scottish Youth Parliament',
+              },
+              {
+                quote: "This is brilliant, thanks so much.",
+                name: 'Louise Davies',
+                org: 'Scottish Fair Trade Forum',
+              },
+              {
                 quote: "Working with Jamie was excellent. Not only did he create some fantastic content for me, he was very open to my ideas and we collaborated creatively. He very much put me at ease as I'm not one for being in front of the camera. The service he provides is 10/10 and he got the images back to me very quickly. I would work with Jamie again and would highly recommend him to others!",
-                name: 'Kevin',
+                name: 'Kevin Lawrence',
                 org: 'Kev Lawrence Design',
               },
             ].map((t) => (
