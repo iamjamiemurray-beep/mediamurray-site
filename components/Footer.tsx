@@ -91,7 +91,21 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-          <div className="mt-8 flex gap-4">
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a
+              href="mailto:mail@mediamurray.com"
+              className="text-gray-400 dark:text-white/40 hover:text-gray-900 dark:hover:text-white transition-colors text-sm"
+            >
+              Email
+            </a>
+            <a
+              href="https://wa.me/447841728249"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 dark:text-white/40 hover:text-gray-900 dark:hover:text-white transition-colors text-sm"
+            >
+              WhatsApp
+            </a>
             <a
               href="https://www.instagram.com/mediamurrayuk"
               target="_blank"

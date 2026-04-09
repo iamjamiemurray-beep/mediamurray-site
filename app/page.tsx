@@ -169,7 +169,7 @@ export default function Home() {
             ))}
           </div>
           <div className="flex flex-wrap gap-2 justify-center">
-            {['Corporate Events', 'Public Sector', 'Charities', 'Small Businesses', 'Individuals'].map((tag) => (
+            {['Public Sector', 'Corporate Events', 'Creative Agencies', 'Charities', 'Small Businesses', 'Individuals'].map((tag) => (
               <span key={tag} className="text-[10px] font-bold uppercase tracking-[0.15em] border border-white/20 text-white/50 px-3 py-1 rounded-full">
                 {tag}
               </span>
