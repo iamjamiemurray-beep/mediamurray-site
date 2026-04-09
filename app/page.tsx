@@ -216,19 +216,43 @@ export default function Home() {
           </Link>
         </div>
         {/* Featured — RJC */}
-        <div className="mb-4 max-w-4xl mx-auto">
-          <VideoCard
-            id="APrjtZ7kTGk"
-            title="Working at Rothesay Joint Campus — Full Promo"
-            category="Corporate"
-            featured
-            stats={[
-              { value: '25K+', label: 'total views' },
-              { value: '14K+', label: 'in first 24hrs' },
-              { value: '560+', label: 'reactions' },
-              { value: '6.5K', label: 'organic reach' },
-            ]}
-          />
+        <div className="mb-8 max-w-3xl mx-auto">
+          {/* Gradient border wrapper */}
+          <div className="p-[2px] rounded-sm bg-gradient-to-r from-[#0052D4] to-[#00C6FF]">
+            <div className="rounded-sm overflow-hidden">
+              <VideoCard
+                id="APrjtZ7kTGk"
+                title="Working at Rothesay Joint Campus — Full Promo"
+                category="Corporate"
+                featured
+                stats={[
+                  { value: '25K+', label: 'total views' },
+                  { value: '14K+', label: 'in first 24hrs' },
+                  { value: '560+', label: 'reactions' },
+                  { value: '6.5K', label: 'organic reach' },
+                ]}
+              />
+            </div>
+          </div>
+          {/* Stats bar + CTA below featured */}
+          <div className="mt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-1">
+            <div className="flex gap-6 flex-wrap">
+              {[
+                { value: '25K+', label: 'total views' },
+                { value: '14K+', label: 'in first 24hrs' },
+                { value: '560+', label: 'reactions' },
+                { value: '6.5K', label: 'organic reach' },
+              ].map((s) => (
+                <div key={s.label}>
+                  <span className="text-xl font-black gradient-text">{s.value}</span>
+                  <span className="text-xs text-gray-400 dark:text-white/40 ml-1 uppercase tracking-wider">{s.label}</span>
+                </div>
+              ))}
+            </div>
+            <Link href="/work" className="text-xs font-bold uppercase tracking-widest text-[#0052D4] dark:text-white/60 hover:text-[#00C6FF] dark:hover:text-white transition-colors whitespace-nowrap">
+              See All Work →
+            </Link>
+          </div>
         </div>
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

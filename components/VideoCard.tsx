@@ -86,11 +86,24 @@ export default function VideoCard({ id, title, category, featured, stats, facebo
           </svg>
         </div>
       </div>
-      {/* Info overlay */}
+      {/* Stats at top — featured only */}
+      {featured && stats && (
+        <div className="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-black/90 via-black/40 to-transparent">
+          <div className="flex gap-5 flex-wrap">
+            {stats.map((s) => (
+              <div key={s.label} className="flex items-baseline gap-1">
+                <span className="text-2xl font-black text-white leading-none">{s.value}</span>
+                <span className="text-xs text-white/60 uppercase tracking-wider">{s.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+      {/* Info overlay — bottom */}
       <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
         <p className="text-xs font-bold uppercase tracking-wider text-[#00C6FF] mb-1">{category}</p>
         <p className="text-sm font-bold text-white">{title}</p>
-        {stats && (
+        {!featured && stats && (
           <div className="flex gap-4 mt-2">
             {stats.map((s) => (
               <div key={s.label}>
