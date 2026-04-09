@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Testimonials',
@@ -13,6 +14,7 @@ const testimonials = [
     org: 'Scottish Youth Parliament',
     project: 'Event & Portrait Photography',
     category: 'Public Sector',
+    photo: '/Ryan-coelho.png',
   },
   {
     quote: "Professional, highly skilled and friendly. Far exceeded our expectations!",
@@ -132,7 +134,17 @@ export default function Testimonials() {
               <p className="text-gray-600 dark:text-white/70 leading-relaxed text-sm flex-1 mb-6">
                 &ldquo;{t.quote}&rdquo;
               </p>
-              <div>
+              <div className="flex items-center gap-3">
+                {t.photo && (
+                  <Image
+                    src={t.photo}
+                    alt={t.name}
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                  />
+                )}
+                <div>
                 <p className="font-bold text-gray-900 dark:text-white text-sm">{t.name}</p>
                 <p className="text-xs text-gray-400 dark:text-white/40 uppercase tracking-wider mt-0.5">{t.org}</p>
                 {t.project && (
@@ -153,6 +165,7 @@ export default function Testimonials() {
                 <span className="inline-block mt-3 text-[10px] font-bold uppercase tracking-[0.15em] border border-gray-200 dark:border-white/10 text-gray-400 dark:text-white/30 px-2 py-0.5 rounded-full">
                   {t.category}
                 </span>
+                </div>
               </div>
             </div>
           ))}
