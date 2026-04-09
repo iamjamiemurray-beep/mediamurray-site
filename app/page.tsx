@@ -399,6 +399,11 @@ export default function Home() {
               </div>
             )
           })()}
+          <div className="mt-10 text-center">
+            <Link href="/testimonials" className="text-sm font-bold text-gray-500 dark:text-white/50 hover:text-gray-900 dark:hover:text-white transition-colors uppercase tracking-wider">
+              See All Reviews →
+            </Link>
+          </div>
         </ScrollReveal>
       </section>
 
