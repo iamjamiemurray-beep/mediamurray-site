@@ -59,6 +59,7 @@ export default function Footer() {
             {[
               { href: '/work', label: 'Work' },
               { href: '/about', label: 'About' },
+              { href: '/testimonials', label: 'Testimonials' },
               { href: '/resources', label: 'Resources' },
               { href: '/contact', label: 'Contact' },
             ].map((l) => (
@@ -69,7 +70,7 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-col gap-2">
             <a
               href="mailto:mail@mediamurray.com"
               className="text-gray-400 dark:text-white/40 hover:text-gray-900 dark:hover:text-white transition-colors text-sm"
