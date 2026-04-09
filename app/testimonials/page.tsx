@@ -23,6 +23,7 @@ const testimonials = [
     project: 'Promotional Films',
     projectUrl: '/work/video/7eQSVwN0oBU',
     category: 'Small Business',
+    photo: '/Annie-McAllister.png',
   },
   {
     quote: "Professional, approachable and very likeable. Five out of five all round!",
@@ -31,6 +32,7 @@ const testimonials = [
     project: 'Music Video',
     projectUrl: '/work/video/MuUrZOhwSAQ',
     category: 'Individual',
+    photo: '/Scott-Fleming.png',
   },
   {
     quote: "No hesitation in recommending! Surpassed my expectations and significantly eased the process for me.",
@@ -38,6 +40,7 @@ const testimonials = [
     org: 'Reid Financial Planning',
     project: 'Portrait Photography',
     category: 'Small Business',
+    photo: '/Jonathan-Reid.png',
   },
   {
     quote: "Really enjoyed the process and working with MediaMurray. Incredibly professional and friendly. The final materials far exceeded expectations! Really appreciated the patience shown with figuring out a schedule and working through the ideas before filming. Definitely recommend MediaMurray.",
@@ -45,6 +48,7 @@ const testimonials = [
     org: 'Argyll & Bute Council',
     project: 'Portrait Photography',
     category: 'Public Sector',
+    photo: '/Eve-McArthur.png',
   },
   {
     quote: "It's amazing!! We shared it with the team and even had a few people a bit emotional.",
@@ -61,6 +65,7 @@ const testimonials = [
     project: 'Youth Collective Film & Social Media Ads',
     projectUrl: '/work/video/b9phaKPVKxY',
     category: 'Charity',
+    photo: '/Louise-Davies.png',
   },
   {
     quote: "A pleasure to work with. Clear, understanding and supportive. Exceptional in terms of the final product. The promotional video has helped reach international audiences with our Art & Climate Change message.",
@@ -69,6 +74,7 @@ const testimonials = [
     project: 'Exhibition Promotional Film',
     projectUrl: '/work/video/v4sbb5wXikU',
     category: 'Charity',
+    photo: '/Richard-Whitcomb.png',
   },
   {
     quote: "Working with Jamie was excellent. He was very open to my ideas and we collaborated creatively. He very much put me at ease — I'm not one for being in front of the camera. The service he provides is 10/10 and he got the images back to me very quickly. Highly recommend.",
@@ -76,6 +82,7 @@ const testimonials = [
     org: 'Kev Lawrence Design',
     project: 'Promotional Film & Portrait Photography',
     category: 'Small Business',
+    photo: '/Kevin-Lawrence.png',
   },
 ]
 
