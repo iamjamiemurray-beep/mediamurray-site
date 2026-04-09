@@ -16,6 +16,10 @@ const clientLogos = [
   { src: '/MM_Client_Logo_10_Reid_Financial_Planning.avif', alt: 'Reid Financial Planning' },
   { src: '/MM_Client_Logo_02_BBC_Social.avif', alt: 'BBC Social' },
   { src: '/MM_Client_Logo_03_BBC_Sport.avif', alt: 'BBC Sport' },
+  { src: '/MM_Client_Logo_07_Frame_thewarmup.jpg', alt: 'The Warmup' },
+  { src: '/MM_Client_Logo_07_Frame_spotlight.png', alt: 'Spotlight' },
+  { src: '/MM_Client_Logo_07_Frame_argyllandbutecouncil.png', alt: 'Argyll & Bute Council' },
+  { src: '/MM_Client_Logo_07_Frame_northlanarkshirecouncil.png', alt: 'North Lanarkshire Council' },
 ]
 
 export const metadata: Metadata = {

@@ -101,6 +101,10 @@ const clientLogos = [
   { src: '/MM_Client_Logo_10_Reid_Financial_Planning.avif', alt: 'Reid Financial Planning' },
   { src: '/MM_Client_Logo_02_BBC_Social.avif', alt: 'BBC Social' },
   { src: '/MM_Client_Logo_03_BBC_Sport.avif', alt: 'BBC Sport' },
+  { src: '/MM_Client_Logo_07_Frame_thewarmup.jpg', alt: 'The Warmup' },
+  { src: '/MM_Client_Logo_07_Frame_spotlight.png', alt: 'Spotlight' },
+  { src: '/MM_Client_Logo_07_Frame_argyllandbutecouncil.png', alt: 'Argyll & Bute Council' },
+  { src: '/MM_Client_Logo_07_Frame_northlanarkshirecouncil.png', alt: 'North Lanarkshire Council' },
 ]
 
 export default function Home() {
@@ -118,7 +122,7 @@ export default function Home() {
             </p>
             <h1 className="hero-animate hero-animate-delay-2 text-5xl sm:text-6xl font-black leading-none tracking-tight mb-6 text-gray-900 dark:text-white">
               Professional video production &{' '}
-              photography in <span className="gradient-text">Scotland.</span> <span className="text-5xl sm:text-6xl">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
+              photography in <span className="gradient-text">Scotland</span> <span className="text-5xl sm:text-6xl">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
             </h1>
             <p className="hero-animate hero-animate-delay-3 text-lg text-gray-600 dark:text-white/60 max-w-xl mb-10 font-light">
               Videography, photography and editing for businesses, events and organisations across Scotland and the United Kingdom.
@@ -256,10 +260,10 @@ export default function Home() {
         </div>
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <VideoCard id="T68PCvwUwH0" title="Visit Bute: Your Own Adventure Island" category="Commercial" />
+          <VideoCard id="VVGPcQIk0cY" title="An Evening with Graeme Souness — BTS" category="Event" />
           <VideoCard id="hDpazT7xfFc" title="The Whisky Journal — Promo Film" category="Commercial" />
           <VideoCard id="B6dOtVrT6Bg" title="International Fair Trade Towns Conference 2025" category="Event" />
-          <VideoCard id="VVGPcQIk0cY" title="An Evening with Graeme Souness — BTS" category="Event" />
+          <VideoCard id="T68PCvwUwH0" title="Visit Bute: Your Own Adventure Island" category="Commercial" />
           <VideoCard id="9zONKRiBPm0" title="Warrior In Training — Pilates Promo" category="Commercial" />
           <VideoCard
             id="5cv1GW6mlm8"
