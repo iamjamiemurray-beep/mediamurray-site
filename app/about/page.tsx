@@ -92,7 +92,7 @@ export default function About() {
           <div>
             <div className="overflow-hidden">
               <Image
-                src="/jamie-portrait.png"
+                src="/jamiehero2.png"
                 alt="Jamie Murray — MediaMurray"
                 width={600}
                 height={750}
@@ -100,9 +100,8 @@ export default function About() {
               />
             </div>
             {/* Small gallery below portrait */}
-            <div className="grid grid-cols-3 gap-2 mt-2">
+            <div className="grid grid-cols-2 gap-2 mt-2">
               {[
-                { src: '/jamiebts5.jpeg', alt: 'Jamie filming at Europa League' },
                 { src: '/jamiebts6.jpeg', alt: 'Jamie on location' },
                 { src: '/jamiebts4.jpeg', alt: 'Jamie filming on location' },
               ].map((img, i) => (
@@ -173,7 +172,7 @@ export default function About() {
               <p className="text-gray-600 dark:text-white/60 leading-relaxed mb-6">
                 Projects have grown in scale consistently year on year. More varied clients, more ambitious briefs, and more work each year since graduating. The variety is a big part of what I enjoy — working with new people on projects that are genuinely different from one another keeps the standard high.
               </p>
-              <div className="flex gap-8">
+              <div className="flex gap-8 mb-8">
                 <div>
                   <p className="text-3xl font-black gradient-text">170+</p>
                   <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-white/40 mt-1">Projects delivered</p>
@@ -183,6 +182,13 @@ export default function About() {
                   <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-white/40 mt-1">Years professional freelance</p>
                 </div>
               </div>
+              <Image
+                src="/jamiehero4.png"
+                alt="Jamie Murray on location"
+                width={400}
+                height={300}
+                className="w-full max-w-xs h-auto object-contain"
+              />
             </div>
             <div className="text-gray-600 dark:text-white/60 text-sm leading-relaxed">
               <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-white/40 mb-3">Recent organisations</p>

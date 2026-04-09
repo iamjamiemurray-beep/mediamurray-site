@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Services',
@@ -73,11 +74,24 @@ export default function Services() {
   return (
     <div className="pt-24">
       <section className="max-w-6xl mx-auto px-6 py-20">
-        <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">What I Offer</p>
-        <h1 className="text-5xl font-black mb-4 text-gray-900 dark:text-white">Services</h1>
-        <p className="text-gray-500 dark:text-white/50 max-w-xl mb-16 text-lg">
-          Video, photography and editing for businesses, events and organisations across Scotland. Every project is scoped to what you actually need and handled properly from start to finish.
-        </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">What I Offer</p>
+            <h1 className="text-5xl font-black mb-4 text-gray-900 dark:text-white">Services</h1>
+            <p className="text-gray-500 dark:text-white/50 max-w-xl text-lg">
+              Video, photography and editing for businesses, events and organisations across Scotland. Every project is scoped to what you actually need and handled properly from start to finish.
+            </p>
+          </div>
+          <div className="hidden lg:flex justify-end">
+            <Image
+              src="/jamiehero5.png"
+              alt="Jamie Murray — MediaMurray videographer"
+              width={400}
+              height={500}
+              className="h-64 w-auto object-contain"
+            />
+          </div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-200 dark:bg-white/10">
           {services.map((s) => (
