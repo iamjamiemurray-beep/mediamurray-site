@@ -321,18 +321,24 @@ export default function Home() {
                 </div>
               )
             }
-            const Attr = ({ name, org, project, projectUrl }: { name: string; org: string; project?: string; projectUrl?: string }) => (
-              <div className="mt-auto pt-4">
-                <p className="font-bold text-white text-sm">{name}</p>
-                <p className="text-xs text-white/40 uppercase tracking-wider mt-0.5">{org}</p>
-                {project && <ProjectTag label={project} url={projectUrl} light />}
+            const Attr = ({ name, org, project, projectUrl, photo }: { name: string; org: string; project?: string; projectUrl?: string; photo?: string }) => (
+              <div className="mt-auto pt-4 flex items-center gap-3">
+                {photo && <Image src={photo} alt={name} width={36} height={36} className="w-9 h-9 rounded-full object-cover flex-shrink-0" />}
+                <div>
+                  <p className="font-bold text-white text-sm">{name}</p>
+                  <p className="text-xs text-white/40 uppercase tracking-wider mt-0.5">{org}</p>
+                  {project && <ProjectTag label={project} url={projectUrl} light />}
+                </div>
               </div>
             )
-            const AttrDark = ({ name, org, project, projectUrl }: { name: string; org: string; project?: string; projectUrl?: string }) => (
-              <div className="mt-auto pt-4">
-                <p className="font-bold text-gray-900 dark:text-white text-sm">{name}</p>
-                <p className="text-xs text-gray-400 dark:text-white/40 uppercase tracking-wider mt-0.5">{org}</p>
-                {project && <ProjectTag label={project} url={projectUrl} />}
+            const AttrDark = ({ name, org, project, projectUrl, photo }: { name: string; org: string; project?: string; projectUrl?: string; photo?: string }) => (
+              <div className="mt-auto pt-4 flex items-center gap-3">
+                {photo && <Image src={photo} alt={name} width={36} height={36} className="w-9 h-9 rounded-full object-cover flex-shrink-0" />}
+                <div>
+                  <p className="font-bold text-gray-900 dark:text-white text-sm">{name}</p>
+                  <p className="text-xs text-gray-400 dark:text-white/40 uppercase tracking-wider mt-0.5">{org}</p>
+                  {project && <ProjectTag label={project} url={projectUrl} />}
+                </div>
               </div>
             )
             return (
@@ -344,20 +350,20 @@ export default function Home() {
                   <p className="text-white text-xl leading-relaxed mb-0 font-light max-w-4xl">
                     From start to finish, Jamie was a pleasure to work with. He made our young people feel at ease and slotted right into our event, really capturing the energy of the day and truly bringing our work to life. He turned around our images in record time. We would thoroughly recommend his services to prospective clients.
                   </p>
-                  <Attr name="Ryan Coelho" org="Scottish Youth Parliament" project="Event & Portrait Photography" />
+                  <Attr name="Ryan Coelho" org="Scottish Youth Parliament" project="Event & Portrait Photography" photo="/Ryan-coelho.png" />
                 </div>
 
                 {/* Row 2: Three short punchy cards */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {[
-                    { quote: "Professional, highly skilled and friendly. Far exceeded our expectations!", name: 'Annie McAllister', org: 'AniMac Design', project: 'Promotional Films', url: '/work/video/7eQSVwN0oBU' },
-                    { quote: "Professional, approachable and very likeable. Five out of five all round!", name: 'Scott Fleming', org: 'The Highways Band', project: 'Music Video', url: '/work/video/MuUrZOhwSAQ' },
-                    { quote: "No hesitation in recommending! Surpassed my expectations and significantly eased the process for me.", name: 'Jonathan Reid', org: 'Reid Financial Planning', project: 'Portrait Photography' },
+                    { quote: "Professional, highly skilled and friendly. Far exceeded our expectations!", name: 'Annie McAllister', org: 'AniMac Design', project: 'Promotional Films', url: '/work/video/7eQSVwN0oBU', photo: '/Annie-McAllister.png' },
+                    { quote: "Professional, approachable and very likeable. Five out of five all round!", name: 'Scott Fleming', org: 'The Highways Band', project: 'Music Video', url: '/work/video/MuUrZOhwSAQ', photo: '/Scott-Fleming.png' },
+                    { quote: "No hesitation in recommending! Surpassed my expectations and significantly eased the process for me.", name: 'Jonathan Reid', org: 'Reid Financial Planning', project: 'Portrait Photography', photo: '/Jonathan-Reid.png' },
                   ].map((t) => (
                     <div key={t.name} className="bg-[#0a0a0a] border border-white/10 p-7 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.02] cursor-default">
                       <Stars />
                       <p className="text-white/80 leading-relaxed text-sm flex-1">&ldquo;{t.quote}&rdquo;</p>
-                      <Attr name={t.name} org={t.org} project={t.project} projectUrl={t.url} />
+                      <Attr name={t.name} org={t.org} project={t.project} projectUrl={t.url} photo={t.photo} />
                     </div>
                   ))}
                 </div>
@@ -367,7 +373,7 @@ export default function Home() {
                   <div className="sm:col-span-2 bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 p-8 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.01] cursor-default">
                     <Stars />
                     <p className="text-gray-600 dark:text-white/70 leading-relaxed text-base flex-1">&ldquo;Really enjoyed the process and working with MediaMurray. Incredibly professional and friendly. The final materials far exceeded expectations! Really appreciated the patience shown with figuring out a schedule and working through the ideas before filming. Definitely recommend MediaMurray.&rdquo;</p>
-                    <AttrDark name="Eve McArthur" org="Argyll & Bute Council" project="Portrait Photography" />
+                    <AttrDark name="Eve McArthur" org="Argyll & Bute Council" project="Portrait Photography" photo="/Eve-McArthur.png" />
                   </div>
                   <div className="flex flex-col gap-4">
                     <div className="flex-1 bg-[#0052D4] p-6 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.02] cursor-default">
@@ -378,7 +384,7 @@ export default function Home() {
                     <div className="flex-1 bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 p-6 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.02] cursor-default">
                       <Stars />
                       <p className="text-gray-600 dark:text-white/70 leading-relaxed text-sm flex-1">&ldquo;This is brilliant, thanks so much.&rdquo;</p>
-                      <AttrDark name="Louise Davies" org="Scottish Fair Trade Forum" project="Youth Collective Film & Social Media Ads" projectUrl="/work/video/b9phaKPVKxY" />
+                      <AttrDark name="Louise Davies" org="Scottish Fair Trade Forum" project="Youth Collective Film & Social Media Ads" projectUrl="/work/video/b9phaKPVKxY" photo="/Louise-Davies.png" />
                     </div>
                   </div>
                 </div>
@@ -388,12 +394,12 @@ export default function Home() {
                   <div className="bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 p-8 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.01] cursor-default">
                     <Stars />
                     <p className="text-gray-600 dark:text-white/70 leading-relaxed text-sm flex-1">&ldquo;A pleasure to work with. Clear, understanding and supportive. Exceptional in terms of the final product. The promotional video has helped reach international audiences with our Art &amp; Climate Change message.&rdquo;</p>
-                    <AttrDark name="Richard Whitcomb" org="Bute Community Forest" project="Exhibition Promotional Film" projectUrl="/work/video/v4sbb5wXikU" />
+                    <AttrDark name="Richard Whitcomb" org="Bute Community Forest" project="Exhibition Promotional Film" projectUrl="/work/video/v4sbb5wXikU" photo="/Richard-Whitcomb.png" />
                   </div>
                   <div className="bg-[#0a0a0a] border border-white/10 p-8 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.01] cursor-default">
                     <Stars />
                     <p className="text-white/80 leading-relaxed text-sm flex-1">&ldquo;Working with Jamie was excellent. He was very open to my ideas and we collaborated creatively. He very much put me at ease — I&rsquo;m not one for being in front of the camera. The service he provides is 10/10 and he got the images back to me very quickly. Highly recommend.&rdquo;</p>
-                    <Attr name="Kevin Lawrence" org="Kev Lawrence Design" project="Promotional Film & Portrait Photography" />
+                    <Attr name="Kevin Lawrence" org="Kev Lawrence Design" project="Promotional Film & Portrait Photography" photo="/Kevin-Lawrence.png" />
                   </div>
                 </div>
               </div>
