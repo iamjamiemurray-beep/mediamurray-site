@@ -152,29 +152,27 @@ export default function Home() {
       </section>
 
       {/* Trusted By — Client Faces */}
-      <section className="bg-[#0a0a0a] py-8 border-b border-white/10">
-        <ScrollReveal className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-8">
-          <div className="text-center sm:text-left">
-            <p className="text-2xl sm:text-3xl font-light text-white">
-              Trusted by <span className="font-black gradient-text">over 100</span> clients
-            </p>
-            <div className="flex flex-wrap gap-2 mt-3 justify-center sm:justify-start">
-              {['Corporate', 'Events', 'Public Sector', 'Charities', 'Small Business'].map((tag) => (
-                <span key={tag} className="text-[10px] font-bold uppercase tracking-[0.15em] border border-white/20 text-white/50 px-3 py-1 rounded-full">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className="flex -space-x-5 flex-shrink-0">
+      <section className="bg-[#0a0a0a] py-12 border-b border-white/10">
+        <ScrollReveal className="max-w-6xl mx-auto px-6 flex flex-col items-center gap-6 text-center">
+          <p className="text-2xl sm:text-3xl font-light text-white">
+            Trusted by <span className="font-black gradient-text">over 100</span> clients
+          </p>
+          <div className="flex -space-x-4 flex-shrink-0">
             {clientFaces.map((src, i) => (
               <div
                 key={i}
-                className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border-[3px] border-[#0a0a0a] flex-shrink-0"
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-[3px] border-[#0a0a0a] flex-shrink-0"
                 style={{ zIndex: clientFaces.length - i }}
               >
                 <Image src={src} alt="MediaMurray client" width={64} height={64} className="w-full h-full object-cover" />
               </div>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-2 justify-center">
+            {['Corporate Events', 'Public Sector', 'Charities', 'Small Businesses', 'Individuals'].map((tag) => (
+              <span key={tag} className="text-[10px] font-bold uppercase tracking-[0.15em] border border-white/20 text-white/50 px-3 py-1 rounded-full">
+                {tag}
+              </span>
             ))}
           </div>
         </ScrollReveal>
