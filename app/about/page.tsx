@@ -44,10 +44,8 @@ export default function About() {
     <div className="pt-24">
 
       {/* Hero — About */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 items-start">
-
-          {/* Left — text content */}
+      <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[90vh] items-start">
+        <div className="px-6 lg:px-16 py-20 max-w-2xl">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">About</p>
             <h1 className="text-5xl font-black mb-8 text-gray-900 dark:text-white">Jamie Murray</h1>
@@ -108,29 +106,19 @@ export default function About() {
               </Link>
             </div>
           </div>
-
-          {/* Right — hero photo */}
-          <div className="flex flex-col">
-            <Image
-              src="/jamiehero2.png"
-              alt="Jamie Murray — MediaMurray"
-              width={800}
-              height={1100}
-              className="w-full h-auto object-contain"
-              priority
-            />
-            <div className="mt-4 flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 flex-shrink-0 text-[#0052D4]" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-              </svg>
-              <p className="text-xs text-gray-400 dark:text-white/40 leading-tight">
-                Originally from the<br />
-                <span className="font-bold text-gray-600 dark:text-white/60">Isle of Bute, Scotland</span>
-              </p>
-            </div>
-          </div>
-
         </div>
+
+        {/* Right — hero photo, full column */}
+        <div className="relative hidden lg:block self-stretch">
+          <Image
+            src="/jamiehero2.png"
+            alt="Jamie Murray — MediaMurray"
+            fill
+            className="object-contain object-bottom"
+            priority
+          />
+        </div>
+
       </section>
 
       {/* How I Work */}
