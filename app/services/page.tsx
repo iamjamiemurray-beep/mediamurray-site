@@ -76,7 +76,7 @@ export default function Services() {
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">What I Offer</p>
         <h1 className="text-5xl font-black mb-4 text-gray-900 dark:text-white">Services</h1>
         <p className="text-gray-500 dark:text-white/50 max-w-xl mb-16 text-lg">
-          From one-off event coverage to full content production days — everything scoped to your brief and delivered on broadcast-quality cameras.
+          Video, photography and editing for businesses, events and organisations across Scotland. Every project is scoped to what you actually need and handled properly from start to finish.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-200 dark:bg-white/10">
