@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import VideoCard from '@/components/VideoCard'
 import ScrollReveal from '@/components/ScrollReveal'
+import RotatingServices from '@/components/RotatingServices'
 
 const statItems = [
   { value: '170+', label: 'Client Projects' },
@@ -177,6 +178,8 @@ export default function Home() {
           </div>
         </ScrollReveal>
       </section>
+
+      <RotatingServices />
 
       {/* Clients Logo Marquee */}
       <section className="py-14 overflow-hidden border-b border-gray-200 dark:border-white/10">
