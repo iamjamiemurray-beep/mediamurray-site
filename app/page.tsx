@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import VideoCard from '@/components/VideoCard'
 import ScrollReveal from '@/components/ScrollReveal'
-import RotatingServices from '@/components/RotatingServices'
+import RotatingServices, { RotatingServicesInline } from '@/components/RotatingServices'
 
 const statItems = [
   { value: '170+', label: 'Client Projects' },
@@ -107,11 +107,11 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative flex items-center overflow-hidden pt-24 pb-12">
         <div className="absolute inset-0 bg-gray-50 dark:bg-[#0a0a0a]" />
         <div className="absolute inset-0 bg-gradient-to-br from-[#0052D4]/10 via-transparent to-[#00C6FF]/10" />
 
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-24 pb-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="hero-animate hero-animate-delay-1 text-xs font-bold uppercase tracking-[0.25em] text-gray-400 dark:text-white/40 mb-6">
               Based in Scotland, United Kingdom
@@ -137,6 +137,7 @@ export default function Home() {
                 Get a Quote
               </Link>
             </div>
+            <RotatingServicesInline />
           </div>
           <div className="hero-animate hero-animate-delay-3 relative hidden lg:block">
             <Image
@@ -156,7 +157,7 @@ export default function Home() {
       <section className="bg-[#0a0a0a] py-12 border-b border-white/10">
         <ScrollReveal className="max-w-6xl mx-auto px-6 flex flex-col items-center gap-6 text-center">
           <p className="text-2xl sm:text-3xl font-light text-white">
-            Trusted by <span className="font-black gradient-text">over 100</span> clients
+            Trusted by over <span className="font-black gradient-text">100</span> clients
           </p>
           <div className="flex -space-x-4 flex-shrink-0">
             {clientFaces.map((src, i) => (
@@ -178,8 +179,6 @@ export default function Home() {
           </div>
         </ScrollReveal>
       </section>
-
-      <RotatingServices />
 
       {/* Clients Logo Marquee */}
       <section className="py-14 overflow-hidden border-b border-gray-200 dark:border-white/10">
@@ -444,7 +443,7 @@ export default function Home() {
                 alt="Jamie Murray — MediaMurray"
                 width={450}
                 height={550}
-                className="h-80 w-auto object-contain"
+                className="h-[500px] w-auto object-contain"
               />
             </div>
           </div>

@@ -108,13 +108,14 @@ export default function About() {
           </div>
         </div>
 
-        {/* Right — hero photo, full column */}
-        <div className="relative hidden lg:block self-stretch">
+        {/* Right — hero photo */}
+        <div className="hidden lg:flex items-end justify-center">
           <Image
             src="/jamiehero2.png"
             alt="Jamie Murray — MediaMurray"
-            fill
-            className="object-contain object-bottom"
+            width={580}
+            height={780}
+            className="w-full h-auto object-contain max-h-[80vh]"
             priority
           />
         </div>
@@ -156,41 +157,50 @@ export default function About() {
       <section className="border-t border-gray-200 dark:border-white/10 py-20">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Experience</p>
-          <h2 className="text-3xl font-black mb-6 text-gray-900 dark:text-white">Since Going Freelance</h2>
+          <h2 className="text-3xl font-black mb-10 text-gray-900 dark:text-white">Since Going Freelance</h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+            {/* Col 1: text + stats */}
             <div>
-              <p className="text-gray-600 dark:text-white/60 leading-relaxed mb-6">
+              <p className="text-gray-600 dark:text-white/60 leading-relaxed mb-8">
                 Projects have grown in scale consistently year on year. More varied clients, more ambitious briefs, and more work each year since graduating. The variety is a big part of what I enjoy — working with new people on projects that are genuinely different from one another keeps the standard high.
               </p>
-              <div className="flex gap-8 mb-8">
+              <div className="flex gap-8">
                 <div>
                   <p className="text-3xl font-black gradient-text">170+</p>
                   <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-white/40 mt-1">Projects delivered</p>
                 </div>
                 <div>
                   <p className="text-3xl font-black gradient-text">6+</p>
-                  <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-white/40 mt-1">Years professional freelance</p>
+                  <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-white/40 mt-1">Years freelance</p>
                 </div>
               </div>
+            </div>
+
+            {/* Col 2: photo */}
+            <div className="flex justify-center">
               <Image
                 src="/jamiehero4.png"
                 alt="Jamie Murray on location"
-                width={400}
-                height={300}
-                className="w-full max-w-xs h-auto object-contain"
+                width={320}
+                height={420}
+                className="w-full max-w-[260px] h-auto object-contain"
               />
             </div>
-            <div className="text-gray-600 dark:text-white/60 text-sm leading-relaxed">
-              <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-white/40 mb-3">Recent organisations</p>
-              <p>LowlandRFCA, West Lowland Battalion ACF, Scottish Youth Parliament, Scottish Fair Trade, International Fair Trade Towns Conference, Scottish Women&apos;s Wellbeing Summit, Rothesay Joint Campus, Visit Bute, Ember Clyde Whisky Festival, The Whisky Journal, Socially Creative, Isle of Bute Artists&apos; Collective, and others.</p>
-            </div>
-          </div>
 
-          <div className="bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 p-6 rounded-sm max-w-2xl">
-            <p className="text-gray-600 dark:text-white/60 leading-relaxed text-sm">
-              If you&apos;re looking for experience, reliability, and someone who&apos;s easy to work with, takes the work seriously, and delivers what&apos;s agreed — we are likely a good fit.
-            </p>
+            {/* Col 3: orgs + quote box */}
+            <div className="flex flex-col gap-6">
+              <div className="text-gray-600 dark:text-white/60 text-sm leading-relaxed">
+                <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-white/40 mb-3">Recent organisations</p>
+                <p>LowlandRFCA, West Lowland Battalion ACF, Scottish Youth Parliament, Scottish Fair Trade, International Fair Trade Towns Conference, Scottish Women&apos;s Wellbeing Summit, Rothesay Joint Campus, Visit Bute, Ember Clyde Whisky Festival, The Whisky Journal, Socially Creative, Isle of Bute Artists&apos; Collective, and others.</p>
+              </div>
+
+              <div className="gradient-bg p-6 rounded-sm">
+                <p className="text-white font-medium leading-relaxed text-sm">
+                  If you&apos;re looking for experience, reliability, and someone who&apos;s easy to work with, takes the work seriously, and delivers what&apos;s agreed — we are likely a good fit.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
