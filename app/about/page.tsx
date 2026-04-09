@@ -79,28 +79,8 @@ export default function About() {
               ))}
             </div>
 
-            <div className="mt-10 flex gap-4">
-              <Link href="/contact" className="gradient-bg text-white font-bold px-8 py-4 rounded-sm hover:opacity-90 transition-opacity text-sm uppercase tracking-wider">
-                Work Together
-              </Link>
-              <Link href="/work" className="border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white font-bold px-8 py-4 rounded-sm hover:border-gray-500 dark:hover:border-white/50 transition-colors text-sm uppercase tracking-wider">
-                View Work
-              </Link>
-            </div>
-          </div>
-
-          <div>
-            <div className="overflow-hidden">
-              <Image
-                src="/jamiehero2.png"
-                alt="Jamie Murray — MediaMurray"
-                width={600}
-                height={750}
-                className="w-full h-auto object-contain"
-              />
-            </div>
-            {/* Small gallery below portrait */}
-            <div className="grid grid-cols-2 gap-2 mt-2">
+            {/* Two on-location photos */}
+            <div className="mt-6 grid grid-cols-2 gap-2">
               {[
                 { src: '/jamiebts6.jpeg', alt: 'Jamie on location' },
                 { src: '/jamiebts4.jpeg', alt: 'Jamie filming on location' },
@@ -116,8 +96,27 @@ export default function About() {
                 </div>
               ))}
             </div>
+
+            <div className="mt-8 flex gap-4">
+              <Link href="/contact" className="gradient-bg text-white font-bold px-8 py-4 rounded-sm hover:opacity-90 transition-opacity text-sm uppercase tracking-wider">
+                Work Together
+              </Link>
+              <Link href="/work" className="border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white font-bold px-8 py-4 rounded-sm hover:border-gray-500 dark:hover:border-white/50 transition-colors text-sm uppercase tracking-wider">
+                View Work
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col">
+            <Image
+              src="/jamiehero2.png"
+              alt="Jamie Murray — MediaMurray"
+              width={600}
+              height={900}
+              className="w-full h-auto object-contain"
+            />
             {/* Isle of Bute origin */}
-            <div className="mt-5 flex items-center gap-3">
+            <div className="mt-4 flex items-center gap-3">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 flex-shrink-0 text-[#0052D4]" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
               </svg>
