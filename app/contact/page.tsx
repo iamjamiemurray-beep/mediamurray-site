@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -11,24 +10,13 @@ export default function Contact() {
     <div className="pt-24">
       <section className="max-w-6xl mx-auto px-6 py-20">
 
-        {/* Header with photo */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-12">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Get In Touch</p>
-            <h1 className="text-5xl font-black mb-4 text-gray-900 dark:text-white">Let&apos;s Work Together</h1>
-            <p className="text-gray-500 dark:text-white/50 text-lg">
-              Tell me about your project and I&apos;ll get back to you within 24 hours.
-            </p>
-          </div>
-          <div className="hidden lg:flex justify-end items-start">
-            <Image
-              src="/jamiehero3.png"
-              alt="Jamie Murray — MediaMurray"
-              width={400}
-              height={520}
-              className="h-52 w-auto object-contain"
-            />
-          </div>
+        {/* Header */}
+        <div className="mb-12 max-w-3xl">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Get In Touch</p>
+          <h1 className="text-5xl font-black mb-4 text-gray-900 dark:text-white">Let&apos;s Work Together</h1>
+          <p className="text-gray-500 dark:text-white/50 text-lg">
+            Tell me about your project and I&apos;ll get back to you within 24 hours.
+          </p>
         </div>
 
         {/* Form */}
