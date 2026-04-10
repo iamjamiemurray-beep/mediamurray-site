@@ -230,10 +230,6 @@ export default function Home() {
                 category="Corporate"
                 featured
                 stats={[
-                  { value: '25K+', label: 'total views' },
-                  { value: '14K+', label: 'in first 24hrs' },
-                  { value: '560+', label: 'reactions' },
-                  { value: '6.5K', label: 'organic reach' },
                 ]}
               />
             </div>
@@ -444,7 +440,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="gradient-bg py-24 overflow-hidden">
+      <section className="gradient-bg py-14 overflow-hidden">
         <ScrollReveal className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
             <div>
