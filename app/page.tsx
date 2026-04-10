@@ -122,7 +122,7 @@ export default function Home() {
             </p>
             <h1 className="hero-animate hero-animate-delay-2 text-5xl sm:text-6xl font-black leading-none tracking-tight mb-6 text-gray-900 dark:text-white">
               Professional video production &{' '}
-              photography in <span className="gradient-text">Scotland</span> <span className="text-5xl sm:text-6xl">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
+              photography in <span className="gradient-text">Scotland</span>
             </h1>
             <p className="hero-animate hero-animate-delay-3 text-lg text-gray-600 dark:text-white/60 max-w-xl mb-10 font-light">
               Videography, photography and editing for businesses, events and organisations across Scotland and the United Kingdom.

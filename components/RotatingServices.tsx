@@ -21,9 +21,9 @@ function useRotating() {
       setTimeout(() => {
         setIndex(i => (i + 1) % services.length)
         setPhase('in')
-        setTimeout(() => setPhase('visible'), 300)
-      }, 300)
-    }, 2800)
+        setTimeout(() => setPhase('visible'), 200)
+      }, 200)
+    }, 1800)
     return () => clearInterval(tick)
   }, [])
 
