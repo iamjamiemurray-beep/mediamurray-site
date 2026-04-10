@@ -17,6 +17,29 @@ export default function Footer() {
   const { theme } = useTheme()
   return (
     <footer className="border-t border-gray-200 dark:border-white/10 bg-white dark:bg-[#0a0a0a] mt-24 transition-colors duration-200">
+
+      {/* Bold social links row */}
+      <div className="border-b border-gray-100 dark:border-white/10 py-8">
+        <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center items-center gap-6 md:gap-10">
+          {[
+            { label: 'Email', href: 'mailto:mail@mediamurray.com' },
+            { label: 'WhatsApp', href: 'https://wa.me/447841728249', external: true },
+            { label: 'Instagram', href: 'https://www.instagram.com/mediamurrayuk', external: true },
+            { label: 'YouTube', href: 'https://www.youtube.com/@mediamurray', external: true },
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jamieamurray/', external: true },
+          ].map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              {...(s.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              className="text-base font-black uppercase tracking-widest text-gray-400 dark:text-white/40 hover:text-gray-900 dark:hover:text-white transition-colors"
+            >
+              {s.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
       <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
           <Image
@@ -70,46 +93,6 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-          <div className="mt-8 flex flex-col gap-2">
-            <a
-              href="mailto:mail@mediamurray.com"
-              className="text-gray-400 dark:text-white/40 hover:text-gray-900 dark:hover:text-white transition-colors text-sm"
-            >
-              Email
-            </a>
-            <a
-              href="https://wa.me/447841728249"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 dark:text-white/40 hover:text-gray-900 dark:hover:text-white transition-colors text-sm"
-            >
-              WhatsApp
-            </a>
-            <a
-              href="https://www.instagram.com/mediamurrayuk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 dark:text-white/40 hover:text-gray-900 dark:hover:text-white transition-colors text-sm"
-            >
-              Instagram
-            </a>
-            <a
-              href="https://www.youtube.com/@mediamurray"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 dark:text-white/40 hover:text-gray-900 dark:hover:text-white transition-colors text-sm"
-            >
-              YouTube
-            </a>
-            <a
-              href="https://www.linkedin.com/in/jamieamurray/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 dark:text-white/40 hover:text-gray-900 dark:hover:text-white transition-colors text-sm"
-            >
-              LinkedIn
-            </a>
-          </div>
         </div>
       </div>
 
