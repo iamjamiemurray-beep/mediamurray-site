@@ -449,10 +449,10 @@ export default function Home() {
             <div className="py-16">
               <h2 className="text-4xl font-black mb-4 text-white">Ready to start your project?</h2>
               <p className="text-white/90 mb-3 text-lg font-medium">
-                170+ projects. Clients across Scotland and the United Kingdom.
+                170+ projects. Clients across Scotland and the UK.
               </p>
               <p className="text-white/75 mb-8 text-base leading-relaxed">
-                If you&apos;ve been let down by content you&apos;d never want to share, or by suppliers who didn&apos;t deliver - this is the alternative. Trusted results from someone experienced, with countless clients who can testify to that.
+                If you&apos;ve been let down by content you&apos;d never want to share, or by suppliers who didn&apos;t deliver - this is the alternative. Trusted results from someone experienced, with countless clients who can vouch for it.
               </p>
               <Link
                 href="/contact"
@@ -461,13 +461,13 @@ export default function Home() {
                 Get a Free Quote
               </Link>
             </div>
-            <div className="hidden lg:flex justify-end items-end">
+            <div className="hidden lg:flex justify-center items-end">
               <Image
                 src="/jamiehero6.png"
                 alt="Jamie Murray — MediaMurray"
                 width={700}
                 height={900}
-                className="h-[480px] w-auto object-contain object-bottom"
+                className="h-[600px] w-auto object-contain object-bottom"
               />
             </div>
           </div>
