@@ -443,16 +443,16 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="gradient-bg py-14 overflow-hidden">
-        <ScrollReveal className="max-w-6xl mx-auto px-6">
+      <section className="gradient-bg pt-8 pb-0 overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
-            <div>
+            <div className="py-10">
               <h2 className="text-4xl font-black mb-6 text-white">Ready to start your project?</h2>
               <p className="text-white/90 mb-4 text-lg font-medium">
                 170+ projects. Clients across Scotland and the United Kingdom.
               </p>
               <p className="text-white/75 mb-4 text-base leading-relaxed">
-                If you&apos;ve been let down by content you&apos;d never want to share, or by suppliers who didn&apos;t deliver — this is the alternative. Trusted results from someone experienced, with countless clients who can testify to that.
+                If you&apos;ve been let down by content you&apos;d never want to share, or by suppliers who didn&apos;t deliver - this is the alternative. Trusted results from someone experienced, with countless clients who can testify to that.
               </p>
               <p className="text-white/75 mb-10 text-base leading-relaxed">
                 You deserve work that represents you properly, delivered on time, and worth sharing with the world. Let&apos;s get started.
@@ -468,13 +468,13 @@ export default function Home() {
               <Image
                 src="/jamiehero6.png"
                 alt="Jamie Murray — MediaMurray"
-                width={450}
-                height={550}
-                className="h-[500px] w-auto object-contain"
+                width={650}
+                height={800}
+                className="h-[750px] w-auto object-contain"
               />
             </div>
           </div>
-        </ScrollReveal>
+        </div>
       </section>
     </>
   )
