@@ -29,19 +29,13 @@ export const metadata: Metadata = {
 }
 
 const btsImages = [
-  { src: '/btsphotos1.jpg', alt: 'Jamie on location' },
   { src: '/btsphotos3.jpg', alt: 'Jamie on location' },
   { src: '/btsphotos4.jpg', alt: 'Jamie on location' },
   { src: '/btsphotos5.jpg', alt: 'Jamie on location' },
-  { src: '/jamiebts1.jpg', alt: 'Jamie on location' },
   { src: '/jamiebts2.png', alt: 'Jamie on location' },
   { src: '/jamiebts3.png', alt: 'Jamie on location' },
-  { src: '/jamiebts4.jpeg', alt: 'Jamie on location' },
   { src: '/jamiebts5.jpeg', alt: 'Jamie on location' },
-  { src: '/jamiebts6.jpeg', alt: 'Jamie on location' },
-  { src: '/jamiebts7.jpeg', alt: 'Jamie on location' },
   { src: '/jamiebts8.jpeg', alt: 'Jamie on location' },
-  { src: '/jamiebts9.jpeg', alt: 'Jamie on location' },
   { src: '/jamiebts10.jpeg', alt: 'Jamie on location' },
   { src: '/jamiebts11.jpeg', alt: 'Jamie on location' },
   { src: '/jamiecreative1.jpg', alt: 'Jamie working' },
