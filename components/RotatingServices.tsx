@@ -42,10 +42,10 @@ export function RotatingServicesInline() {
   const { service, style } = useRotating()
 
   return (
-    <div className="mt-8 pt-8 border-t border-gray-200 dark:border-white/10">
-      <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/30 mb-2">Are you looking for</p>
-      <div className="h-10 flex items-center">
-        <span className={`text-2xl font-black gradient-text transition-all duration-300 ${style}`}>
+    <div className="mt-8 pt-8 border-t border-gray-200 dark:border-white/10 flex items-center gap-3">
+      <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-gray-500 dark:text-white/40 flex-shrink-0">Are you looking for</p>
+      <div className="h-8 flex items-center">
+        <span className={`text-xl font-black gradient-text transition-all duration-300 ${style}`}>
           {service}?
         </span>
       </div>

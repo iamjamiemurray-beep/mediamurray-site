@@ -20,7 +20,6 @@ const frames = [
   { src: '/rjcprojectframe5.png', alt: 'Rothesay Joint Campus — project frame' },
   { src: '/rjcprojectframe6.png', alt: 'Rothesay Joint Campus — project frame' },
   { src: '/kateframe1.png', alt: 'Project frame' },
-  { src: '/kateframe2.png', alt: 'Project frame' },
 ]
 
 export default function Videography() {
@@ -65,6 +64,35 @@ export default function Videography() {
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Recent Projects</p>
           <h2 className="text-3xl font-black mb-12 text-gray-900 dark:text-white">From the Edit</h2>
           <ImageGallery images={frames} aspectRatio="video" />
+        </div>
+      </section>
+
+      {/* Video Examples */}
+      <section className="border-t border-gray-200 dark:border-white/10 py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Watch</p>
+          <h2 className="text-3xl font-black mb-12 text-gray-900 dark:text-white">Video Examples</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {[
+              { id: 'APrjtZ7kTGk', title: 'Working at Rothesay Joint Campus — Full Promo' },
+              { id: '5cv1GW6mlm8', title: 'West Lowland Battalion ACF — The Only Way Is Up' },
+              { id: 'hDpazT7xfFc', title: 'The Whisky Journal — Promo Film' },
+              { id: 'VVGPcQIk0cY', title: 'An Evening with Graeme Souness — BTS' },
+            ].map((v) => (
+              <div key={v.id}>
+                <div className="aspect-video rounded-sm overflow-hidden bg-gray-100 dark:bg-white/5">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${v.id}`}
+                    title={v.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                </div>
+                <p className="text-xs text-gray-500 dark:text-white/40 mt-2">{v.title}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>

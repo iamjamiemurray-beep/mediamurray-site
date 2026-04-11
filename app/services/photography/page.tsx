@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import ImageGallery from '@/components/ImageGallery'
+import MasonryGallery from '@/components/MasonryGallery'
 
 export const metadata: Metadata = {
   title: 'Photography',
@@ -66,7 +66,26 @@ export default function Photography() {
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Gallery</p>
           <h2 className="text-3xl font-black mb-12 text-gray-900 dark:text-white">Recent Work</h2>
-          <ImageGallery images={gallery} />
+          <MasonryGallery images={gallery} />
+        </div>
+      </section>
+
+      {/* Favourite Photos */}
+      <section className="border-t border-gray-200 dark:border-white/10 py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Personal</p>
+          <h2 className="text-3xl font-black mb-4 text-gray-900 dark:text-white">Favourite Shots</h2>
+          <p className="text-gray-500 dark:text-white/50 mb-12 max-w-xl">A personal selection — photos taken for no brief in particular, just because they were worth taking.</p>
+          <MasonryGallery images={[
+            { src: '/nyc1.jpg', alt: 'New York City' },
+            { src: '/nyc2.jpg', alt: 'New York City' },
+            { src: '/nyc3.jpg', alt: 'New York City' },
+            { src: '/nyc4.jpg', alt: 'New York City' },
+            { src: '/goodpics1.jpg', alt: 'Photography by Jamie Murray' },
+            { src: '/goodpics2.jpg', alt: 'Photography by Jamie Murray' },
+            { src: '/goodpics5.jpg', alt: 'Photography by Jamie Murray' },
+            { src: '/goodpics6.jpg', alt: 'Photography by Jamie Murray' },
+          ]} />
         </div>
       </section>
     </div>

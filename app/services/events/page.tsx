@@ -1,33 +1,30 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import ImageGallery from '@/components/ImageGallery'
 import VideoCard from '@/components/VideoCard'
+import MasonryGallery from '@/components/MasonryGallery'
 
 export const metadata: Metadata = {
   title: 'Event Coverage',
   description: 'Professional event coverage combining videography, photography and editing. Conferences, awards, ceremonies across Scotland.',
 }
 
-const gallery = [
-  { src: '/event1.jpg', alt: 'Event coverage' },
-  { src: '/event2.jpg', alt: 'Event coverage' },
-  { src: '/event3.jpg', alt: 'Event coverage' },
-  { src: '/conference1.jpg', alt: 'Conference coverage' },
-  { src: '/conference2.jpg', alt: 'Conference coverage' },
-  { src: '/conference3.jpg', alt: 'Conference coverage' },
-  { src: '/conference4.jpg', alt: 'Conference coverage' },
-  { src: '/piperevent1.jpg', alt: 'Pipe event coverage' },
-  { src: '/piperevent2.jpg', alt: 'Pipe event coverage' },
-  { src: '/piperevent3.jpg', alt: 'Pipe event coverage' },
-  { src: '/piperevent4.jpg', alt: 'Pipe event coverage' },
-  { src: '/awards1.jpg', alt: 'Awards evening coverage' },
-  { src: '/awards2.jpg', alt: 'Awards evening coverage' },
-  { src: '/awards3.jpg', alt: 'Awards evening coverage' },
-  { src: '/awards4.jpg', alt: 'Awards evening coverage' },
-  { src: '/awardspaisley1.jpg', alt: 'Awards coverage' },
-  { src: '/awardspaisley2.jpg', alt: 'Awards coverage' },
-  { src: '/awardspaisley3.jpg', alt: 'Awards coverage' },
-  { src: '/awardspaisley4.jpg', alt: 'Awards coverage' },
+const eventGroups = [
+  {
+    name: 'LowlandRFCA Awards — Paisley',
+    photos: ['/awardspaisley1.jpg', '/awardspaisley2.jpg', '/awardspaisley3.jpg', '/awardspaisley4.jpg'],
+  },
+  {
+    name: 'Awards Evening',
+    photos: ['/awards1.jpg', '/awards2.jpg', '/awards3.jpg', '/awards4.jpg'],
+  },
+  {
+    name: 'Pipe Band Event',
+    photos: ['/piperevent1.jpg', '/piperevent2.jpg', '/piperevent3.jpg', '/piperevent4.jpg'],
+  },
+  {
+    name: 'Conferences & Events',
+    photos: ['/event1.jpg', '/event2.jpg', '/event3.jpg', '/conference1.jpg', '/conference2.jpg', '/conference3.jpg', '/conference4.jpg'],
+  },
 ]
 
 export default function Events() {
@@ -51,7 +48,7 @@ export default function Events() {
           <div className="grid grid-cols-2 gap-3">
             <VideoCard id="lGnpNxBG4xU" title="Scottish Women's Wellbeing Summit 2025" category="Conference" />
             <VideoCard id="B6dOtVrT6Bg" title="International Fair Trade Towns Conference 2025" category="Conference" />
-            <VideoCard id="VV1P0zK_hP4" title="Ember Clyde Whisky Festival" category="Event" />
+            <VideoCard id="VV1P0zK_hP4" title="Inverclyde Whisky Festival 2025" category="Event" />
             <VideoCard id="rUWGAz0s5hw" title="LowlandRFCA Beating Retreat 2025" category="Event" />
           </div>
         </div>
@@ -60,18 +57,25 @@ export default function Events() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-8 border-t border-gray-200 dark:border-white/10">
           <VideoCard id="lGnpNxBG4xU" title="Scottish Women's Wellbeing Summit 2025" category="Conference" />
           <VideoCard id="B6dOtVrT6Bg" title="International Fair Trade Towns Conference 2025" category="Conference" />
-          <VideoCard id="VV1P0zK_hP4" title="Ember Clyde Whisky Festival" category="Event" />
+          <VideoCard id="VV1P0zK_hP4" title="Inverclyde Whisky Festival 2025" category="Event" />
           <VideoCard id="rUWGAz0s5hw" title="LowlandRFCA Beating Retreat 2025" category="Event" />
           <VideoCard id="VVGPcQIk0cY" title="An Evening with Graeme Souness — BTS" category="Event" />
         </div>
       </section>
 
-      {/* Event Gallery */}
+      {/* Event Gallery — Grouped */}
       <section className="border-t border-gray-200 dark:border-white/10 py-20">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Gallery</p>
-          <h2 className="text-3xl font-black mb-12 text-gray-900 dark:text-white">Events Covered</h2>
-          <ImageGallery images={gallery} />
+          <h2 className="text-3xl font-black mb-16 text-gray-900 dark:text-white">Events Covered</h2>
+          <div className="space-y-16">
+            {eventGroups.map((group) => (
+              <div key={group.name}>
+                <h3 className="text-lg font-black text-gray-900 dark:text-white mb-6 pb-3 border-b border-gray-200 dark:border-white/10">{group.name}</h3>
+                <MasonryGallery images={group.photos.map(src => ({ src, alt: group.name }))} />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>

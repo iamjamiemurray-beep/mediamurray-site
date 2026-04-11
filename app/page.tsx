@@ -3,6 +3,8 @@ import Image from 'next/image'
 import VideoCard from '@/components/VideoCard'
 import ScrollReveal from '@/components/ScrollReveal'
 import RotatingServices, { RotatingServicesInline } from '@/components/RotatingServices'
+import RotatingTestimonials from '@/components/RotatingTestimonials'
+import RotatingLogos from '@/components/RotatingLogos'
 
 const statItems = [
   { value: '170+', label: 'Client Projects' },
@@ -63,9 +65,9 @@ const services = [
     ),
   },
   {
-    title: 'Short-Form Packages',
-    desc: 'Consistent, high-quality Reels and Shorts to grow your social media presence.',
-    href: '/services/short-form',
+    title: 'Retainer Packages',
+    desc: 'Consistent, high-quality video and social content on a monthly retainer.',
+    href: '/services/retainer',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/>
@@ -111,47 +113,50 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex items-center overflow-hidden pt-24 pb-12">
+      <section className="relative flex items-center overflow-hidden pt-32 pb-4">
         <div className="absolute inset-0 bg-gray-50 dark:bg-[#0a0a0a]" />
         <div className="absolute inset-0 bg-gradient-to-br from-[#0052D4]/10 via-transparent to-[#00C6FF]/10" />
 
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="hero-animate hero-animate-delay-1 text-xs font-bold uppercase tracking-[0.25em] text-gray-400 dark:text-white/40 mb-6">
-              Based in Scotland, United Kingdom
-            </p>
-            <h1 className="hero-animate hero-animate-delay-2 text-5xl sm:text-6xl font-black leading-none tracking-tight mb-6 text-gray-900 dark:text-white">
-              Professional video production &{' '}
-              photography in <span className="gradient-text">Scotland</span>
-            </h1>
-            <p className="hero-animate hero-animate-delay-3 text-lg text-gray-600 dark:text-white/60 max-w-xl mb-10 font-light">
-              Videography, photography and editing for businesses, events and organisations across Scotland and the United Kingdom.
-            </p>
-            <div className="hero-animate hero-animate-delay-4 flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/work"
-                className="gradient-bg text-white font-bold px-8 py-4 rounded-sm hover:opacity-90 transition-opacity text-sm uppercase tracking-wider"
-              >
-                View Work
-              </Link>
-              <Link
-                href="/contact"
-                className="border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white font-bold px-8 py-4 rounded-sm hover:border-gray-500 dark:hover:border-white/50 transition-colors text-sm uppercase tracking-wider"
-              >
-                Get a Quote
-              </Link>
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <p className="hero-animate hero-animate-delay-1 text-xs font-bold uppercase tracking-[0.25em] text-gray-400 dark:text-white/40 mb-6">
+                Based in Scotland, United Kingdom
+              </p>
+              <h1 className="hero-animate hero-animate-delay-2 text-5xl sm:text-6xl font-black leading-none tracking-tight mb-6 text-gray-900 dark:text-white">
+                Professional video production &{' '}
+                photography in <span className="gradient-text">Scotland</span>
+              </h1>
+              <p className="hero-animate hero-animate-delay-3 text-lg text-gray-600 dark:text-white/60 max-w-xl mb-10 font-light">
+                Videography, photography and editing for businesses, events and organisations across Scotland and the United Kingdom.
+              </p>
+              <div className="hero-animate hero-animate-delay-4 flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/work"
+                  className="gradient-bg text-white font-bold px-8 py-4 rounded-sm hover:opacity-90 transition-opacity text-sm uppercase tracking-wider"
+                >
+                  View Work
+                </Link>
+                <Link
+                  href="/contact"
+                  className="border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white font-bold px-8 py-4 rounded-sm hover:border-gray-500 dark:hover:border-white/50 transition-colors text-sm uppercase tracking-wider"
+                >
+                  Get a Quote
+                </Link>
+              </div>
+              <RotatingServicesInline />
             </div>
-            <RotatingServicesInline />
-          </div>
-          <div className="hero-animate hero-animate-delay-3 relative hidden lg:block">
-            <Image
-              src="/jamie-portrait.png"
-              alt="Jamie Murray — MediaMurray videographer"
-              width={600}
-              height={700}
-              className="w-full h-auto object-cover rounded-sm"
-              priority
-            />
+            <div className="hero-animate hero-animate-delay-3 relative hidden lg:block -mt-16">
+              <Image
+                src="/jamie-portrait.png"
+                alt="Jamie Murray — MediaMurray videographer"
+                width={600}
+                height={700}
+                className="w-full h-auto object-cover rounded-sm"
+                priority
+              />
+              <RotatingTestimonials />
+            </div>
           </div>
         </div>
 
@@ -235,20 +240,18 @@ export default function Home() {
             </div>
           </div>
           {/* Stats bar + CTA below featured */}
-          <div className="mt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 px-1">
-            <div className="flex gap-6 flex-wrap">
-              {[
-                { value: '25K+', label: 'total views' },
-                { value: '14K+', label: 'in first 24hrs' },
-                { value: '560+', label: 'reactions' },
-                { value: '6.5K', label: 'organic reach' },
-              ].map((s) => (
-                <div key={s.label}>
-                  <span className="text-xl font-black gradient-text">{s.value}</span>
-                  <span className="text-xs text-gray-400 dark:text-white/40 ml-1 uppercase tracking-wider">{s.label}</span>
-                </div>
-              ))}
-            </div>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 px-1">
+            {[
+              { value: '25K+', label: 'Total Views' },
+              { value: '14K+', label: 'In First 24hrs' },
+              { value: '560+', label: 'Reactions' },
+              { value: '6.5K', label: 'Organic Reach' },
+            ].map((s) => (
+              <div key={s.label} className="flex items-center gap-1.5 whitespace-nowrap">
+                <span className="text-base font-black gradient-text">{s.value}</span>
+                <span className="text-xs font-bold text-gray-400 dark:text-white/40 uppercase tracking-wider">{s.label}</span>
+              </div>
+            ))}
             <Link href="/work" className="text-xs font-bold uppercase tracking-widest text-[#0052D4] dark:text-white/60 hover:text-[#00C6FF] dark:hover:text-white transition-colors whitespace-nowrap">
               See All Work →
             </Link>

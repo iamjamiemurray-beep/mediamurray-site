@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -8,10 +9,9 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <div className="pt-24">
-      <section className="max-w-6xl mx-auto px-6 py-20">
+      <section className="max-w-3xl mx-auto px-6 py-20">
 
-        {/* Header */}
-        <div className="mb-12 max-w-3xl">
+        <div className="mb-12 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Get In Touch</p>
           <h1 className="text-5xl font-black mb-4 text-gray-900 dark:text-white">Let&apos;s Work Together</h1>
           <p className="text-gray-500 dark:text-white/50 text-lg">
@@ -19,17 +19,9 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* Form */}
-        <iframe
-          src="https://tally.so/embed/WOYkPN?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-          width="100%"
-          height="700"
-          frameBorder={0}
-          title="MediaMurray Enquiry Form"
-          className="w-full max-w-3xl"
-        />
+        <ContactForm />
 
-        <div className="mt-16 pt-12 border-t border-gray-200 dark:border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl">
+        <div className="mt-16 pt-12 border-t border-gray-200 dark:border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
           <div>
             <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-white/30 mb-2">Email</p>
             <a href="mailto:mail@mediamurray.com" className="font-medium text-gray-600 dark:text-white/70 hover:text-gray-900 dark:hover:text-white transition-colors">

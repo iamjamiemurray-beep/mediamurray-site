@@ -13,7 +13,7 @@ const videoMeta: Record<string, { title: string; category: string }> = {
   'rUWGAz0s5hw': { title: 'LowlandRFCA Beating Retreat 2025', category: 'Event' },
   'T68PCvwUwH0': { title: 'Visit Bute: Your Own Adventure Island', category: 'Commercial' },
   'lGnpNxBG4xU': { title: 'Scottish Women\'s Wellbeing Summit 2025', category: 'Conference' },
-  'VV1P0zK_hP4': { title: 'Ember Clyde Whisky Festival', category: 'Event' },
+  'VV1P0zK_hP4': { title: 'Inverclyde Whisky Festival 2025', category: 'Event' },
   'B6dOtVrT6Bg': { title: 'International Fair Trade Towns Conference 2025', category: 'Conference' },
   'hDpazT7xfFc': { title: 'The Whisky Journal — Promo Film', category: 'Commercial' },
   'fVm0VBWuyt8': { title: 'Rita Rusk Promo (Socially Creative)', category: 'Commercial' },

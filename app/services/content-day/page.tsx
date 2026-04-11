@@ -1,47 +1,89 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import ImageGallery from '@/components/ImageGallery'
 import VideoCard from '@/components/VideoCard'
+import MasonryGallery from '@/components/MasonryGallery'
 
 export const metadata: Metadata = {
   title: 'Content Day',
   description: 'One full production day — maximum content output. Video and photography in a single session for weeks of social media content.',
 }
 
-const gallery = [
-  { src: '/contentdayitaliankithcen1.jpg', alt: 'Content day — Italian kitchen' },
-  { src: '/contentdayitaliankithcen2.jpg', alt: 'Content day — Italian kitchen' },
-  { src: '/contentdayitaliankithcen3.jpg', alt: 'Content day — Italian kitchen' },
-  { src: '/contentdayitaliankithcen4.jpg', alt: 'Content day — Italian kitchen' },
-  { src: '/contentdayitaliankithcen5.jpg', alt: 'Content day — Italian kitchen' },
-  { src: '/contentdayitaliankithcen6.jpg', alt: 'Content day — Italian kitchen' },
-  { src: '/contentdayitaliankithcen7.jpg', alt: 'Content day — Italian kitchen' },
-  { src: '/contentdayitaliankithcen8.jpg', alt: 'Content day — Italian kitchen' },
-  { src: '/contentdayitaliankithcen9.jpg', alt: 'Content day — Italian kitchen' },
-  { src: '/contentdayitaliankithcen10.jpg', alt: 'Content day — Italian kitchen' },
-  { src: '/ContentDayAllSewnUp1.jpg', alt: 'Content day — All Sewn Up' },
-  { src: '/ContentDayAllSewnUp2.jpg', alt: 'Content day — All Sewn Up' },
-  { src: '/ContentDayAllSewnUp3.jpg', alt: 'Content day — All Sewn Up' },
-  { src: '/ContentDayAllSewnUp4.jpg', alt: 'Content day — All Sewn Up' },
-  { src: '/ContentDayAllSewnUp5.jpg', alt: 'Content day — All Sewn Up' },
-  { src: '/ContentDayAllSewnUp6.jpg', alt: 'Content day — All Sewn Up' },
-  { src: '/contentdaypilates1.jpg', alt: 'Content day — pilates' },
-  { src: '/contentdaypilates2.jpg', alt: 'Content day — pilates' },
-  { src: '/contentdaypilates3.jpg', alt: 'Content day — pilates' },
-  { src: '/contentdaypilates4.jpg', alt: 'Content day — pilates' },
-  { src: '/contentdaypilates5.jpg', alt: 'Content day — pilates' },
-  { src: '/contentdaypilates6.jpg', alt: 'Content day — pilates' },
-  { src: '/cdchanel1.jpg', alt: 'Content day' },
-  { src: '/cdchanel2.jpg', alt: 'Content day' },
-  { src: '/cdchanel3.jpg', alt: 'Content day' },
-  { src: '/cdchanel4.jpg', alt: 'Content day' },
-  { src: '/cdkevin1.jpg', alt: 'Content day' },
-  { src: '/cdkevin2.jpg', alt: 'Content day' },
-  { src: '/cdkevin3.jpg', alt: 'Content day' },
-  { src: '/cd1.jpg', alt: 'Content day' },
-  { src: '/cd2.jpg', alt: 'Content day' },
-  { src: '/cd3.jpg', alt: 'Content day' },
-  { src: '/cd4.jpg', alt: 'Content day' },
+const shoots = [
+  {
+    client: 'Warrior In Training',
+    url: 'https://warriorintraining.co.uk',
+    desc: 'Pilates & fitness — social content day',
+    photos: [
+      '/contentdaypilates1.jpg',
+      '/contentdaypilates2.jpg',
+      '/contentdaypilates3.jpg',
+      '/contentdaypilates4.jpg',
+      '/contentdaypilates5.jpg',
+      '/contentdaypilates6.jpg',
+    ],
+  },
+  {
+    client: 'Italian Kitchen',
+    url: null,
+    desc: 'Restaurant & food — social content day',
+    photos: [
+      '/contentdayitaliankithcen1.jpg',
+      '/contentdayitaliankithcen2.jpg',
+      '/contentdayitaliankithcen3.jpg',
+      '/contentdayitaliankithcen4.jpg',
+      '/contentdayitaliankithcen5.jpg',
+      '/contentdayitaliankithcen6.jpg',
+      '/contentdayitaliankithcen7.jpg',
+      '/contentdayitaliankithcen8.jpg',
+      '/contentdayitaliankithcen9.jpg',
+      '/contentdayitaliankithcen10.jpg',
+    ],
+  },
+  {
+    client: 'All Sewn Up',
+    url: null,
+    desc: 'Fashion & alterations — social content day',
+    photos: [
+      '/ContentDayAllSewnUp1.jpg',
+      '/ContentDayAllSewnUp2.jpg',
+      '/ContentDayAllSewnUp3.jpg',
+      '/ContentDayAllSewnUp4.jpg',
+      '/ContentDayAllSewnUp5.jpg',
+      '/ContentDayAllSewnUp6.jpg',
+    ],
+  },
+  {
+    client: "Chanel O'Connor",
+    url: null,
+    desc: "RuPaul's Drag Race UK - social content day",
+    photos: [
+      '/cdchanel1.jpg',
+      '/cdchanel2.jpg',
+      '/cdchanel3.jpg',
+      '/cdchanel4.jpg',
+    ],
+  },
+  {
+    client: 'Kev Lawrence',
+    url: 'https://kevlawrence.design',
+    desc: 'Brand & design - social content day',
+    photos: [
+      '/cdkevin1.jpg',
+      '/cdkevin2.jpg',
+      '/cdkevin3.jpg',
+    ],
+  },
+  {
+    client: 'Isle of Bute Gin',
+    url: null,
+    desc: 'Spirits brand - social content day',
+    photos: [
+      '/cd1.jpg',
+      '/cd2.jpg',
+      '/cd3.jpg',
+      '/cd4.jpg',
+    ],
+  },
 ]
 
 export default function ContentDay() {
@@ -107,12 +149,25 @@ export default function ContentDay() {
         </div>
       </section>
 
-      {/* Past Content Days Gallery */}
+      {/* Past Content Days — Grouped by Shoot */}
       <section className="border-t border-gray-200 dark:border-white/10 py-20">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Past Content Days</p>
-          <h2 className="text-3xl font-black mb-12 text-gray-900 dark:text-white">Recent Sessions</h2>
-          <ImageGallery images={gallery} />
+          <h2 className="text-3xl font-black mb-16 text-gray-900 dark:text-white">Recent Sessions</h2>
+          <div className="space-y-20">
+            {shoots.map((shoot) => (
+              <div key={shoot.client}>
+                <div className="flex items-baseline gap-4 mb-6 pb-4 border-b border-gray-200 dark:border-white/10">
+                  <h3 className="text-xl font-black text-gray-900 dark:text-white">{shoot.client}</h3>
+                  {shoot.url && (
+                    <a href={shoot.url} target="_blank" rel="noopener noreferrer" className="text-xs text-[#0052D4] dark:text-[#00C6FF] hover:underline">{shoot.url.replace('https://', '')}</a>
+                  )}
+                  <span className="text-xs text-gray-400 dark:text-white/40 ml-auto">{shoot.desc}</span>
+                </div>
+                <MasonryGallery images={shoot.photos.map(src => ({ src, alt: `${shoot.client} content day` }))} />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>

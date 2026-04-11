@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import MasonryGallery from '@/components/MasonryGallery'
 
 const clientLogos = [
   { src: '/MM_Client_Logo_01_BBC_Scotland.avif', alt: 'BBC Scotland' },
@@ -28,6 +29,11 @@ export const metadata: Metadata = {
 }
 
 const btsImages = [
+  { src: '/btsphotos1.jpg', alt: 'Jamie on location' },
+  { src: '/btsphotos3.jpg', alt: 'Jamie on location' },
+  { src: '/btsphotos4.jpg', alt: 'Jamie on location' },
+  { src: '/btsphotos5.jpg', alt: 'Jamie on location' },
+  { src: '/jamiebts1.jpg', alt: 'Jamie on location' },
   { src: '/jamiebts2.png', alt: 'Jamie on location' },
   { src: '/jamiebts3.png', alt: 'Jamie on location' },
   { src: '/jamiebts4.jpeg', alt: 'Jamie on location' },
@@ -48,13 +54,15 @@ export default function About() {
     <div className="pt-24">
 
       {/* Hero — About */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[90vh] items-start">
-        <div className="px-6 lg:px-16 py-20 max-w-2xl">
+      <section className="max-w-6xl mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+          {/* Left — text + specs + buttons */}
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">About</p>
             <h1 className="text-5xl font-black mb-8 text-gray-900 dark:text-white">Jamie Murray</h1>
 
-            <div className="space-y-5 text-gray-600 dark:text-white/60 leading-relaxed">
+            <div className="space-y-5 text-gray-600 dark:text-white/60 leading-relaxed mb-10">
               <p>
                 I&apos;m originally from the Isle of Bute, where I was born and grew up, and I now work across Scotland producing professional video and photography for businesses, organisations, creative agencies, charities and individuals.
               </p>
@@ -69,7 +77,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="mt-10 grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-6 mb-8">
               {[
                 { label: 'Based', value: 'Scotland, UK' },
                 { label: 'Camera', value: 'Sony a7IV + a7III' },
@@ -83,25 +91,7 @@ export default function About() {
               ))}
             </div>
 
-            {/* Two on-location photos */}
-            <div className="mt-6 grid grid-cols-2 gap-2">
-              {[
-                { src: '/jamiebts6.jpeg', alt: 'Jamie on location' },
-                { src: '/jamiebts4.jpeg', alt: 'Jamie filming on location' },
-              ].map((img, i) => (
-                <div key={i} className="overflow-hidden rounded-sm aspect-square">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    width={300}
-                    height={300}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 flex gap-4">
+            <div className="flex gap-4">
               <Link href="/contact" className="gradient-bg text-white font-bold px-8 py-4 rounded-sm hover:opacity-90 transition-opacity text-sm uppercase tracking-wider">
                 Work Together
               </Link>
@@ -110,20 +100,49 @@ export default function About() {
               </Link>
             </div>
           </div>
-        </div>
 
-        {/* Right — hero photo */}
-        <div className="hidden lg:flex items-end justify-center">
-          <Image
-            src="/jamiehero2.png"
-            alt="Jamie Murray — MediaMurray"
-            width={580}
-            height={780}
-            className="w-full h-auto object-contain max-h-[80vh]"
-            priority
-          />
-        </div>
+          {/* Right — photos */}
+          <div className="space-y-3">
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                { src: '/jamieheroportrait.png', alt: 'Jamie Murray' },
+                { src: '/jamiebts4.jpeg', alt: 'Jamie filming on location' },
+                { src: '/jamiebts9.jpeg', alt: 'Jamie on location' },
+                { src: '/jamiebts7.jpeg', alt: 'Jamie on location' },
+              ].map((img, i) => (
+                <div key={i} className="overflow-hidden rounded-sm aspect-square">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    width={400}
+                    height={400}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              ))}
+            </div>
+            {/* Young Jamie — compact strip */}
+            <div className="grid grid-cols-4 gap-2">
+              {[
+                { src: '/jamieyoung1.jpg', alt: 'Young Jamie' },
+                { src: '/jamieyoung2.jpg', alt: 'Young Jamie' },
+                { src: '/jamieyoung3.jpg', alt: 'Young Jamie' },
+                { src: '/jamieyoung4.jpg', alt: 'Young Jamie' },
+              ].map((img, i) => (
+                <div key={i} className="overflow-hidden rounded-sm aspect-square">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    width={120}
+                    height={120}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
 
+        </div>
       </section>
 
       {/* How I Work */}
@@ -160,16 +179,15 @@ export default function About() {
       {/* Experience */}
       <section className="border-t border-gray-200 dark:border-white/10 py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Experience</p>
-          <h2 className="text-3xl font-black mb-10 text-gray-900 dark:text-white">Since Going Freelance</h2>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Left: text + stats + photo */}
+            {/* Left: heading + text + stats */}
             <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Experience</p>
+              <h2 className="text-3xl font-black mb-8 text-gray-900 dark:text-white">Since Going Freelance</h2>
               <p className="text-gray-600 dark:text-white/60 leading-relaxed mb-8">
                 Projects have grown in scale consistently year on year. More varied clients, more ambitious briefs, and more work each year since graduating. The variety is a big part of what I enjoy — working with new people on projects that are genuinely different from one another keeps the standard high.
               </p>
-              <div className="flex gap-8 mb-8">
+              <div className="flex gap-8">
                 <div>
                   <p className="text-3xl font-black gradient-text">170+</p>
                   <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-white/40 mt-1">Projects delivered</p>
@@ -179,20 +197,13 @@ export default function About() {
                   <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-white/40 mt-1">Years freelance</p>
                 </div>
               </div>
-              <Image
-                src="/jamiehero4.png"
-                alt="Jamie Murray on location"
-                width={500}
-                height={600}
-                className="w-full max-w-sm h-auto object-contain"
-              />
             </div>
 
-            {/* Right: orgs + quote box */}
+            {/* Right: photo + orgs + quote box */}
             <div className="flex flex-col gap-6">
               <div className="text-gray-600 dark:text-white/60 text-sm leading-relaxed">
                 <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-white/40 mb-3">Recent organisations</p>
-                <p>LowlandRFCA, West Lowland Battalion ACF, Scottish Youth Parliament, Scottish Fair Trade, International Fair Trade Towns Conference, Scottish Women&apos;s Wellbeing Summit, Rothesay Joint Campus, Visit Bute, Ember Clyde Whisky Festival, The Whisky Journal, Socially Creative, Isle of Bute Artists&apos; Collective, and others.</p>
+                <p>LowlandRFCA, West Lowland Battalion ACF, Scottish Youth Parliament, Scottish Fair Trade, International Fair Trade Towns Conference, Scottish Women&apos;s Wellbeing Summit, Rothesay Joint Campus, Visit Bute, Inverclyde Whisky Festival 2025, The Whisky Journal, Socially Creative, Isle of Bute Artists&apos; Collective, and others.</p>
               </div>
               <div className="gradient-bg p-6 rounded-sm">
                 <p className="text-white font-medium leading-relaxed text-sm">
@@ -269,19 +280,7 @@ export default function About() {
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Behind the Scenes</p>
           <h2 className="text-3xl font-black mb-12 text-gray-900 dark:text-white">On Location</h2>
-          <div className="columns-2 sm:columns-3 lg:columns-4 gap-3">
-            {btsImages.map((img, i) => (
-              <div key={i} className="break-inside-avoid mb-3 overflow-hidden rounded-sm group">
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  width={600}
-                  height={900}
-                  className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            ))}
-          </div>
+          <MasonryGallery images={btsImages} />
         </div>
       </section>
     </div>

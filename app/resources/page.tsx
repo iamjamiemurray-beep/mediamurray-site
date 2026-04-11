@@ -8,11 +8,22 @@ export const metadata: Metadata = {
 
 const resources = [
   {
+    title: 'Introduction to Content Creation',
+    desc: 'Six modules covering equipment, filming, editing, and publishing. Written from personal experience — practical, no-nonsense, and free.',
+    tag: 'Free Guide',
+    available: true,
+    href: '/resources/creator-starter-kit',
+    cta: 'Read the guide →',
+    meta: '~20 min read',
+  },
+  {
     title: 'What Camera Should I Buy First?',
-    desc: 'A practical guide to starter cameras for content creation — from budget Sony options to the kit professionals actually use.',
-    tag: 'Gear Guide',
+    desc: 'A practical guide to starter cameras for content creation — from budget options to the kit professionals actually use.',
+    tag: 'Equipment Guide',
     available: true,
     href: '/What Camera Should I Buy - MediaMurray.pdf',
+    cta: 'Download free →',
+    meta: 'PDF',
   },
   {
     title: 'Establishing or Re-establishing Your Brand on Social Media',
@@ -62,15 +73,17 @@ export default function Resources() {
                 )}
               </div>
               <h3 className="font-bold text-lg mb-3 text-gray-900 dark:text-white leading-snug">{r.title}</h3>
-              <p className="text-sm text-gray-500 dark:text-white/50 leading-relaxed flex-1 mb-6">{r.desc}</p>
+              <p className="text-sm text-gray-500 dark:text-white/50 leading-relaxed flex-1 mb-4">{r.desc}</p>
+              {'meta' in r && r.meta && (
+                <p className="text-xs text-gray-400 dark:text-white/30 mb-4">{r.meta}</p>
+              )}
               {r.available ? (
                 <Link
                   href={r.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...(r.href.startsWith('/resources') ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
                   className="text-xs font-bold uppercase tracking-wider text-[#0052D4] hover:text-[#00C6FF] transition-colors"
                 >
-                  Download free →
+                  {'cta' in r && r.cta ? r.cta : 'Download free →'}
                 </Link>
               ) : (
                 <span className="text-xs font-bold uppercase tracking-wider text-gray-300 dark:text-white/20">

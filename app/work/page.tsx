@@ -77,7 +77,7 @@ export default function Work() {
             ]}
           />
           <VideoCard id="lGnpNxBG4xU" title="Scottish Women's Wellbeing Summit 2025" category="Conference" />
-          <VideoCard id="VV1P0zK_hP4" title="Ember Clyde Whisky Festival" category="Event" />
+          <VideoCard id="VV1P0zK_hP4" title="Inverclyde Whisky Festival 2025" category="Event" />
           <VideoCard id="B6dOtVrT6Bg" title="International Fair Trade Towns Conference 2025" category="Conference" />
           <VideoCard id="hDpazT7xfFc" title="The Whisky Journal — Promo Film" category="Commercial" />
           <VideoCard id="fVm0VBWuyt8" title="Rita Rusk Promo (Socially Creative)" category="Commercial" />
