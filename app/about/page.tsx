@@ -60,7 +60,15 @@ export default function About() {
           {/* Left — text + specs + buttons */}
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">About</p>
-            <h1 className="text-5xl font-black mb-8 text-gray-900 dark:text-white">Jamie Murray</h1>
+            <h1 className="text-5xl font-black mb-2 text-gray-900 dark:text-white">Jamie Murray</h1>
+            <a
+              href="https://www.instagram.com/jamieamurray"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-gray-400 dark:text-white/40 hover:text-gray-600 dark:hover:text-white/70 transition-colors mb-8 inline-block"
+            >
+              @jamieamurray
+            </a>
 
             <div className="space-y-5 text-gray-600 dark:text-white/60 leading-relaxed mb-10">
               <p>
@@ -105,7 +113,6 @@ export default function About() {
           <div className="space-y-3">
             <div className="grid grid-cols-2 gap-3">
               {[
-                { src: '/jamieheroportrait.png', alt: 'Jamie Murray' },
                 { src: '/jamiebts4.jpeg', alt: 'Jamie filming on location' },
                 { src: '/jamiebts9.jpeg', alt: 'Jamie on location' },
                 { src: '/jamiebts7.jpeg', alt: 'Jamie on location' },
@@ -116,25 +123,6 @@ export default function About() {
                     alt={img.alt}
                     width={400}
                     height={400}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              ))}
-            </div>
-            {/* Young Jamie — compact strip */}
-            <div className="grid grid-cols-4 gap-2">
-              {[
-                { src: '/jamieyoung1.jpg', alt: 'Young Jamie' },
-                { src: '/jamieyoung2.jpg', alt: 'Young Jamie' },
-                { src: '/jamieyoung3.jpg', alt: 'Young Jamie' },
-                { src: '/jamieyoung4.jpg', alt: 'Young Jamie' },
-              ].map((img, i) => (
-                <div key={i} className="overflow-hidden rounded-sm aspect-square">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    width={120}
-                    height={120}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
