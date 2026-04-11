@@ -113,12 +113,12 @@ export default function About() {
           <div className="space-y-3">
             <div className="grid grid-cols-2 gap-3">
               {[
-                { src: '/jamie-portrait.png', alt: 'Jamie Murray' },
-                { src: '/jamie-portrait2.png', alt: 'Jamie Murray' },
-                { src: '/jamie-portrait3.jpeg', alt: 'Jamie Murray' },
-                { src: '/jamie-portrait4.jpeg', alt: 'Jamie Murray' },
-                { src: '/jamiehero4.png', alt: 'Jamie Murray' },
-                { src: '/jamiehero5.png', alt: 'Jamie Murray' },
+                { src: '/jamiebts4.jpeg', alt: 'Jamie filming on location' },
+                { src: '/jamiebts9.jpeg', alt: 'Jamie on location' },
+                { src: '/jamiebts7.jpeg', alt: 'Jamie on location' },
+                { src: '/btsphotos1.jpg', alt: 'Jamie on location' },
+                { src: '/jamiebts1.jpg', alt: 'Jamie on location' },
+                { src: '/jamiebts6.jpeg', alt: 'Jamie on location' },
               ].map((img, i) => (
                 <div key={i} className="overflow-hidden rounded-sm aspect-square">
                   <Image
