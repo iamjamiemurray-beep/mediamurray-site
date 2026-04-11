@@ -146,7 +146,7 @@ export default function Home() {
               </div>
               <RotatingServicesInline />
             </div>
-            <div className="hero-animate hero-animate-delay-3 relative hidden lg:block -mt-16">
+            <div className="hero-animate hero-animate-delay-3 relative hidden lg:block -mt-32">
               <Image
                 src="/jamie-portrait.png"
                 alt="Jamie Murray — MediaMurray videographer"
