@@ -116,6 +116,9 @@ export default function About() {
                 { src: '/jamiebts4.jpeg', alt: 'Jamie filming on location' },
                 { src: '/jamiebts9.jpeg', alt: 'Jamie on location' },
                 { src: '/jamiebts7.jpeg', alt: 'Jamie on location' },
+                { src: '/btsphotos1.jpg', alt: 'Jamie on location' },
+                { src: '/jamiebts1.jpg', alt: 'Jamie on location' },
+                { src: '/jamiebts6.jpeg', alt: 'Jamie on location' },
               ].map((img, i) => (
                 <div key={i} className="overflow-hidden rounded-sm aspect-square">
                   <Image
