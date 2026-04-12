@@ -10,9 +10,9 @@ const statItems = [
   { value: '170+', label: 'Client Projects' },
   { value: '6', label: 'Years Freelancing in the Industry' },
   { value: '4K', label: 'Premium Footage, Every Shoot' },
-  { value: '48hr', label: 'Express Turnaround Available' },
   { value: 'Sony', label: 'Professional Full-Frame Cameras' },
   { value: '5,000+', label: 'Hours in the Edit Suite' },
+  { value: 'Drone', label: 'Licensed Aerial Operator' },
   { value: 'Promo', label: 'Promotional Films' },
   { value: 'Events', label: 'Event Coverage' },
   { value: 'Corp.', label: 'Corporate Video' },
@@ -22,11 +22,39 @@ const statItems = [
   { value: 'BBC', label: 'Scotland Client' },
 ]
 
+const trustItems = [
+  {
+    label: '170+ Projects Delivered',
+    icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>,
+  },
+  {
+    label: 'Sony Full Frame Camera System',
+    icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z"/></svg>,
+  },
+  {
+    label: 'Drone Licensed (A2 CofC)',
+    icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>,
+  },
+  {
+    label: 'Scotland Based',
+    icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>,
+  },
+  {
+    label: 'Available Across the UK',
+    icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253"/></svg>,
+  },
+  {
+    label: 'Broadcast Quality Output',
+    icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>,
+  },
+]
+
 const services = [
   {
     title: 'Videography & Editing',
-    desc: 'Professional 4K coverage with fast turnaround editing. Broadcast-quality cameras, in-house edit, ready to publish.',
+    desc: 'Professional 4K coverage with Sony full-frame cameras. In-house edit, broadcast quality, ready to publish.',
     href: '/services/videography',
+    photo: '/jamiebts9.jpeg',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.72-2.36A.75.75 0 0121.75 8.84v6.32a.75.75 0 01-1.28.53L15.75 13.5M3.75 18h9a1.5 1.5 0 001.5-1.5V7.5A1.5 1.5 0 0012.75 6h-9A1.5 1.5 0 002.25 7.5v9A1.5 1.5 0 003.75 18z"/>
@@ -37,6 +65,7 @@ const services = [
     title: 'Promotional Videos',
     desc: 'Bespoke promo films for businesses, brands, and organisations — from concept to delivery.',
     href: '/services/promo-video',
+    photo: '/whiskyjournalframes1.png',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h1.5C5.496 19.5 6 18.996 6 18.375m-3.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-1.5A1.125 1.125 0 0118 18.375M20.625 4.5H3.375m17.25 0c.621 0 1.125.504 1.125 1.125M20.625 4.5h-1.5C18.504 4.5 18 5.004 18 5.625m3.75 0v1.5c0 .621-.504 1.125-1.125 1.125M3.375 4.5c-.621 0-1.125.504-1.125 1.125M3.375 4.5h1.5C5.496 4.5 6 5.004 6 5.625m-3.75 0v1.5c0 .621.504 1.125 1.125 1.125m0 0h1.5m-1.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m1.5-3.75C5.496 8.25 6 8.754 6 9.375v1.5m0-5.25v5.25m0-5.25C6 5.004 6.504 4.5 7.125 4.5h9.75c.621 0 1.125.504 1.125 1.125m1.125 2.625h1.5m-1.5 0A1.125 1.125 0 0118 9.375v1.5m1.5-3.75C19.496 8.25 20 8.754 20 9.375v1.5m0 0v1.5m0-1.5c0 .621-.504 1.125-1.125 1.125m1.125-2.625v1.5c0 .621-.504 1.125-1.125 1.125"/>
@@ -47,6 +76,7 @@ const services = [
     title: 'Photography',
     desc: 'Events, portraits, product and lifestyle photography packages for any brief.',
     href: '/services/photography',
+    photo: '/goodpics2.jpg',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/>
@@ -58,6 +88,7 @@ const services = [
     title: 'Event Coverage',
     desc: 'Full event coverage combining videography, photography and same-day editing.',
     href: '/services/events',
+    photo: '/eventphoto2.jpg',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"/>
@@ -68,6 +99,7 @@ const services = [
     title: 'Retainer Packages',
     desc: 'Consistent, high-quality video and social content on a monthly retainer.',
     href: '/services/retainer',
+    photo: '/jamiecreative2.jpg',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/>
@@ -78,6 +110,7 @@ const services = [
     title: 'Content Day',
     desc: 'One full day, maximum output. Video and photo content for weeks of social posting.',
     href: '/services/content-day',
+    photo: '/cd2.jpg',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3"/>
@@ -160,6 +193,19 @@ export default function Home() {
           </div>
         </div>
 
+      </section>
+
+      {/* Trust Strip */}
+      <section className="border-y border-gray-200 dark:border-white/10 bg-white dark:bg-[#0a0a0a] py-4 overflow-hidden">
+        <div className="flex animate-marquee-medium whitespace-nowrap">
+          {[...trustItems, ...trustItems].map((item, i) => (
+            <div key={i} className="inline-flex items-center gap-2.5 px-10 flex-shrink-0">
+              <span className="text-[#0052D4] dark:text-white/50">{item.icon}</span>
+              <span className="text-xs font-bold uppercase tracking-[0.18em] text-gray-500 dark:text-white/50">{item.label}</span>
+              <span className="ml-8 text-[#0052D4]/40 text-lg font-thin select-none">·</span>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Trusted By — Client Faces */}
@@ -297,21 +343,31 @@ export default function Home() {
         <ScrollReveal className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">What I Do</p>
           <h2 className="text-4xl font-black mb-12 text-gray-900 dark:text-white">Services</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 dark:bg-white/10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((s) => (
               <Link
                 key={s.href}
                 href={s.href}
-                className="bg-white dark:bg-[#0a0a0a] p-8 hover:bg-gray-50 dark:hover:bg-white/[0.03] transition-colors group"
+                className="group relative overflow-hidden rounded-sm bg-gray-100 dark:bg-white/5 block"
               >
-                <div className="text-[#0052D4] mb-4 group-hover:text-[#00C6FF] transition-colors">
-                  {s.icon}
+                {/* Photo */}
+                <div className="relative h-52 overflow-hidden">
+                  <Image
+                    src={s.photo}
+                    alt={s.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 </div>
-                <h3 className="font-bold text-lg mb-3 text-gray-900 dark:text-white group-hover:gradient-text transition-colors">{s.title}</h3>
-                <p className="text-sm text-gray-500 dark:text-white/50 leading-relaxed mb-6">{s.desc}</p>
-                <span className="text-xs font-bold uppercase tracking-wider text-[#0052D4] group-hover:text-[#00C6FF] transition-colors">
-                  Learn more →
-                </span>
+                {/* Text */}
+                <div className="p-6 bg-white dark:bg-[#111] border border-t-0 border-gray-200 dark:border-white/10">
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <h3 className="font-black text-base text-gray-900 dark:text-white leading-tight">{s.title}</h3>
+                    <span className="text-[#0052D4] group-hover:text-[#00C6FF] transition-colors flex-shrink-0 mt-0.5">→</span>
+                  </div>
+                  <p className="text-sm text-gray-500 dark:text-white/50 leading-relaxed">{s.desc}</p>
+                </div>
               </Link>
             ))}
           </div>
@@ -447,7 +503,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="py-16">
-              <h2 className="text-4xl font-black mb-4 text-white">Ready to start your project?</h2>
+              <h2 className="text-4xl font-black mb-4 text-white">Ready to start your <span className="text-white/60">project?</span></h2>
               <p className="text-white/90 mb-3 text-lg font-medium">
                 170+ projects. Clients across Scotland and the UK.
               </p>
