@@ -55,7 +55,7 @@ const services = [
     desc: 'Professional 4K coverage with Sony full-frame cameras. In-house edit, broadcast quality, ready to publish.',
     href: '/services/videography',
     photo: '/jamiebts9.jpeg',
-    photoPosition: 'center 65%',
+    photoPosition: 'center 25%',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.72-2.36A.75.75 0 0121.75 8.84v6.32a.75.75 0 01-1.28.53L15.75 13.5M3.75 18h9a1.5 1.5 0 001.5-1.5V7.5A1.5 1.5 0 0012.75 6h-9A1.5 1.5 0 002.25 7.5v9A1.5 1.5 0 003.75 18z"/>
@@ -79,7 +79,7 @@ const services = [
     desc: 'Events, portraits, product and lifestyle photography packages for any brief.',
     href: '/services/photography',
     photo: '/goodpics4.jpg',
-    photoPosition: 'center 25%',
+    photoPosition: 'center 20%',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/>
@@ -105,7 +105,7 @@ const services = [
     desc: 'Consistent, high-quality video and social content on a monthly retainer.',
     href: '/services/retainer',
     photo: '/jamiecreative2.jpg',
-    photoPosition: 'center 65%',
+    photoPosition: 'center 30%',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/>
@@ -117,7 +117,7 @@ const services = [
     desc: 'One full day, maximum output. Video and photo content for weeks of social posting.',
     href: '/services/content-day',
     photo: '/ContentDayAllSewnUp1.jpg',
-    photoPosition: 'center 70%',
+    photoPosition: 'center 15%',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3"/>
