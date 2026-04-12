@@ -66,8 +66,8 @@ const services = [
     title: 'Promotional Videos',
     desc: 'Bespoke promo films for businesses, brands, and organisations — from concept to delivery.',
     href: '/services/promo-video',
-    photo: '/conference2.jpg',
-    photoPosition: 'center center',
+    photo: '/btsphotos5.jpg',
+    photoPosition: 'center 40%',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h1.5C5.496 19.5 6 18.996 6 18.375m-3.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-1.5A1.125 1.125 0 0118 18.375M20.625 4.5H3.375m17.25 0c.621 0 1.125.504 1.125 1.125M20.625 4.5h-1.5C18.504 4.5 18 5.004 18 5.625m3.75 0v1.5c0 .621-.504 1.125-1.125 1.125M3.375 4.5c-.621 0-1.125.504-1.125 1.125M3.375 4.5h1.5C5.496 4.5 6 5.004 6 5.625m-3.75 0v1.5c0 .621.504 1.125 1.125 1.125m0 0h1.5m-1.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m1.5-3.75C5.496 8.25 6 8.754 6 9.375v1.5m0-5.25v5.25m0-5.25C6 5.004 6.504 4.5 7.125 4.5h9.75c.621 0 1.125.504 1.125 1.125m1.125 2.625h1.5m-1.5 0A1.125 1.125 0 0118 9.375v1.5m1.5-3.75C19.496 8.25 20 8.754 20 9.375v1.5m0 0v1.5m0-1.5c0 .621-.504 1.125-1.125 1.125m1.125-2.625v1.5c0 .621-.504 1.125-1.125 1.125"/>
@@ -78,8 +78,8 @@ const services = [
     title: 'Photography',
     desc: 'Events, portraits, product and lifestyle photography packages for any brief.',
     href: '/services/photography',
-    photo: '/goodpics2.jpg',
-    photoPosition: 'center 80%',
+    photo: '/goodpics4.jpg',
+    photoPosition: 'center 25%',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/>
@@ -498,7 +498,7 @@ export default function Home() {
       <section className="gradient-bg overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="py-16">
+            <div className="py-10">
               <h2 className="text-4xl font-black mb-4 text-white">Ready to start your <span className="text-white/60">project?</span></h2>
               <p className="text-white/90 mb-3 text-lg font-medium">
                 170+ projects. Clients across Scotland and the UK.
@@ -519,7 +519,7 @@ export default function Home() {
                 alt="Jamie Murray — MediaMurray"
                 width={800}
                 height={1000}
-                className="h-[640px] w-auto object-contain -ml-4"
+                className="h-[500px] w-auto object-contain -ml-4"
               />
             </div>
           </div>

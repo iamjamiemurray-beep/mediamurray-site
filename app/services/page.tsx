@@ -11,7 +11,7 @@ const services = [
   {
     href: '/services/videography',
     title: 'Videography & Editing',
-    desc: 'Professional 4K video production with fast turnaround editing. Half-day and full-day shoots available for corporate, commercial, and documentary work.',
+    desc: 'Professional 4K video production with broadcast-quality editing. Half-day and full-day shoots available for corporate, commercial, and documentary work.',
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.72-2.36A.75.75 0 0121.75 8.84v6.32a.75.75 0 01-1.28.53L15.75 13.5M3.75 18h9a1.5 1.5 0 001.5-1.5V7.5A1.5 1.5 0 0012.75 6h-9A1.5 1.5 0 002.25 7.5v9A1.5 1.5 0 003.75 18z"/>
