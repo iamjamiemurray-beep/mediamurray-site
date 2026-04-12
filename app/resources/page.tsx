@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 const resources = [
   {
     title: 'Introduction to Content Creation',
-    desc: 'Six modules covering equipment, filming, editing, and publishing. Written from personal experience — practical, no-nonsense, and free.',
+    desc: 'Six sections covering equipment, filming, editing, and publishing. Written from personal experience — practical, no-nonsense, and free.',
     tag: 'Free Guide',
     available: true,
     href: '/resources/creator-starter-kit',
     cta: 'Read the guide →',
-    meta: '~20 min read',
+    meta: '~10 min read',
   },
   {
     title: 'What Camera Should I Buy First?',

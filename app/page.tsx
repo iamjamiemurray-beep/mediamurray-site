@@ -55,6 +55,7 @@ const services = [
     desc: 'Professional 4K coverage with Sony full-frame cameras. In-house edit, broadcast quality, ready to publish.',
     href: '/services/videography',
     photo: '/jamiebts9.jpeg',
+    photoPosition: 'center 65%',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.72-2.36A.75.75 0 0121.75 8.84v6.32a.75.75 0 01-1.28.53L15.75 13.5M3.75 18h9a1.5 1.5 0 001.5-1.5V7.5A1.5 1.5 0 0012.75 6h-9A1.5 1.5 0 002.25 7.5v9A1.5 1.5 0 003.75 18z"/>
@@ -65,7 +66,8 @@ const services = [
     title: 'Promotional Videos',
     desc: 'Bespoke promo films for businesses, brands, and organisations — from concept to delivery.',
     href: '/services/promo-video',
-    photo: '/whiskyjournalframes1.png',
+    photo: '/conference2.jpg',
+    photoPosition: 'center center',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h1.5C5.496 19.5 6 18.996 6 18.375m-3.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-1.5A1.125 1.125 0 0118 18.375M20.625 4.5H3.375m17.25 0c.621 0 1.125.504 1.125 1.125M20.625 4.5h-1.5C18.504 4.5 18 5.004 18 5.625m3.75 0v1.5c0 .621-.504 1.125-1.125 1.125M3.375 4.5c-.621 0-1.125.504-1.125 1.125M3.375 4.5h1.5C5.496 4.5 6 5.004 6 5.625m-3.75 0v1.5c0 .621.504 1.125 1.125 1.125m0 0h1.5m-1.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m1.5-3.75C5.496 8.25 6 8.754 6 9.375v1.5m0-5.25v5.25m0-5.25C6 5.004 6.504 4.5 7.125 4.5h9.75c.621 0 1.125.504 1.125 1.125m1.125 2.625h1.5m-1.5 0A1.125 1.125 0 0118 9.375v1.5m1.5-3.75C19.496 8.25 20 8.754 20 9.375v1.5m0 0v1.5m0-1.5c0 .621-.504 1.125-1.125 1.125m1.125-2.625v1.5c0 .621-.504 1.125-1.125 1.125"/>
@@ -77,6 +79,7 @@ const services = [
     desc: 'Events, portraits, product and lifestyle photography packages for any brief.',
     href: '/services/photography',
     photo: '/goodpics2.jpg',
+    photoPosition: 'center 80%',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/>
@@ -88,7 +91,9 @@ const services = [
     title: 'Event Coverage',
     desc: 'Full event coverage combining videography, photography and same-day editing.',
     href: '/services/events',
-    photo: '/eventphoto2.jpg',
+    photo: '/awards1.jpg',
+    photoPosition: 'center 40%',
+    photoScale: true,
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"/>
@@ -100,6 +105,7 @@ const services = [
     desc: 'Consistent, high-quality video and social content on a monthly retainer.',
     href: '/services/retainer',
     photo: '/jamiecreative2.jpg',
+    photoPosition: 'center 65%',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/>
@@ -110,7 +116,8 @@ const services = [
     title: 'Content Day',
     desc: 'One full day, maximum output. Video and photo content for weeks of social posting.',
     href: '/services/content-day',
-    photo: '/cd2.jpg',
+    photo: '/ContentDayAllSewnUp1.jpg',
+    photoPosition: 'center 70%',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3"/>
@@ -195,18 +202,6 @@ export default function Home() {
 
       </section>
 
-      {/* Trust Strip */}
-      <section className="border-y border-gray-200 dark:border-white/10 bg-white dark:bg-[#0a0a0a] py-4 overflow-hidden">
-        <div className="flex animate-marquee-medium whitespace-nowrap">
-          {[...trustItems, ...trustItems].map((item, i) => (
-            <div key={i} className="inline-flex items-center gap-2.5 px-10 flex-shrink-0">
-              <span className="text-[#0052D4] dark:text-white/50">{item.icon}</span>
-              <span className="text-xs font-bold uppercase tracking-[0.18em] text-gray-500 dark:text-white/50">{item.label}</span>
-              <span className="ml-8 text-[#0052D4]/40 text-lg font-thin select-none">·</span>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Trusted By — Client Faces */}
       <section className="bg-[#0a0a0a] py-12 border-b border-white/10">
@@ -348,7 +343,7 @@ export default function Home() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="group relative overflow-hidden rounded-sm bg-gray-100 dark:bg-white/5 block"
+                className="group relative overflow-hidden rounded-sm bg-gray-100 dark:bg-white/5 block transition-all duration-300 hover:ring-2 hover:ring-[#0052D4] hover:ring-offset-0"
               >
                 {/* Photo */}
                 <div className="relative h-52 overflow-hidden">
@@ -356,7 +351,8 @@ export default function Home() {
                     src={s.photo}
                     alt={s.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className={`object-cover transition-transform duration-500 ${s.photoScale ? 'scale-110 group-hover:scale-115' : 'group-hover:scale-105'}`}
+                    style={{ objectPosition: s.photoPosition || 'center center' }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                 </div>
@@ -517,13 +513,13 @@ export default function Home() {
                 Get a Free Quote
               </Link>
             </div>
-            <div className="hidden lg:flex justify-center items-end">
+            <div className="hidden lg:flex justify-start items-end">
               <Image
                 src="/jamiehero6.png"
                 alt="Jamie Murray — MediaMurray"
-                width={700}
-                height={900}
-                className="h-[600px] w-auto object-contain object-bottom"
+                width={800}
+                height={1000}
+                className="h-[640px] w-auto object-contain -ml-4"
               />
             </div>
           </div>

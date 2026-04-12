@@ -40,7 +40,7 @@ export default function Events() {
           <div className="space-y-5 text-gray-600 dark:text-white/60 leading-relaxed">
             <p>Awards evenings, conferences, ceremonies, community events — if it&apos;s happening, it&apos;s worth capturing professionally.</p>
             <p>I cover events solo with dual camera rigs and a run-and-gun approach, meaning you get broad coverage without needing a full crew. Photos and video highlights in one booking.</p>
-            <p>Clients include LowlandRFCA, Scottish Parliament, Scottish Fair Trade Forum, and more. I understand how these events run and how to work unobtrusively within them.</p>
+            <p>Clients include LowlandRFCA, North Lanarkshire Council, Scottish Fair Trade Forum, and more. I understand how these events run and how to work unobtrusively within them.</p>
             <Link href="/contact" className="gradient-bg text-white font-bold px-8 py-4 rounded-sm hover:opacity-90 transition-opacity text-sm uppercase tracking-wider inline-block mt-4">
               Enquire About Your Event
             </Link>
