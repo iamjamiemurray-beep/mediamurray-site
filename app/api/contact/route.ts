@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import { Resend } from 'resend'
 
 export async function POST(req: NextRequest) {
   const body = await req.json()
@@ -9,15 +9,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
   }
 
-  const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
-    auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_APP_PASSWORD,
-    },
-  })
+  const resend = new Resend(process.env.RESEND_API_KEY)
 
   const text = `
 New enquiry from mediamurray.com/contact
@@ -31,8 +23,8 @@ Message:
 ${message}
 `.trim()
 
-  await transporter.sendMail({
-    from: `"MediaMurray Website" <${process.env.GMAIL_USER}>`,
+  await resend.emails.send({
+    from: 'MediaMurray Website <onboarding@resend.dev>',
     to: 'mail@mediamurray.com',
     replyTo: email,
     subject: `New Enquiry — ${name}`,
