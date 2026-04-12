@@ -23,7 +23,7 @@ export default function TallyForm() {
 
   return (
     <iframe
-      data-tally-src="https://tally.so/embed/WOYkPN?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+      data-tally-src="https://tally.so/embed/WOYkPN?hideTitle=1&transparentBackground=1&dynamicHeight=1"
       loading="lazy"
       width="100%"
       height="500"

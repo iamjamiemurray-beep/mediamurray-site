@@ -76,7 +76,7 @@ export default function Footer() {
 
       {/* Bold social links row */}
       <div className="border-t border-gray-200 dark:border-white/10 py-8">
-        <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center items-center gap-6 md:gap-10">
+        <div className="w-full flex flex-wrap justify-center items-center gap-6 md:gap-10 px-6">
           {[
             { label: 'Email', href: 'mailto:mail@mediamurray.com' },
             { label: 'WhatsApp', href: 'https://wa.me/447841728249', external: true },
