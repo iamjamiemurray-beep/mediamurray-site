@@ -1,9 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server'
-import Anthropic from '@anthropic-ai/sdk'
 import { YoutubeTranscript } from 'youtube-transcript'
 
 const IDEA_BANK_DB = 'd75ee24adb8e46cda40e2e38d35d0c3f'
 const CLIENT_DB = '90cc60d38cad4df7b621ba4509677559'
+
+const WATCH_CREATORS = [
+  'Peter McKinnon',
+  'Mark Bone',
+  'WhoisMattJohnson',
+  'Danny Gevirtz',
+  'Matti Haapoja',
+]
 
 function notionHeaders() {
   return {
@@ -23,7 +30,7 @@ function extractText(p: any): string {
   return ''
 }
 
-async function fetchIdeas() {
+async function runResearcher(): Promise<string> {
   const res = await fetch(`https://api.notion.com/v1/databases/${IDEA_BANK_DB}/query`, {
     method: 'POST',
     headers: notionHeaders(),
@@ -31,21 +38,83 @@ async function fetchIdeas() {
   })
   const data = await res.json()
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return (data.results ?? []).map((page: any) => {
+  const ideas = (data.results ?? []).map((page: any) => {
     const p = page.properties
     return {
       title: p['Video Title']?.title?.[0]?.plain_text ?? 'Untitled',
       status: p.Status?.select?.name ?? 'New',
       platform: p.Platform?.select?.name ?? '',
       creator: p.Creator?.rich_text?.[0]?.plain_text ?? '',
-      actionPoints: p['Action Points']?.rich_text?.[0]?.plain_text ?? '',
       score: p['Verdict Score']?.number ?? null,
+      actionPoints: p['Action Points']?.rich_text?.[0]?.plain_text ?? '',
     }
   })
+
+  if (ideas.length === 0) return 'No ideas in the Idea Bank yet.'
+
+  const byStatus: Record<string, typeof ideas> = {}
+  for (const idea of ideas) {
+    const s = idea.status || 'Unknown'
+    if (!byStatus[s]) byStatus[s] = []
+    byStatus[s].push(idea)
+  }
+
+  const lines: string[] = [`IDEA BANK — ${ideas.length} entries\n`]
+  for (const [status, items] of Object.entries(byStatus)) {
+    lines.push(`── ${status.toUpperCase()} (${items.length}) ──`)
+    for (const i of items) {
+      lines.push(`• ${i.title}${i.platform ? ` [${i.platform}]` : ''}${i.score != null ? ` — Score: ${i.score}/10` : ''}`)
+      if (i.creator) lines.push(`  Creator: ${i.creator}`)
+      if (i.actionPoints) lines.push(`  Notes: ${i.actionPoints}`)
+    }
+    lines.push('')
+  }
+
+  return lines.join('\n')
 }
 
-async function fetchPipeline() {
+async function runScriptwriter(): Promise<string> {
+  const res = await fetch(`https://api.notion.com/v1/databases/${IDEA_BANK_DB}/query`, {
+    method: 'POST',
+    headers: notionHeaders(),
+    body: JSON.stringify({
+      page_size: 20,
+      sorts: [{ timestamp: 'created_time', direction: 'descending' }],
+      filter: {
+        or: [
+          { property: 'Status', select: { equals: 'New' } },
+          { property: 'Status', select: { equals: 'In Progress' } },
+        ],
+      },
+    }),
+  })
+  const data = await res.json()
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const ideas = (data.results ?? []).map((page: any) => {
+    const p = page.properties
+    return {
+      title: p['Video Title']?.title?.[0]?.plain_text ?? 'Untitled',
+      platform: p.Platform?.select?.name ?? '',
+      score: p['Verdict Score']?.number ?? null,
+      actionPoints: p['Action Points']?.rich_text?.[0]?.plain_text ?? '',
+    }
+  }).sort((a: { score: number | null }, b: { score: number | null }) => (b.score ?? 0) - (a.score ?? 0))
+
+  if (ideas.length === 0) return 'No new or in-progress ideas to script. Add some ideas to the Idea Bank first.'
+
+  const lines: string[] = [`UNACTIONED IDEAS — Ready to Script (${ideas.length})\nSorted by Verdict Score\n`]
+  ideas.forEach((i: { title: string; platform: string; score: number | null; actionPoints: string }, idx: number) => {
+    lines.push(`${idx + 1}. ${i.title}`)
+    if (i.platform) lines.push(`   Platform: ${i.platform}`)
+    if (i.score != null) lines.push(`   Score: ${i.score}/10`)
+    if (i.actionPoints) lines.push(`   Notes: ${i.actionPoints}`)
+    lines.push('')
+  })
+
+  return lines.join('\n')
+}
+
+async function runPipeline(): Promise<string> {
   const res = await fetch(`https://api.notion.com/v1/databases/${CLIENT_DB}/query`, {
     method: 'POST',
     headers: notionHeaders(),
@@ -53,106 +122,51 @@ async function fetchPipeline() {
   })
   const data = await res.json()
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return (data.results ?? []).map((page: any) => {
+  const projects = (data.results ?? []).map((page: any) => {
     const p = page.properties
-    const name =
-      extractText(p['Client Name']) ||
-      extractText(p['Project Name']) ||
-      extractText(p['Name']) ||
-      extractText(p['Client'])
+    const name = extractText(p['Client Name']) || extractText(p['Project Name']) || extractText(p['Name']) || extractText(p['Client'])
     const stage = extractText(p['Stage']) || extractText(p['Status'])
     const deliverables = extractText(p['Deliverables']) || extractText(p['Service'])
     const date: string = p['Shoot Date']?.date?.start ?? p['Date']?.date?.start ?? ''
-    return { name, stage, deliverables, date }
+    const value = extractText(p['Amount']) || extractText(p['Invoice Amount']) || extractText(p['Value'])
+    return { name, stage, deliverables, date, value }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   }).filter((p: any) => p.name)
-}
 
-async function runResearcher(client: Anthropic): Promise<string> {
-  const ideas = await fetchIdeas()
-  const list = ideas
-    .map((i: { title: string; platform: string; score: number | null; status: string }) => `- "${i.title}" [${i.platform || 'Unknown'}]${i.score != null ? ` Score: ${i.score}/10` : ''}${i.status ? ` Status: ${i.status}` : ''}`)
-    .join('\n')
+  if (projects.length === 0) return 'No projects found in the pipeline.'
 
-  const msg = await client.messages.create({
-    model: 'claude-haiku-4-5-20251001',
-    max_tokens: 1024,
-    messages: [{
-      role: 'user',
-      content: `You are a content research analyst for MediaMurray — a solo Edinburgh-based videographer targeting £10k/month revenue.
-
-Here are the ${ideas.length} most recent ideas in the Idea Bank:
-${list}
-
-Analyse and provide:
-1. **Top 3 content themes** appearing across these ideas
-2. **Content gaps** — topics missing but relevant to a Scottish videographer
-3. **Best idea to act on this week** — pick one, say exactly why
-4. **Platform distribution** — what to post where
-
-Be direct, no waffle. Use UK English.`,
-    }],
-  })
-  return msg.content[0].type === 'text' ? msg.content[0].text : ''
-}
-
-async function runScriptwriter(client: Anthropic): Promise<string> {
-  const ideas = await fetchIdeas()
-  const candidates = ideas.filter((i: { status: string }) => i.status === 'New' || i.status === 'In Progress')
-  const best = candidates.sort((a: { score: number | null }, b: { score: number | null }) => (b.score ?? 0) - (a.score ?? 0))[0]
-  if (!best) return 'No new ideas in the Idea Bank to script. Add some ideas first.'
-
-  const msg = await client.messages.create({
-    model: 'claude-haiku-4-5-20251001',
-    max_tokens: 1024,
-    messages: [{
-      role: 'user',
-      content: `You are a video script writer for MediaMurray, a Scottish videographer based in Edinburgh.
-
-Write a punchy short-form script (TikTok/Reels, under 60 seconds when read aloud) for this idea:
-"${best.title}"
-${best.actionPoints ? `\nContext: ${best.actionPoints}` : ''}
-
-Structure:
-- Hook (first 3 seconds — grab attention)
-- Problem/Setup (5-10 seconds)
-- Value/Solution (15-20 seconds)
-- CTA (final 5 seconds)
-
-Include [PAUSE] and [B-ROLL: description] cues. Scottish/UK tone. Write the script itself, not instructions.`,
-    }],
-  })
-
-  const script = msg.content[0].type === 'text' ? msg.content[0].text : ''
-  return `**Scripting idea: "${best.title}"**\n\n${script}`
-}
-
-const WATCH_CREATORS = [
-  'Peter McKinnon',
-  'Mark Bone',
-  'WhoisMattJohnson',
-  'Danny Gevirtz',
-  'Matti Haapoja',
-]
-
-type VideoEntry = { creator: string; title: string; videoId: string; transcript: string }
-
-async function getTranscript(videoId: string): Promise<string> {
-  try {
-    const segments = await YoutubeTranscript.fetchTranscript(videoId)
-    const text = segments.map(s => s.text).join(' ')
-    // cap at ~800 words
-    return text.split(' ').slice(0, 800).join(' ')
-  } catch {
-    return ''
+  const stageOrder = ['Enquiry', 'Booked', 'Filming', 'Editing', 'Delivered', 'Complete']
+  const byStage: Record<string, typeof projects> = {}
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  for (const proj of projects) {
+    const s = proj.stage || 'Unknown'
+    if (!byStage[s]) byStage[s] = []
+    byStage[s].push(proj)
   }
+
+  const ordered = [...stageOrder, ...Object.keys(byStage).filter(s => !stageOrder.includes(s))]
+  const lines: string[] = [`CLIENT PIPELINE — ${projects.length} projects\n`]
+
+  for (const stage of ordered) {
+    const items = byStage[stage]
+    if (!items?.length) continue
+    lines.push(`── ${stage.toUpperCase()} (${items.length}) ──`)
+    for (const p of items) {
+      lines.push(`• ${p.name}${p.value ? ` — ${p.value}` : ''}`)
+      if (p.deliverables) lines.push(`  ${p.deliverables}`)
+      if (p.date) lines.push(`  Date: ${p.date}`)
+    }
+    lines.push('')
+  }
+
+  return lines.join('\n')
 }
 
-async function runHookScout(client: Anthropic): Promise<string> {
+async function runHookScout(): Promise<string> {
   const apiKey = process.env.YOUTUBE_API_KEY
   if (!apiKey) return 'Add YOUTUBE_API_KEY to Vercel env vars to enable Creator Intel.'
 
-  const allVideos: VideoEntry[] = []
+  const lines: string[] = [`CREATOR INTEL — Latest videos from watched creators\n`]
 
   for (const creator of WATCH_CREATORS) {
     try {
@@ -161,111 +175,57 @@ async function runHookScout(client: Anthropic): Promise<string> {
       )
       const chData = await chRes.json()
       const channelId = chData.items?.[0]?.id?.channelId
-      if (!channelId) continue
+      if (!channelId) {
+        lines.push(`── ${creator.toUpperCase()} ──\n(Channel not found)\n`)
+        continue
+      }
 
-      // fetch 2 latest videos per creator to stay within token limits
       const vidRes = await fetch(
-        `https://www.googleapis.com/youtube/v3/search?channelId=${channelId}&type=video&part=snippet&order=date&maxResults=2&key=${apiKey}`
+        `https://www.googleapis.com/youtube/v3/search?channelId=${channelId}&type=video&part=snippet&order=date&maxResults=3&key=${apiKey}`
       )
       const vidData = await vidRes.json()
-      for (const item of vidData.items ?? []) {
+      const videos = vidData.items ?? []
+
+      lines.push(`── ${creator.toUpperCase()} (${videos.length} recent videos) ──`)
+
+      for (const item of videos) {
         const title = item.snippet?.title ?? ''
         const videoId = item.id?.videoId ?? ''
-        if (!title || !videoId) continue
-        const transcript = await getTranscript(videoId)
-        allVideos.push({ creator, title, videoId, transcript })
+        const published = item.snippet?.publishedAt?.split('T')[0] ?? ''
+        lines.push(`\n📹 ${title}${published ? ` (${published})` : ''}`)
+
+        if (videoId) {
+          try {
+            const segments = await YoutubeTranscript.fetchTranscript(videoId)
+            const transcript = segments.map((s: { text: string }) => s.text).join(' ').split(' ').slice(0, 150).join(' ')
+            if (transcript) lines.push(`   Opening: "${transcript}…"`)
+          } catch {
+            // no transcript available
+          }
+        }
       }
+      lines.push('')
     } catch {
-      // skip creator on error
+      lines.push(`── ${creator.toUpperCase()} ──\n(Could not fetch — try again)\n`)
     }
   }
 
-  if (allVideos.length === 0) {
-    return 'Could not fetch any videos. Check YOUTUBE_API_KEY is valid and has YouTube Data API v3 enabled in Google Cloud Console.'
-  }
-
-  const list = allVideos.map(v =>
-    `=== [${v.creator}] "${v.title}" ===\n${v.transcript ? `Transcript (first ~800 words):\n${v.transcript}` : '(No transcript available)'}`
-  ).join('\n\n')
-
-  const msg = await client.messages.create({
-    model: 'claude-haiku-4-5-20251001',
-    max_tokens: 2000,
-    messages: [{
-      role: 'user',
-      content: `You are a content strategist for MediaMurray — a solo Edinburgh-based freelance videographer targeting businesses, events, and brand films. Revenue goal: £10k/month.
-
-I've pulled the latest videos from 5 top videography/filmmaking YouTube creators, including full transcripts. Analyse them deeply:
-
-${list}
-
-Write a full creator intelligence report covering:
-
-1. **Topics & angles getting traction** — what subjects are landing with audiences, with specific examples from the transcripts
-2. **Content formats working** — tutorials, talking head, b-roll heavy, gear reviews, personal stories, etc.
-3. **Hook techniques** — exactly how do they open their videos? First sentence/30 seconds. Quote examples.
-4. **Storytelling & structure** — how do they build tension, maintain watch time, deliver the payoff?
-5. **Tone & personality** — what character/voice is working? Confident, vulnerable, educational, entertaining?
-6. **Gaps MediaMurray can own** — topics none of them are covering that a Scottish business videographer could dominate
-7. **5 specific video ideas for MediaMurray** — ready to make, inspired by what's working, adapted for Scottish market
-
-Be specific, quote from transcripts where useful. UK English. Direct, no waffle.`,
-    }],
-  })
-
-  const analysis = msg.content[0].type === 'text' ? msg.content[0].text : ''
-  const rawList = allVideos.map(v =>
-    `• [${v.creator}] ${v.title} — ${v.transcript ? 'transcript read' : 'no transcript'}`
-  ).join('\n')
-  return `${analysis}\n\n---\n**Videos analysed (${allVideos.length}):**\n${rawList}`
-}
-
-async function runPipeline(client: Anthropic): Promise<string> {
-  const projects = await fetchPipeline()
-  const active = projects.filter((p: { stage: string }) => !['Complete', 'Delivered', 'Paid'].includes(p.stage))
-
-  if (active.length === 0) {
-    return 'No active projects found in the pipeline. All clear — or worth checking your Notion database is shared with the integration.'
-  }
-
-  const list = active
-    .map((p: { name: string; stage: string; deliverables: string; date: string }) => `- ${p.name}: ${p.stage || 'No stage'}${p.deliverables ? ` (${p.deliverables})` : ''}${p.date ? ` — ${p.date}` : ''}`)
-    .join('\n')
-
-  const msg = await client.messages.create({
-    model: 'claude-haiku-4-5-20251001',
-    max_tokens: 512,
-    messages: [{
-      role: 'user',
-      content: `You are a business assistant for MediaMurray, a solo Scottish videographer.
-
-Active pipeline (${active.length} projects):
-${list}
-
-Give a concise action list for this week — 3-5 specific bullet points. What needs to move? Who needs chasing? What's at risk of slipping? Be direct, UK English.`,
-    }],
-  })
-  return msg.content[0].type === 'text' ? msg.content[0].text : ''
+  return lines.join('\n')
 }
 
 export async function POST(req: NextRequest) {
   const { agent } = await req.json()
 
-  if (!process.env.ANTHROPIC_API_KEY) {
-    return NextResponse.json({ error: 'No API key — add ANTHROPIC_API_KEY to Vercel env vars.' }, { status: 500 })
-  }
-  if (!process.env.NOTION_API_KEY) {
+  if (!process.env.NOTION_API_KEY && agent !== 'hooks') {
     return NextResponse.json({ error: 'No Notion key' }, { status: 500 })
   }
 
-  const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
-
   try {
     let result = ''
-    if (agent === 'researcher') result = await runResearcher(client)
-    else if (agent === 'scriptwriter') result = await runScriptwriter(client)
-    else if (agent === 'pipeline') result = await runPipeline(client)
-    else if (agent === 'hooks') result = await runHookScout(client)
+    if (agent === 'researcher') result = await runResearcher()
+    else if (agent === 'scriptwriter') result = await runScriptwriter()
+    else if (agent === 'pipeline') result = await runPipeline()
+    else if (agent === 'hooks') result = await runHookScout()
     else return NextResponse.json({ error: 'Unknown agent' }, { status: 400 })
 
     return NextResponse.json({ result })
