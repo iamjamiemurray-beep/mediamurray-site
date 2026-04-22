@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Anthropic from '@anthropic-ai/sdk'
+import { YoutubeTranscript } from 'youtube-transcript'
 
 const IDEA_BANK_DB = 'd75ee24adb8e46cda40e2e38d35d0c3f'
 const CLIENT_DB = '90cc60d38cad4df7b621ba4509677559'
@@ -134,12 +135,24 @@ const WATCH_CREATORS = [
   'Matti Haapoja',
 ]
 
+type VideoEntry = { creator: string; title: string; videoId: string; transcript: string }
+
+async function getTranscript(videoId: string): Promise<string> {
+  try {
+    const segments = await YoutubeTranscript.fetchTranscript(videoId)
+    const text = segments.map(s => s.text).join(' ')
+    // cap at ~800 words
+    return text.split(' ').slice(0, 800).join(' ')
+  } catch {
+    return ''
+  }
+}
+
 async function runHookScout(client: Anthropic): Promise<string> {
   const apiKey = process.env.YOUTUBE_API_KEY
-  if (!apiKey) return 'Add YOUTUBE_API_KEY to Vercel env vars to enable Hook Scout.'
+  if (!apiKey) return 'Add YOUTUBE_API_KEY to Vercel env vars to enable Creator Intel.'
 
-  type Hook = { creator: string; title: string }
-  const allHooks: Hook[] = []
+  const allVideos: VideoEntry[] = []
 
   for (const creator of WATCH_CREATORS) {
     try {
@@ -150,48 +163,61 @@ async function runHookScout(client: Anthropic): Promise<string> {
       const channelId = chData.items?.[0]?.id?.channelId
       if (!channelId) continue
 
+      // fetch 2 latest videos per creator to stay within token limits
       const vidRes = await fetch(
-        `https://www.googleapis.com/youtube/v3/search?channelId=${channelId}&type=video&part=snippet&order=date&maxResults=6&key=${apiKey}`
+        `https://www.googleapis.com/youtube/v3/search?channelId=${channelId}&type=video&part=snippet&order=date&maxResults=2&key=${apiKey}`
       )
       const vidData = await vidRes.json()
       for (const item of vidData.items ?? []) {
         const title = item.snippet?.title ?? ''
-        if (title) allHooks.push({ creator, title })
+        const videoId = item.id?.videoId ?? ''
+        if (!title || !videoId) continue
+        const transcript = await getTranscript(videoId)
+        allVideos.push({ creator, title, videoId, transcript })
       }
     } catch {
       // skip creator on error
     }
   }
 
-  if (allHooks.length === 0) {
-    return 'Could not fetch any videos. Check YOUTUBE_API_KEY is valid and has YouTube Data API v3 enabled.'
+  if (allVideos.length === 0) {
+    return 'Could not fetch any videos. Check YOUTUBE_API_KEY is valid and has YouTube Data API v3 enabled in Google Cloud Console.'
   }
 
-  const list = allHooks.map(h => `[${h.creator}] ${h.title}`).join('\n')
+  const list = allVideos.map(v =>
+    `=== [${v.creator}] "${v.title}" ===\n${v.transcript ? `Transcript (first ~800 words):\n${v.transcript}` : '(No transcript available)'}`
+  ).join('\n\n')
 
   const msg = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
-    max_tokens: 1200,
+    max_tokens: 2000,
     messages: [{
       role: 'user',
-      content: `You are a content strategist for MediaMurray — a solo Edinburgh-based freelance videographer targeting businesses, events, and brand films.
+      content: `You are a content strategist for MediaMurray — a solo Edinburgh-based freelance videographer targeting businesses, events, and brand films. Revenue goal: £10k/month.
 
-Here are the most recent YouTube video titles from top videography/filmmaking creators:
+I've pulled the latest videos from 5 top videography/filmmaking YouTube creators, including full transcripts. Analyse them deeply:
+
 ${list}
 
-Analyse these and provide:
-1. **Hook patterns working right now** — 3-4 recurring structures or techniques (e.g. "X Ways to...", "I tried...", question hooks, controversy hooks)
-2. **Power words and phrases** — specific language appearing that grabs attention
-3. **Content angles getting traction** — what topics/themes are the audience clicking on
-4. **5 hook ideas for MediaMurray** — adapt the best patterns for a Scottish videographer targeting local businesses and events. Make them specific and usable.
+Write a full creator intelligence report covering:
 
-Be concise, direct, UK English.`,
+1. **Topics & angles getting traction** — what subjects are landing with audiences, with specific examples from the transcripts
+2. **Content formats working** — tutorials, talking head, b-roll heavy, gear reviews, personal stories, etc.
+3. **Hook techniques** — exactly how do they open their videos? First sentence/30 seconds. Quote examples.
+4. **Storytelling & structure** — how do they build tension, maintain watch time, deliver the payoff?
+5. **Tone & personality** — what character/voice is working? Confident, vulnerable, educational, entertaining?
+6. **Gaps MediaMurray can own** — topics none of them are covering that a Scottish business videographer could dominate
+7. **5 specific video ideas for MediaMurray** — ready to make, inspired by what's working, adapted for Scottish market
+
+Be specific, quote from transcripts where useful. UK English. Direct, no waffle.`,
     }],
   })
 
   const analysis = msg.content[0].type === 'text' ? msg.content[0].text : ''
-  const hookList = allHooks.map(h => `• [${h.creator}] ${h.title}`).join('\n')
-  return `${analysis}\n\n---\n**Raw titles scraped (${allHooks.length} videos):**\n${hookList}`
+  const rawList = allVideos.map(v =>
+    `• [${v.creator}] ${v.title} — ${v.transcript ? 'transcript read' : 'no transcript'}`
+  ).join('\n')
+  return `${analysis}\n\n---\n**Videos analysed (${allVideos.length}):**\n${rawList}`
 }
 
 async function runPipeline(client: Anthropic): Promise<string> {

@@ -64,7 +64,7 @@ const AGENTS = [
     id: 'hooks',
     name: 'Hook Scout',
     tags: ['INTEL', 'HOOKS'],
-    description: 'Pulls latest videos from Peter McKinnon, Mark Bone, WhoisMattJohnson, Danny Gevirtz & Matti Haapoja — finds what hooks are working right now.',
+    description: 'Reads full transcripts from Peter McKinnon, Mark Bone, WhoisMattJohnson, Danny Gevirtz & Matti Haapoja — deep analysis of topics, structure, hooks, tone, and gaps you can own.',
     accentColor: 'green',
     border: 'border-green-500/40',
     glow: 'shadow-green-500/10',
