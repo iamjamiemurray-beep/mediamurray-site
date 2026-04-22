@@ -126,6 +126,74 @@ Include [PAUSE] and [B-ROLL: description] cues. Scottish/UK tone. Write the scri
   return `**Scripting idea: "${best.title}"**\n\n${script}`
 }
 
+const WATCH_CREATORS = [
+  'Peter McKinnon',
+  'Mark Bone',
+  'WhoisMattJohnson',
+  'Danny Gevirtz',
+  'Matti Haapoja',
+]
+
+async function runHookScout(client: Anthropic): Promise<string> {
+  const apiKey = process.env.YOUTUBE_API_KEY
+  if (!apiKey) return 'Add YOUTUBE_API_KEY to Vercel env vars to enable Hook Scout.'
+
+  type Hook = { creator: string; title: string }
+  const allHooks: Hook[] = []
+
+  for (const creator of WATCH_CREATORS) {
+    try {
+      const chRes = await fetch(
+        `https://www.googleapis.com/youtube/v3/search?q=${encodeURIComponent(creator)}&type=channel&part=snippet&maxResults=1&key=${apiKey}`
+      )
+      const chData = await chRes.json()
+      const channelId = chData.items?.[0]?.id?.channelId
+      if (!channelId) continue
+
+      const vidRes = await fetch(
+        `https://www.googleapis.com/youtube/v3/search?channelId=${channelId}&type=video&part=snippet&order=date&maxResults=6&key=${apiKey}`
+      )
+      const vidData = await vidRes.json()
+      for (const item of vidData.items ?? []) {
+        const title = item.snippet?.title ?? ''
+        if (title) allHooks.push({ creator, title })
+      }
+    } catch {
+      // skip creator on error
+    }
+  }
+
+  if (allHooks.length === 0) {
+    return 'Could not fetch any videos. Check YOUTUBE_API_KEY is valid and has YouTube Data API v3 enabled.'
+  }
+
+  const list = allHooks.map(h => `[${h.creator}] ${h.title}`).join('\n')
+
+  const msg = await client.messages.create({
+    model: 'claude-haiku-4-5-20251001',
+    max_tokens: 1200,
+    messages: [{
+      role: 'user',
+      content: `You are a content strategist for MediaMurray — a solo Edinburgh-based freelance videographer targeting businesses, events, and brand films.
+
+Here are the most recent YouTube video titles from top videography/filmmaking creators:
+${list}
+
+Analyse these and provide:
+1. **Hook patterns working right now** — 3-4 recurring structures or techniques (e.g. "X Ways to...", "I tried...", question hooks, controversy hooks)
+2. **Power words and phrases** — specific language appearing that grabs attention
+3. **Content angles getting traction** — what topics/themes are the audience clicking on
+4. **5 hook ideas for MediaMurray** — adapt the best patterns for a Scottish videographer targeting local businesses and events. Make them specific and usable.
+
+Be concise, direct, UK English.`,
+    }],
+  })
+
+  const analysis = msg.content[0].type === 'text' ? msg.content[0].text : ''
+  const hookList = allHooks.map(h => `• [${h.creator}] ${h.title}`).join('\n')
+  return `${analysis}\n\n---\n**Raw titles scraped (${allHooks.length} videos):**\n${hookList}`
+}
+
 async function runPipeline(client: Anthropic): Promise<string> {
   const projects = await fetchPipeline()
   const active = projects.filter((p: { stage: string }) => !['Complete', 'Delivered', 'Paid'].includes(p.stage))
@@ -171,6 +239,7 @@ export async function POST(req: NextRequest) {
     if (agent === 'researcher') result = await runResearcher(client)
     else if (agent === 'scriptwriter') result = await runScriptwriter(client)
     else if (agent === 'pipeline') result = await runPipeline(client)
+    else if (agent === 'hooks') result = await runHookScout(client)
     else return NextResponse.json({ error: 'Unknown agent' }, { status: 400 })
 
     return NextResponse.json({ result })

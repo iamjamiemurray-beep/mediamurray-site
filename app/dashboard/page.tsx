@@ -60,6 +60,16 @@ const AGENTS = [
     glow: 'shadow-orange-500/10',
     tagColor: 'text-orange-400 border-orange-500/30',
   },
+  {
+    id: 'hooks',
+    name: 'Hook Scout',
+    tags: ['INTEL', 'HOOKS'],
+    description: 'Pulls latest videos from Peter McKinnon, Mark Bone, WhoisMattJohnson, Danny Gevirtz & Matti Haapoja — finds what hooks are working right now.',
+    accentColor: 'green',
+    border: 'border-green-500/40',
+    glow: 'shadow-green-500/10',
+    tagColor: 'text-green-400 border-green-500/30',
+  },
 ] as const
 
 type AgentId = typeof AGENTS[number]['id']
@@ -415,6 +425,7 @@ function AgentsPanel() {
     researcher:   { status: 'idle', result: '', ts: '' },
     scriptwriter: { status: 'idle', result: '', ts: '' },
     pipeline:     { status: 'idle', result: '', ts: '' },
+    hooks:        { status: 'idle', result: '', ts: '' },
   })
 
   const runAgent = async (agentId: AgentId) => {
@@ -453,7 +464,7 @@ function AgentsPanel() {
         {' '}<span className="text-white/20">Requires ANTHROPIC_API_KEY in Vercel.</span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
         {AGENTS.map(agent => (
           <AgentCard
             key={agent.id}
