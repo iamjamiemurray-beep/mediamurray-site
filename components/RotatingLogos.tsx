@@ -40,7 +40,7 @@ export default function RotatingLogos({ logos }: { logos: Logo[] }) {
               alt={logo.alt}
               width={140}
               height={56}
-              className="h-full w-full object-contain opacity-70 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+              className="h-full w-full object-contain opacity-70 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 dark:invert"
             />
           </div>
         ))}

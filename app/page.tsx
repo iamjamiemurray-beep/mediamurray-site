@@ -52,10 +52,10 @@ const trustItems = [
 const services = [
   {
     title: 'Videography & Editing',
-    desc: 'Professional 4K coverage with Sony full-frame cameras. In-house edit, broadcast quality, ready to publish.',
+    desc: 'Professional 4K video production with full-frame cameras. In-house edit, professional quality, ready to publish.',
     href: '/services/videography',
-    photo: '/jamiebts9.jpeg',
-    photoPosition: 'center 25%',
+    photo: '/Videographyandeditingservicepicture.jpg',
+    photoPosition: 'center center',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.72-2.36A.75.75 0 0121.75 8.84v6.32a.75.75 0 01-1.28.53L15.75 13.5M3.75 18h9a1.5 1.5 0 001.5-1.5V7.5A1.5 1.5 0 0012.75 6h-9A1.5 1.5 0 002.25 7.5v9A1.5 1.5 0 003.75 18z"/>
@@ -64,9 +64,9 @@ const services = [
   },
   {
     title: 'Promotional Videos',
-    desc: 'Bespoke promo films for businesses, brands, and organisations — from concept to delivery.',
+    desc: 'Bespoke promotional and advertisement films to promote your business or organisation. Concept to delivery, entirely bespoke.',
     href: '/services/promo-video',
-    photo: '/whiskyjournalframes1.png',
+    photo: '/PromoVideoServicePicture.jpg',
     photoPosition: 'center center',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
@@ -76,10 +76,10 @@ const services = [
   },
   {
     title: 'Photography',
-    desc: 'Events, portraits, product and lifestyle photography packages for any brief.',
+    desc: 'Professional photography packages for events, portraits, product and lifestyle shoots. Edited and delivered quickly.',
     href: '/services/photography',
-    photo: '/goodpics4.jpg',
-    photoPosition: 'center 20%',
+    photo: '/PhotographyServicePicture.jpg',
+    photoPosition: 'center center',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/>
@@ -89,11 +89,10 @@ const services = [
   },
   {
     title: 'Event Coverage',
-    desc: 'Full event coverage combining videography, photography and same-day editing.',
+    desc: 'Full event coverage combining videography and photography in one package. Conferences, awards, ceremonies, and more.',
     href: '/services/events',
-    photo: '/awards1.jpg',
-    photoPosition: 'center 40%',
-    photoScale: true,
+    photo: '/eventcoverageservicepicture.jpg',
+    photoPosition: 'center center',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"/>
@@ -102,10 +101,10 @@ const services = [
   },
   {
     title: 'Retainer Packages',
-    desc: 'Consistent, high-quality video and social content on a monthly retainer.',
+    desc: 'Consistent, high-quality video and social content on a monthly retainer. Predictable output, delivered on schedule.',
     href: '/services/retainer',
-    photo: '/jamiecreative2.jpg',
-    photoPosition: 'center 30%',
+    photo: '/retainerpackagesservicepicture.png',
+    photoPosition: 'center center',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/>
@@ -114,10 +113,10 @@ const services = [
   },
   {
     title: 'Content Day',
-    desc: 'One full day, maximum output. Video and photo content for weeks of social posting.',
+    desc: 'One full production day — maximum content output. Walk away with weeks of professional video and photo content.',
     href: '/services/content-day',
-    photo: '/ContentDayAllSewnUp1.jpg',
-    photoPosition: 'center 15%',
+    photo: '/contentpackagesservicespicture.png',
+    photoPosition: 'center center',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3"/>
@@ -127,7 +126,10 @@ const services = [
 ]
 
 
-const clientFaces = Array.from({ length: 16 }, (_, i) => `/client${i + 1}.png`)
+const clientFaces = [
+  ...Array.from({ length: 16 }, (_, i) => `/client${i + 1}.png`),
+  '/client19_emma_lowlandrfca.png',
+]
 
 const clientLogos = [
   { src: '/MM_Client_Logo_01_BBC_Scotland.avif', alt: 'BBC Scotland' },
@@ -135,7 +137,6 @@ const clientLogos = [
   { src: '/MM_Client_Logo_09_RTV.avif', alt: 'RangersTV' },
   { src: '/MM_Client_Logo_08_RFCA.avif', alt: 'LowlandRFCA' },
   { src: '/MM_Client_Logo_07_Frame.avif', alt: 'Frame' },
-  { src: '/MM_Client_Logo_04_Bute_Kitchen.avif', alt: 'Bute Kitchen' },
   { src: '/MM_Client_Logo_05_Club71.avif', alt: 'Club71' },
   { src: '/MM_Client_Logo_12_Smarts.avif', alt: 'Smarts' },
   { src: '/MM_Client_Logo_13_Trapdoor.avif', alt: 'Trapdoor' },
@@ -178,7 +179,7 @@ export default function Home() {
                   View Work
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/start"
                   className="border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white font-bold px-8 py-4 rounded-sm hover:border-gray-500 dark:hover:border-white/50 transition-colors text-sm uppercase tracking-wider"
                 >
                   Get a Quote
@@ -209,16 +210,18 @@ export default function Home() {
           <p className="text-2xl sm:text-3xl font-light text-white">
             Trusted by over <span className="font-black gradient-text">100</span> clients
           </p>
-          <div className="flex -space-x-4 flex-shrink-0">
-            {clientFaces.map((src, i) => (
-              <div
-                key={i}
-                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-[3px] border-[#0a0a0a] flex-shrink-0"
-                style={{ zIndex: clientFaces.length - i }}
-              >
-                <Image src={src} alt="MediaMurray client" width={64} height={64} className="w-full h-full object-cover" />
-              </div>
-            ))}
+          <div className="w-full overflow-x-auto">
+            <div className="flex -space-x-4 justify-center min-w-max mx-auto px-4">
+              {clientFaces.map((src, i) => (
+                <div
+                  key={i}
+                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-[3px] border-[#0a0a0a] flex-shrink-0"
+                  style={{ zIndex: clientFaces.length - i }}
+                >
+                  <Image src={src} alt="MediaMurray client" width={64} height={64} className="w-full h-full object-cover" />
+                </div>
+              ))}
+            </div>
           </div>
           <div className="flex flex-wrap gap-2 justify-center">
             {['Public Sector', 'Corporate Events', 'Creative Agencies', 'Charities', 'Small Businesses', 'Individuals'].map((tag) => (
@@ -245,7 +248,7 @@ export default function Home() {
                   alt={logo.alt}
                   width={140}
                   height={56}
-                  className="h-full w-full object-contain opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+                  className="h-full w-full object-contain opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 dark:invert"
                 />
               </div>
             </div>
@@ -320,18 +323,6 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
-      {/* Stats Ticker */}
-      <section className="border-y border-gray-200 dark:border-white/10 py-5 overflow-hidden bg-white dark:bg-[#0a0a0a]">
-        <div className="flex animate-marquee-fast whitespace-nowrap">
-          {[...statItems, ...statItems].map((s, i) => (
-            <div key={i} className="inline-flex items-center gap-2 px-8">
-              <span className="text-2xl font-black gradient-text">{s.value}</span>
-              <span className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40">{s.label}</span>
-              <span className="ml-8 text-[#0052D4] text-lg font-thin select-none">·</span>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Services */}
       <section className="bg-gray-50 dark:bg-white/[0.02] border-y border-gray-200 dark:border-white/10 py-24">
@@ -351,7 +342,7 @@ export default function Home() {
                     src={s.photo}
                     alt={s.title}
                     fill
-                    className={`object-cover transition-transform duration-500 ${s.photoScale ? 'scale-110 group-hover:scale-115' : 'group-hover:scale-105'}`}
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                     style={{ objectPosition: s.photoPosition || 'center center' }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
@@ -366,6 +357,69 @@ export default function Home() {
                 </div>
               </Link>
             ))}
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-24 border-b border-gray-200 dark:border-white/10">
+        <ScrollReveal className="max-w-6xl mx-auto px-6">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">The Process</p>
+          <p className="text-sm font-bold uppercase tracking-widest gradient-text mb-3">No surprises. No ambiguity.</p>
+          <h2 className="text-4xl font-black mb-4 text-gray-900 dark:text-white">How It Works</h2>
+          <p className="text-gray-500 dark:text-white/50 text-base mb-16 max-w-2xl">
+            Every project follows the same clear process — from first message to final delivery.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-0">
+            {[
+              {
+                step: '01',
+                title: 'Brief',
+                desc: "Tell me what you need. The more detail the better — goals, audience, deadlines, any footage or assets you already have.",
+              },
+              {
+                step: '02',
+                title: 'Quote',
+                desc: 'You get a clear, itemised quote. Agreed scope, agreed deliverables, agreed timeline. No hidden costs added later.',
+              },
+              {
+                step: '03',
+                title: 'Shoot Day',
+                desc: "I handle everything on the day. Professional, efficient, and relaxed — clients consistently say it's easier than they expected.",
+              },
+              {
+                step: '04',
+                title: 'Edit & Review',
+                desc: 'I edit to the brief. You review the first cut and feed back — one round of revisions is included as standard.',
+              },
+              {
+                step: '05',
+                title: 'Delivery',
+                desc: 'Final files land in your inbox via a transfer link, optimised for wherever you need them — web, social, broadcast.',
+              },
+            ].map((item, i, arr) => (
+              <div
+                key={item.step}
+                className={`relative flex flex-col p-8 border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] ${i < arr.length - 1 ? 'lg:border-r-0' : ''} ${i > 0 ? 'border-t-0 lg:border-t lg:border-l-0 lg:border-r-0' : ''} first:border-t last:lg:border-r`}
+              >
+                <span className="text-5xl font-black gradient-text leading-none mb-6 select-none">{item.step}</span>
+                <h3 className="font-black text-lg text-gray-900 dark:text-white mb-3 uppercase tracking-wide">{item.title}</h3>
+                <p className="text-sm text-gray-500 dark:text-white/50 leading-relaxed">{item.desc}</p>
+                {i < arr.length - 1 && (
+                  <span className="hidden lg:block absolute top-1/2 -right-3 -translate-y-1/2 z-10 text-gray-300 dark:text-white/20 text-xl select-none">→</span>
+                )}
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <a
+              href="https://tally.so/r/W0YkPN"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="gradient-bg text-white font-bold px-8 py-4 rounded-sm hover:opacity-90 transition-opacity text-sm uppercase tracking-wider inline-block"
+            >
+              Start a Project →
+            </a>
           </div>
         </ScrollReveal>
       </section>
@@ -403,7 +457,7 @@ export default function Home() {
               )
             }
             const Attr = ({ name, org, project, projectUrl, photo }: { name: string; org: string; project?: string; projectUrl?: string; photo?: string }) => (
-              <div className="mt-auto pt-4 flex items-center gap-3">
+              <div className="mt-auto pt-4 flex items-start gap-3">
                 {photo && <Image src={photo} alt={name} width={36} height={36} className="w-9 h-9 rounded-full object-cover flex-shrink-0" />}
                 <div>
                   <p className="font-bold text-white text-sm">{name}</p>
@@ -413,7 +467,7 @@ export default function Home() {
               </div>
             )
             const AttrDark = ({ name, org, project, projectUrl, photo }: { name: string; org: string; project?: string; projectUrl?: string; photo?: string }) => (
-              <div className="mt-auto pt-4 flex items-center gap-3">
+              <div className="mt-auto pt-4 flex items-start gap-3">
                 {photo && <Image src={photo} alt={name} width={36} height={36} className="w-9 h-9 rounded-full object-cover flex-shrink-0" />}
                 <div>
                   <p className="font-bold text-gray-900 dark:text-white text-sm">{name}</p>
@@ -494,6 +548,52 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
+      {/* Gear */}
+      <section className="py-20 border-b border-gray-200 dark:border-white/10 overflow-hidden">
+        <ScrollReveal className="max-w-6xl mx-auto px-6">
+          <div className="flex items-end justify-between mb-10">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">The Kit</p>
+              <h2 className="text-4xl font-black text-gray-900 dark:text-white">Professional Equipment</h2>
+            </div>
+            <p className="hidden sm:block text-sm text-gray-400 dark:text-white/30 max-w-xs text-right leading-relaxed">
+              Every shoot uses the same professional-grade kit — no compromise on quality.
+            </p>
+          </div>
+
+          <div className="flex gap-2 overflow-x-auto pb-2 -mx-6 px-6 sm:mx-0 sm:px-0">
+            {[
+              { src: '/gear/gear-sony-a7iv.jpg', category: 'Camera', name: 'Sony α7 IV' },
+              { src: '/gear/gear-sony-a7iii.jpg', category: 'Camera', name: 'Sony α7 III' },
+              { src: '/gear/gear-dji-mini5pro.png', category: 'Drone', name: 'DJI Mini 5 Pro' },
+              { src: '/gear/gear-ronin-sc2.jpg', category: 'Stabiliser', name: 'DJI Ronin SC2' },
+              { src: '/gear/gear-lenses1.jpg', category: 'Lenses', name: 'Prime Lenses' },
+              { src: '/gear/gear-lenses2.jpg', category: 'Lenses', name: 'Zoom Lenses' },
+              { src: '/gear/ear-audio.jpg', category: 'Audio', name: 'Pro Microphones' },
+            ].map((item) => (
+              <div
+                key={item.name}
+                className="group flex-shrink-0 w-[130px] sm:flex-1 relative rounded-sm overflow-hidden bg-gray-100 dark:bg-white/[0.04] border border-gray-200 dark:border-white/10 transition-all duration-300 hover:border-[#0052D4] dark:hover:border-white/30 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <div className="relative aspect-square overflow-hidden bg-gray-100 dark:bg-white/[0.06]">
+                  <Image
+                    src={item.src}
+                    alt={item.name}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="130px"
+                  />
+                </div>
+                <div className="p-2">
+                  <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#0052D4] dark:text-white/40 mb-0.5">{item.category}</p>
+                  <p className="text-[11px] font-black text-gray-900 dark:text-white leading-tight">{item.name}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
+      </section>
+
       {/* CTA */}
       <section className="gradient-bg overflow-hidden">
         <div className="max-w-6xl mx-auto px-6">
@@ -507,7 +607,7 @@ export default function Home() {
                 If you&apos;ve been let down by content you&apos;d never want to share, or by suppliers who didn&apos;t deliver - this is the alternative. Trusted results from someone experienced, with countless clients who can vouch for it.
               </p>
               <Link
-                href="/contact"
+                href="/start"
                 className="bg-white text-[#0052D4] font-black px-10 py-4 rounded-sm hover:bg-white/90 transition-colors text-sm uppercase tracking-wider inline-block"
               >
                 Get a Free Quote

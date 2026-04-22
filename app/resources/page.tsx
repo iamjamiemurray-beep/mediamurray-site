@@ -29,8 +29,10 @@ const resources = [
     title: 'Establishing or Re-establishing Your Brand on Social Media',
     desc: 'Formats, aspect ratios and basic principles for getting video content right across Instagram, TikTok and LinkedIn — with script examples and real-world references.',
     tag: 'Social Media',
-    available: false,
-    href: '#',
+    available: true,
+    href: '/resources/brand-social-media',
+    cta: 'Read the guide →',
+    meta: '~12 min read',
   },
   {
     title: 'Content Day Checklist',

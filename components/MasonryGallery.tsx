@@ -11,9 +11,10 @@ interface GalleryImage {
 interface Props {
   images: GalleryImage[]
   className?: string
+  uniform?: boolean
 }
 
-export default function MasonryGallery({ images, className = '' }: Props) {
+export default function MasonryGallery({ images, className = '', uniform = false }: Props) {
   const [open, setOpen] = useState<number | null>(null)
 
   const close = useCallback(() => setOpen(null), [])
@@ -38,23 +39,42 @@ export default function MasonryGallery({ images, className = '' }: Props) {
 
   return (
     <>
-      <div className={`columns-2 sm:columns-3 lg:columns-4 gap-3 ${className}`}>
-        {images.map((img, i) => (
-          <div
-            key={i}
-            className="break-inside-avoid mb-3 overflow-hidden rounded-sm group cursor-zoom-in"
-            onClick={() => setOpen(i)}
-          >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              width={600}
-              height={900}
-              className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-        ))}
-      </div>
+      {uniform ? (
+        <div className={`grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 ${className}`}>
+          {images.map((img, i) => (
+            <div
+              key={i}
+              className="relative aspect-[4/3] overflow-hidden rounded-sm group cursor-zoom-in"
+              onClick={() => setOpen(i)}
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className={`columns-2 sm:columns-3 lg:columns-4 gap-3 ${className}`}>
+          {images.map((img, i) => (
+            <div
+              key={i}
+              className="break-inside-avoid mb-3 overflow-hidden rounded-sm group cursor-zoom-in"
+              onClick={() => setOpen(i)}
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={600}
+                height={900}
+                className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* Lightbox */}
       {open !== null && (

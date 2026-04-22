@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { useTheme } from './ThemeProvider'
 
 const services = [
@@ -14,63 +15,67 @@ const services = [
 ]
 
 export default function Footer() {
+  const pathname = usePathname()
+  if (pathname.startsWith('/dashboard')) return null
   const { theme } = useTheme()
   return (
     <footer className="border-t border-gray-200 dark:border-white/10 bg-white dark:bg-[#0a0a0a] mt-24 transition-colors duration-200">
 
-      <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left place-items-center md:place-items-start">
-        <div className="flex flex-col items-center md:items-start">
+      <div className="max-w-6xl mx-auto px-6 py-16 text-center">
+        <div className="flex justify-center mb-4">
           <Image
             src={theme === 'dark' ? '/logo-white.png' : '/logo-black.png'}
             alt="MediaMurray"
             width={240}
             height={135}
-            className="h-20 w-auto object-contain mb-4"
+            className="h-16 w-auto object-contain"
           />
-          <p className="text-gray-500 dark:text-white/50 text-sm leading-relaxed">
-            Professional videography, photography and editing.<br />
-            Based in Edinburgh - available across Scotland and the United Kingdom.
-          </p>
-          <p className="mt-2 text-xs text-gray-400 dark:text-white/30">
-            Trusted by over 100 clients across Scotland and the UK.
-          </p>
-          <p className="mt-4 text-sm text-gray-400 dark:text-white/40">
-            <a href="mailto:mail@mediamurray.com" className="hover:text-gray-900 dark:hover:text-white transition-colors">
-              mail@mediamurray.com
-            </a>
-          </p>
         </div>
+        <p className="text-gray-500 dark:text-white/50 text-sm leading-relaxed max-w-md mx-auto">
+          Professional videography, photography and editing.<br />
+          Based in Edinburgh — available across Scotland and the United Kingdom.
+        </p>
+        <p className="mt-1 text-xs text-gray-400 dark:text-white/30">
+          Trusted by over 100 clients across Scotland and the UK.
+        </p>
+        <p className="mt-3 text-sm text-gray-400 dark:text-white/40">
+          <a href="mailto:mail@mediamurray.com" className="hover:text-gray-900 dark:hover:text-white transition-colors">
+            mail@mediamurray.com
+          </a>
+        </p>
 
-        <div className="flex flex-col items-center md:items-start">
-          <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-4">Services</h3>
-          <ul className="space-y-2">
-            {services.map((s) => (
-              <li key={s.href}>
-                <Link href={s.href} className="text-sm text-gray-600 dark:text-white/60 hover:text-gray-900 dark:hover:text-white transition-colors">
-                  {s.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <div className="flex flex-wrap justify-center gap-x-16 gap-y-8 mt-12">
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-4">Services</h3>
+            <ul className="space-y-2">
+              {services.map((s) => (
+                <li key={s.href}>
+                  <Link href={s.href} className="text-sm text-gray-600 dark:text-white/60 hover:text-gray-900 dark:hover:text-white transition-colors">
+                    {s.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <div className="flex flex-col items-center md:items-start">
-          <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-4">Company</h3>
-          <ul className="space-y-2">
-            {[
-              { href: '/work', label: 'Work' },
-              { href: '/about', label: 'About' },
-              { href: '/testimonials', label: 'Testimonials' },
-              { href: '/resources', label: 'Resources' },
-              { href: '/contact', label: 'Contact' },
-            ].map((l) => (
-              <li key={l.href}>
-                <Link href={l.href} className="text-sm text-gray-600 dark:text-white/60 hover:text-gray-900 dark:hover:text-white transition-colors">
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-4">Company</h3>
+            <ul className="space-y-2">
+              {[
+                { href: '/work', label: 'Work' },
+                { href: '/about', label: 'About' },
+                { href: '/testimonials', label: 'Testimonials' },
+                { href: '/resources', label: 'Resources' },
+                { href: '/contact', label: 'Contact' },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="text-sm text-gray-600 dark:text-white/60 hover:text-gray-900 dark:hover:text-white transition-colors">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 

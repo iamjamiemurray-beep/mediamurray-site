@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import VideoCard from '@/components/VideoCard'
 
 export const metadata: Metadata = {
   title: 'Retainer Packages',
@@ -30,6 +31,18 @@ export default function ShortForm() {
                 Get a Quote
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Examples */}
+      <section className="border-t border-gray-200 dark:border-white/10 py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Watch</p>
+          <h2 className="text-3xl font-black mb-12 text-gray-900 dark:text-white">Examples of Ongoing Work</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl">
+            <VideoCard id="9zONKRiBPm0" title="Warrior In Training — Pilates Promo" category="Social Content" />
+            <VideoCard id="5cv1GW6mlm8" title="West Lowland Battalion ACF — The Only Way Is Up" category="Organic Social" />
           </div>
         </div>
       </section>

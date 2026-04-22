@@ -38,7 +38,7 @@ export default function Photography() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
           <div className="space-y-5 text-gray-600 dark:text-white/60 leading-relaxed">
             <p>Shot on Sony a7IV — a full-frame mirrorless camera with exceptional low-light performance, making it ideal for indoor events, dim venues and natural-light portraits.</p>
-            <p>All images are delivered fully edited in a consistent style. Turnaround is typically 5–7 working days, with 48-hour express delivery available if needed.</p>
+            <p>All images are delivered fully edited in a consistent style. Turnaround is typically 1–2 weeks, with express delivery available if needed.</p>
             <p>Half-day bookings cover up to 3 hours on location. Full-day bookings cover up to 5 hours on location. Suitable for corporate events, awards evenings, headshots, brand content, and product shoots.</p>
           </div>
           <div className="space-y-6">

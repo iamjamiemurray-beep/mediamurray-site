@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import TallyForm from '@/components/TallyForm'
+import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -19,7 +19,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <TallyForm />
+        <ContactForm />
 
         <div className="mt-16 pt-12 border-t border-gray-200 dark:border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
           <div>

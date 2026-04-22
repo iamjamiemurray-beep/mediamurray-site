@@ -35,7 +35,7 @@ export default function Videography() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
           <div className="space-y-5 text-gray-600 dark:text-white/60 leading-relaxed">
             <p>Every shoot is covered on a Sony a7IV or a7III — broadcast-quality sensors with cinematic colour profiles. Drone footage available via DJI Mini 5 Pro where required.</p>
-            <p>I edit using Adobe Premiere Pro and After Effects, with colour grading and audio mixing included as standard. You get polished, ready-to-publish deliverables.</p>
+            <p>I edit using Adobe Premiere Pro, with colour grading and audio mixing included as standard. You get polished, ready-to-publish deliverables.</p>
             <p>Half-day bookings cover up to 3 hours on location. Full-day bookings cover up to 5 hours on location. Turnaround is typically 2–4 weeks. Express delivery is available and agreed per project.</p>
           </div>
           <div className="space-y-6">

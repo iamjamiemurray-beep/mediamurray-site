@@ -11,6 +11,7 @@ const TESTIMONIALS = [
   { quote: 'A pleasure to work with. Clear, understanding and supportive. Exceptional in terms of the final product. The promotional video has helped reach international audiences with our Art & Climate Change message.', name: 'Richard Whitcomb', org: 'Bute Community Forest' },
   { quote: 'Incredibly professional and friendly. The final materials far exceeded expectations! Really appreciated the patience shown with figuring out a schedule and working through the ideas before filming. Definitely recommend.', name: 'Eve McArthur', org: 'Argyll & Bute Council' },
   { quote: "He very much put me at ease - I'm not one for being in front of the camera. The service he provides is 10/10 and he got the images back to me very quickly. Highly recommend.", name: 'Kevin Lawrence', org: 'Kev Lawrence Design' },
+  { quote: "My team has worked with Jamie on a number of projects over the last five years, and for very good reason. Whether it's events photography or shooting marketing videos, the end product is always first class and delivered in a very timely manner. Jamie is a consummate professional and a delight to work with.", name: 'Emma McMullan', org: 'LowlandRFCA' },
 ]
 
 const Stars = () => (

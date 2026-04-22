@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { useTheme } from './ThemeProvider'
 
 const links = [
@@ -42,6 +43,8 @@ function MoonIcon() {
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const { theme, toggle } = useTheme()
+  const pathname = usePathname()
+  if (pathname.startsWith('/dashboard')) return null
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-[#0a0a0a]/90 backdrop-blur-md border-b border-gray-200 dark:border-white/10 transition-colors duration-200">
@@ -76,7 +79,7 @@ export default function Navbar() {
             {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
           </button>
           <Link
-            href="/contact"
+            href="/start"
             className="gradient-bg text-white text-xs font-bold uppercase tracking-wider px-5 py-2 rounded-full hover:opacity-90 transition-opacity ml-2"
           >
             Get a Quote
@@ -120,7 +123,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/contact"
+            href="/start"
             className="gradient-bg text-white font-bold px-5 py-3 rounded-sm text-center mt-2"
             onClick={() => setOpen(false)}
           >

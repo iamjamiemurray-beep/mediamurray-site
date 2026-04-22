@@ -84,6 +84,14 @@ const testimonials = [
     category: 'Small Business',
     photo: '/Kevin-Lawrence.png',
   },
+  {
+    quote: "My team has worked with Jamie on a number of projects over the last five years, and for very good reason. Whether it's events photography or shooting marketing videos, the end product is always first class and delivered in a very timely manner. Jamie is a consummate professional and a delight to work with.",
+    name: 'Emma McMullan',
+    org: 'LowlandRFCA',
+    project: 'Events Photography & Marketing Video',
+    category: 'Public Sector',
+    photo: '/client19_emma_lowlandrfca.png',
+  },
 ]
 
 const categories = ['All', 'Public Sector', 'Small Business', 'Charity', 'Individual']
@@ -141,7 +149,7 @@ export default function Testimonials() {
               <p className="text-gray-600 dark:text-white/70 leading-relaxed text-sm flex-1 mb-6">
                 &ldquo;{t.quote}&rdquo;
               </p>
-              <div className="flex items-center gap-3">
+              <div className="flex items-start gap-3">
                 {t.photo && (
                   <Image
                     src={t.photo}

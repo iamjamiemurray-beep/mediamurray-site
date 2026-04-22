@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import MasonryGallery from '@/components/MasonryGallery'
+import HeroPhotoGrid from '@/components/HeroPhotoGrid'
 
 const clientLogos = [
   { src: '/MM_Client_Logo_01_BBC_Scotland.avif', alt: 'BBC Scotland' },
@@ -9,7 +10,6 @@ const clientLogos = [
   { src: '/MM_Client_Logo_09_RTV.avif', alt: 'RangersTV' },
   { src: '/MM_Client_Logo_08_RFCA.avif', alt: 'LowlandRFCA' },
   { src: '/MM_Client_Logo_07_Frame.avif', alt: 'Frame' },
-  { src: '/MM_Client_Logo_04_Bute_Kitchen.avif', alt: 'Bute Kitchen' },
   { src: '/MM_Client_Logo_05_Club71.avif', alt: 'Club71' },
   { src: '/MM_Client_Logo_12_Smarts.avif', alt: 'Smarts' },
   { src: '/MM_Client_Logo_13_Trapdoor.avif', alt: 'Trapdoor' },
@@ -38,6 +38,7 @@ const btsImages = [
   { src: '/jamiebts8.jpeg', alt: 'Jamie on location' },
   { src: '/jamiebts10.jpeg', alt: 'Jamie on location' },
   { src: '/jamiebts11.jpeg', alt: 'Jamie on location' },
+  { src: '/jamieaboutpagephoto1.jpg', alt: 'Jamie on location' },
   { src: '/jamiecreative1.jpg', alt: 'Jamie working' },
   { src: '/jamiecreative2.jpg', alt: 'Jamie working' },
   { src: '/jamiewritingatdesk.jpg', alt: 'Jamie at desk' },
@@ -104,28 +105,7 @@ export default function About() {
           </div>
 
           {/* Right — photos */}
-          <div className="space-y-3">
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { src: '/jamiebts4.jpeg', alt: 'Jamie filming on location' },
-                { src: '/jamiebts9.jpeg', alt: 'Jamie on location' },
-                { src: '/jamiebts7.jpeg', alt: 'Jamie on location' },
-                { src: '/btsphotos1.jpg', alt: 'Jamie on location' },
-                { src: '/jamiebts1.jpg', alt: 'Jamie on location' },
-                { src: '/jamiebts6.jpeg', alt: 'Jamie on location' },
-              ].map((img, i) => (
-                <div key={i} className="overflow-hidden rounded-sm aspect-square">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    width={400}
-                    height={400}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          <HeroPhotoGrid />
 
         </div>
       </section>
@@ -215,7 +195,7 @@ export default function About() {
                   alt={logo.alt}
                   width={112}
                   height={48}
-                  className="h-full w-full object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+                  className="h-full w-full object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 dark:invert"
                 />
               </div>
             </div>

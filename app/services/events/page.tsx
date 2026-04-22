@@ -10,6 +10,10 @@ export const metadata: Metadata = {
 
 const eventGroups = [
   {
+    name: 'Event Photography',
+    photos: ['/eventphoto1.jpg', '/eventphoto2.jpg', '/eventphoto3.jpg', '/eventphoto4.jpg', '/eventphoto5.jpg'],
+  },
+  {
     name: 'LowlandRFCA Awards — Paisley',
     photos: ['/awardspaisley1.jpg', '/awardspaisley2.jpg', '/awardspaisley3.jpg', '/awardspaisley4.jpg'],
   },

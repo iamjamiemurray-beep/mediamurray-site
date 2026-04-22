@@ -164,7 +164,7 @@ export default function ContentDay() {
                   )}
                   <span className="text-xs text-gray-400 dark:text-white/40 ml-auto">{shoot.desc}</span>
                 </div>
-                <MasonryGallery images={shoot.photos.map(src => ({ src, alt: `${shoot.client} content day` }))} />
+                <MasonryGallery uniform images={shoot.photos.map(src => ({ src, alt: `${shoot.client} content day` }))} />
               </div>
             ))}
           </div>
