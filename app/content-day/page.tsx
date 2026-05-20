@@ -115,7 +115,7 @@ export default function ContentDayPage() {
               },
               {
                 label: 'Filming it yourself',
-                reason: 'Inconsistent quality, inconsistent output. You're running a business - it's not your job.',
+                reason: "Inconsistent quality, inconsistent output. You're running a business - it's not your job.",
               },
               {
                 label: 'Social media manager',
