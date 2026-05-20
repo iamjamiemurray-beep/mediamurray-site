@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 
 const photos = [
-  { src: '/Jamieaboutpagemainherpphoto.jpg', alt: 'Jamie Murray' },
+  { src: '/jamiebts3.png', alt: 'Jamie Murray' },
   { src: '/jamiebts7.jpeg', alt: 'Jamie on location' },
   { src: '/btsphotos1.jpg', alt: 'Jamie on location' },
   { src: '/jamiebts9.jpeg', alt: 'Jamie on location' },

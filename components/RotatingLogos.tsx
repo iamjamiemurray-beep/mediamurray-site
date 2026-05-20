@@ -21,7 +21,7 @@ export default function RotatingLogos({ logos }: { logos: Logo[] }) {
         setPage(p => (p + 1) % pageCount)
         setVisible(true)
       }, 400)
-    }, 3000)
+    }, 1500)
     return () => clearInterval(interval)
   }, [pageCount])
 
