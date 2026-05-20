@@ -365,7 +365,6 @@ export default function Home() {
       <section className="py-24 border-b border-gray-200 dark:border-white/10">
         <ScrollReveal className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">The Process</p>
-          <p className="text-sm font-bold uppercase tracking-widest gradient-text mb-3">No surprises. No ambiguity.</p>
           <h2 className="text-4xl font-black mb-4 text-gray-900 dark:text-white">How It Works</h2>
           <p className="text-gray-500 dark:text-white/50 text-base mb-16 max-w-2xl">
             Every project follows the same clear process — from first message to final delivery.

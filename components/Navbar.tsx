@@ -47,7 +47,15 @@ export default function Navbar() {
   if (pathname.startsWith('/dashboard')) return null
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-[#0a0a0a]/90 backdrop-blur-md border-b border-gray-200 dark:border-white/10 transition-colors duration-200">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Availability bar */}
+      <div className="bg-[#0052D4] text-white text-[11px] font-bold uppercase tracking-[0.18em] text-center py-2 px-4">
+        Limited availability this month —{' '}
+        <Link href="/start" className="underline underline-offset-2 hover:text-white/80 transition-colors">
+          book for next month, enquire now →
+        </Link>
+      </div>
+      <div className="bg-white/95 dark:bg-[#0a0a0a]/90 backdrop-blur-md border-b border-gray-200 dark:border-white/10 transition-colors duration-200">
       <div className="max-w-6xl mx-auto px-6 h-24 flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
@@ -131,6 +139,7 @@ export default function Navbar() {
           </Link>
         </div>
       )}
+      </div>
     </header>
   )
 }

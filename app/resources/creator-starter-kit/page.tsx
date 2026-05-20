@@ -401,13 +401,11 @@ export default function CreatorStarterKit() {
                     {/* Camera guide link - appears after camera table */}
                     {section.heading === 'Camera: starter to professional.' && (
                       <Link
-                        href="/What Camera Should I Buy - MediaMurray.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="/resources/camera-guide"
                         className="inline-flex items-center gap-2 mt-4 text-sm font-bold text-[#0052D4] hover:text-[#00C6FF] transition-colors"
                       >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                        Download: What Camera Should I Buy? (Free Guide)
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        What Camera Should I Buy? — Full Guide
                       </Link>
                     )}
                   </div>

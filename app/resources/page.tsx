@@ -21,9 +21,9 @@ const resources = [
     desc: 'A practical guide to starter cameras for content creation — from budget options to the kit professionals actually use.',
     tag: 'Equipment Guide',
     available: true,
-    href: '/What Camera Should I Buy - MediaMurray.pdf',
-    cta: 'Download free →',
-    meta: 'PDF',
+    href: '/resources/camera-guide',
+    cta: 'Read the guide →',
+    meta: '~8 min read',
   },
   {
     title: 'Establishing or Re-establishing Your Brand on Social Media',

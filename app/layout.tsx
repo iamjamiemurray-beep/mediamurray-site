@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="antialiased bg-white dark:bg-[#0a0a0a] transition-colors duration-200">
         <ThemeProvider>
           <Navbar />
-          <main>{children}</main>
+          <main className="pt-9">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
