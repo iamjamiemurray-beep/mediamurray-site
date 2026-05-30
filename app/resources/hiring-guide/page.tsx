@@ -15,7 +15,7 @@ const points = [
       'The first question any good videographer should ask you is: who is this for and what do you need them to do afterwards? A promotional video for a charity campaign and a promotional video for a product launch are completely different pieces of work, even if they are the same length.',
       'Before you make a single call, write one sentence: who watches this, and what should they feel or do when it ends? That sentence is your brief. Everything else - length, format, style - follows from it.',
     ],
-    tip: 'If you struggle to write that sentence, that is normal. A good videographer will help you find it. But starting with it will save you time, money, and revision rounds.',
+    tip: 'If you struggle to write that sentence, that is normal. But starting with it will save you time, money, and revision rounds.',
   },
   {
     number: '02',
@@ -33,20 +33,20 @@ const points = [
     body: [
       'Most businesses book a videographer and then discover, too late, that the edit takes four to six weeks. If you have a campaign launch, a grant deadline, or a board presentation, that can be a serious problem.',
       'Ask about turnaround time before you book. A clear answer tells you two things: that they have a real workflow, and that they have delivered enough projects to know how long things take.',
-      'For reference, most events should return an edited video within 48 to 72 hours if you need a fast cut. Longer, more complex projects will take longer - but you should get a specific delivery date, not a vague estimate.',
+      'Professional video production is not a quick process to get right. A realistic expectation for a finished edit is two to four weeks from shoot day. If you need an express turnaround, that is possible in some cases - but it needs to be agreed before the quote is confirmed, not assumed.',
     ],
     tip: 'Get the delivery date in writing before the shoot. It does not need to be formal - an email confirmation is enough. It sets expectations for both sides.',
   },
   {
     number: '04',
-    heading: 'Tell them everything - especially the awkward bits',
+    heading: 'Know your access and constraints before the shoot day',
     body: [
-      "I've turned up to shoots where the client had booked me but forgotten to tell the venue. I've arrived to events where a key speaker refused to be filmed with no warning. I've been on jobs where the original brief changed entirely on the morning of the shoot.",
-      "None of these things make a shoot impossible. But they make everything harder, and they eat into the time that should be going into getting good footage.",
-      "Before your shoot, tell your videographer: any access restrictions at the venue, whether any attendees or participants have declined to be filmed, whether there are any sensitivities around what can be shown, and if the schedule is likely to run late or change.",
-      "The more information they have in advance, the better the output on the day.",
+      "Video production depends on access. Access to the venue, access to the people in it, access to the spaces and moments that make the edit work. Gaps in any of those are not usually recoverable on the day.",
+      "Before a shoot, it is worth being clear about any access restrictions at the venue, whether any attendees or participants have declined to be filmed, and whether there are sensitivities around what can or cannot be shown.",
+      "If the schedule is likely to change or run significantly late, that is also worth flagging in advance. A shoot that runs two hours over can produce a very different edit to the one that was planned.",
+      "The more that is known before the cameras arrive, the better the output when they leave.",
     ],
-    tip: 'A ten-minute briefing call the day before a shoot is worth more than a long email brief written two weeks earlier. Things change. Make sure your videographer knows.',
+    tip: 'A brief call the day before a shoot is worth more than a detailed email written two weeks earlier. Circumstances change between booking and shoot day - the people working on the project need to know.',
   },
   {
     number: '05',
@@ -91,7 +91,7 @@ export default function HiringGuide() {
           {points.map((point) => (
             <div key={point.number} className="border-t border-gray-200 dark:border-white/10 pt-12">
               <div className="flex items-start gap-6 mb-6">
-                <span className="text-5xl font-black text-gray-100 dark:text-white/10 leading-none shrink-0 select-none">
+                <span className="text-5xl font-black gradient-text leading-none shrink-0 select-none">
                   {point.number}
                 </span>
                 <h2 className="text-2xl font-black text-gray-900 dark:text-white leading-snug pt-2">
