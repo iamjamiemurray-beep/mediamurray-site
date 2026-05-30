@@ -3,8 +3,8 @@ import Link from 'next/link'
 import VideoCard from '@/components/VideoCard'
 
 export const metadata: Metadata = {
-  title: 'Promotional Videos',
-  description: 'Bespoke promotional and advertisement videos for businesses and organisations across Scotland. From concept to delivery.',
+  title: 'Promotional Video Production Scotland | MediaMurray',
+  description: 'Bespoke promotional films and adverts for businesses and organisations across Scotland. Based in Edinburgh, working regularly in Glasgow and across the Central Belt.',
 }
 
 export default function PromoVideo() {

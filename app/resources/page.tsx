@@ -8,6 +8,15 @@ export const metadata: Metadata = {
 
 const resources = [
   {
+    title: '5 Things to Know Before Hiring a Videographer in Scotland',
+    desc: 'What to ask, what to check, and what to watch out for — written from 170+ client projects and eight years of freelance work across Scotland.',
+    tag: 'Client Guide',
+    available: true,
+    href: '/resources/hiring-guide',
+    cta: 'Read the guide →',
+    meta: '~5 min read',
+  },
+  {
     title: 'Introduction to Content Creation',
     desc: 'Six sections covering equipment, filming, editing, and publishing. Written from personal experience — practical, no-nonsense, and free.',
     tag: 'Free Guide',

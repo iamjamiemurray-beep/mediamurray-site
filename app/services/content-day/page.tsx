@@ -4,8 +4,8 @@ import VideoCard from '@/components/VideoCard'
 import MasonryGallery from '@/components/MasonryGallery'
 
 export const metadata: Metadata = {
-  title: 'Content Day',
-  description: 'One full production day — maximum content output. Video and photography in a single session for weeks of social media content.',
+  title: 'Content Day Scotland | Video & Photo Production | MediaMurray',
+  description: 'Content day videographer covering Edinburgh, Glasgow and the Central Belt. One full production day delivering weeks of professional video and photo content.',
 }
 
 const shoots = [

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import VideoCard from '@/components/VideoCard'
 
 export const metadata: Metadata = {
-  title: 'Retainer Packages',
-  description: 'Consistent high-quality video and social content on a retainer basis. Monthly packages for businesses across Scotland.',
+  title: 'Video Retainer Packages Scotland | MediaMurray',
+  description: 'Monthly video retainer packages for Scottish businesses. Consistent, broadcast-quality content delivered on schedule. Based in Edinburgh, available across Scotland.',
 }
 
 export default function ShortForm() {

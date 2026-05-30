@@ -3,8 +3,8 @@ import Link from 'next/link'
 import MasonryGallery from '@/components/MasonryGallery'
 
 export const metadata: Metadata = {
-  title: 'Photography',
-  description: 'Professional photography packages for events, portraits, product and lifestyle shoots. Based in Scotland, available UK-wide.',
+  title: 'Photographer Scotland | Edinburgh & Glasgow | MediaMurray',
+  description: 'Professional photographer based in Edinburgh, covering events, corporate, portraits and lifestyle shoots across the Central Belt and Scotland. Available UK-wide.',
 }
 
 const gallery = [

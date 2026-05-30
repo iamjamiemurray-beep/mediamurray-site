@@ -4,8 +4,8 @@ import VideoCard from '@/components/VideoCard'
 import MasonryGallery from '@/components/MasonryGallery'
 
 export const metadata: Metadata = {
-  title: 'Event Coverage',
-  description: 'Professional event coverage combining videography, photography and editing. Conferences, awards, ceremonies across Scotland.',
+  title: 'Event Videographer Scotland | Glasgow & Edinburgh | MediaMurray',
+  description: 'Professional event videographer and photographer covering Scotland and the Central Belt. Conferences, awards ceremonies and corporate events. Edinburgh-based, Glasgow regular.',
 }
 
 const eventGroups = [

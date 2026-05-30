@@ -3,8 +3,8 @@ import Link from 'next/link'
 import ImageGallery from '@/components/ImageGallery'
 
 export const metadata: Metadata = {
-  title: 'Videography & Editing',
-  description: 'Professional freelance 4K videography and editing. Half-day and full-day rates available. Based in Scotland, available UK-wide.',
+  title: 'Videographer Scotland | Edinburgh & Glasgow | MediaMurray',
+  description: 'Professional 4K videographer based in Edinburgh, working across the Central Belt and Scotland. Corporate, commercial and documentary video production. Half-day and full-day rates.',
 }
 
 const frames = [
