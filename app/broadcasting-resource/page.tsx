@@ -184,7 +184,7 @@ export default function BroadcastingResource() {
             Getting Into TV: Real Emails From a Broadcasting Student
           </h1>
           <p className="text-[15px] text-gray-500 dark:text-white/40 leading-relaxed max-w-2xl">
-            Real emails sent and received by Jamie Murray while studying HNC and BA Honours Television Production at City of Glasgow College (2016–2020). A reference for anyone starting out in TV and film who wants to see how to contact people in the industry, chase work experience, and build connections from scratch.
+            Real emails sent and received by Jamie Murray while studying HND and BA Honours Television Production at City of Glasgow College (2016–2020). A reference for anyone starting out in TV and film who wants to see how to contact people in the industry, chase work experience, and build connections from scratch.
           </p>
           <div className="flex gap-6 mt-5 flex-wrap">
             {[
