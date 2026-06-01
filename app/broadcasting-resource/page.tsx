@@ -195,7 +195,7 @@ export default function BroadcastingResource() {
       <div className="max-w-[1140px] mx-auto px-6 md:px-8">
 
         {/* Tip */}
-        <div className="mt-8 bg-blue-50 dark:bg-gradient-to-br dark:from-[#0052D4]/10 dark:to-[#00C6FF]/5 border border-blue-200 dark:border-[#0052D4]/30 rounded-lg p-5 flex gap-4">
+        <div className="mt-8 bg-blue-50 dark:bg-[rgba(0,82,212,0.10)] border border-blue-200 dark:border-[#0052D4]/30 rounded-lg p-5 flex gap-4">
           <span className="text-xl flex-shrink-0">💡</span>
           <p className="text-[13px] text-gray-600 dark:text-white/65 leading-relaxed">
             <strong className="text-gray-900 dark:text-white font-bold">How to use this:</strong> The featured examples below show outreach emails that got real responses from industry professionals. In the full database, use the search bar to find emails by company (BBC, STV, Rangers TV), by topic, or by type of opportunity (work experience, freelance). Click any email to read it in full.
