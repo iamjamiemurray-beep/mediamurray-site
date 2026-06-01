@@ -48,7 +48,7 @@ function FeaturedCard({ email, variant = 'student' }: { email: Email; variant?: 
       className={`relative bg-gray-50 dark:bg-white/[0.03] border ${border} rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-100 dark:hover:bg-white/[0.05] flex flex-col gap-3`}
     >
       <span className={`absolute top-4 right-4 text-[9px] font-black tracking-[0.15em] uppercase bg-gradient-to-r ${accent} text-white px-2 py-1 rounded`}>
-        {isPro ? 'Pro' : 'Featured'}
+        {isPro ? 'Client Work' : 'Featured'}
       </span>
       <span className={`text-[10px] font-black tracking-[0.15em] uppercase bg-gradient-to-r ${accent} bg-clip-text text-transparent`}>
         {email.folder}
