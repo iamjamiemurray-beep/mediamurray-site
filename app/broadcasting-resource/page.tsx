@@ -28,20 +28,29 @@ function formatDate(d: string) {
   }
 }
 
-function FeaturedCard({ email }: { email: Email }) {
+function FeaturedCard({ email, variant = 'student' }: { email: Email; variant?: 'student' | 'pro' }) {
   const [open, setOpen] = useState(false)
   const title = email.displayTitle || email.subject
   const meta = email.displayMeta
+  const isPro = variant === 'pro'
+
+  const accent = isPro
+    ? 'from-[#B45309] to-[#F59E0B]'
+    : 'from-[#0052D4] to-[#00C6FF]'
+  const border = isPro
+    ? 'border-[#B45309]/30 dark:border-[#F59E0B]/25 hover:border-[#B45309]'
+    : 'border-[#0052D4]/30 dark:border-[#0052D4]/40 hover:border-[#0052D4]'
+  const toggleColor = isPro ? 'text-[#B45309] dark:text-[#F59E0B]' : 'text-[#0052D4]'
 
   return (
     <div
       onClick={() => setOpen(!open)}
-      className="relative bg-gray-50 dark:bg-white/[0.03] border border-[#0052D4]/30 dark:border-[#0052D4]/40 rounded-lg p-5 cursor-pointer transition-all hover:border-[#0052D4] hover:bg-gray-100 dark:hover:bg-white/[0.05] flex flex-col gap-3"
+      className={`relative bg-gray-50 dark:bg-white/[0.03] border ${border} rounded-lg p-5 cursor-pointer transition-all hover:bg-gray-100 dark:hover:bg-white/[0.05] flex flex-col gap-3`}
     >
-      <span className="absolute top-4 right-4 text-[9px] font-black tracking-[0.15em] uppercase bg-gradient-to-r from-[#0052D4] to-[#00C6FF] text-white px-2 py-1 rounded">
-        Featured
+      <span className={`absolute top-4 right-4 text-[9px] font-black tracking-[0.15em] uppercase bg-gradient-to-r ${accent} text-white px-2 py-1 rounded`}>
+        {isPro ? 'Pro' : 'Featured'}
       </span>
-      <span className="text-[10px] font-black tracking-[0.15em] uppercase bg-gradient-to-r from-[#0052D4] to-[#00C6FF] bg-clip-text text-transparent">
+      <span className={`text-[10px] font-black tracking-[0.15em] uppercase bg-gradient-to-r ${accent} bg-clip-text text-transparent`}>
         {email.folder}
       </span>
       <div className="text-[15px] font-bold text-gray-900 dark:text-white leading-snug pr-14">{title}</div>
@@ -55,7 +64,7 @@ function FeaturedCard({ email }: { email: Email }) {
         <p className="text-[12px] text-gray-500 dark:text-white/40 leading-relaxed line-clamp-4">{email.body.substring(0, 280)}</p>
       )}
       {email.body && (
-        <span className={`text-[10px] font-black tracking-wider uppercase ${open ? 'text-gray-400 dark:text-white/30' : 'text-[#0052D4]'}`}>
+        <span className={`text-[10px] font-black tracking-wider uppercase ${open ? 'text-gray-400 dark:text-white/30' : toggleColor}`}>
           {open ? 'Collapse ↑' : 'Read full email ↓'}
         </span>
       )}
@@ -267,12 +276,24 @@ export default function BroadcastingResource() {
           </div>
         </div>
 
-        {/* Featured */}
-        {data && data.featured.length > 0 && (
+        {/* Featured - student outreach */}
+        {data && data.featured.filter(e => e.folder !== 'Client Communications').length > 0 && (
           <div className="mt-10">
-            <p className="text-[10px] font-black tracking-[0.2em] uppercase text-gray-400 dark:text-white/35 mb-4">Featured examples</p>
+            <p className="text-[10px] font-black tracking-[0.2em] uppercase text-gray-400 dark:text-white/35 mb-1">Featured examples</p>
+            <p className="text-[12px] text-gray-400 dark:text-white/30 mb-4">Student outreach emails that got real responses from industry professionals</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {data.featured.map((e, i) => <FeaturedCard key={i} email={e} />)}
+              {data.featured.filter(e => e.folder !== 'Client Communications').map((e, i) => <FeaturedCard key={i} email={e} variant="student" />)}
+            </div>
+          </div>
+        )}
+
+        {/* Featured - professional work */}
+        {data && data.featured.filter(e => e.folder === 'Client Communications').length > 0 && (
+          <div className="mt-10">
+            <p className="text-[10px] font-black tracking-[0.2em] uppercase text-gray-400 dark:text-white/35 mb-1">Professional examples</p>
+            <p className="text-[12px] text-gray-400 dark:text-white/30 mb-4">Real client communications from MediaMurray — quotes, proposals, and project scoping</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+              {data.featured.filter(e => e.folder === 'Client Communications').map((e, i) => <FeaturedCard key={i} email={e} variant="pro" />)}
             </div>
           </div>
         )}
