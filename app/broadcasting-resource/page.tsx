@@ -122,11 +122,25 @@ export default function BroadcastingResource() {
               displayMeta: 'Jamie contacted director Matt Pinder after watching his BAFTA-winning documentary on the Margaret Fleming case — referencing a personal connection to the Isle of Bute. Pinder responded the same day and they met in person the following week.',
             }
           }
-          if (e.subject.includes('Stephen Bennett') || e.to?.includes('stephenabennett')) {
+          if (e.subject === 'Work experience request — Scottish documentary filmmaker' || (e.subject.includes('Stephen Bennett') && !e.subject.includes('favour'))) {
             return {
               ...e,
               displayTitle: 'Work experience request — Scottish documentary filmmaker',
               displayMeta: 'Cold email to Stephen Bennett, Scottish Producer/Director known for Dunblane: Our Story (BAFTA winner) and The Country Council. Jamie researched his work in depth before writing. Bennett replied within the hour calling it "one of the best letters I have received."',
+            }
+          }
+          if (e.subject === 'SSSA Film Director Application 2020') {
+            return {
+              ...e,
+              displayTitle: 'Repeat application — Film Director, Scottish Social Services Awards',
+              displayMeta: 'A strong application that references previous work with the same organisation and lists specific named projects: Scottish Parliament, Rangers Charity Foundation, BBC The Social. Response came within 30 minutes.',
+            }
+          }
+          if (e.subject === 'A professional asking a student for camera advice') {
+            return {
+              ...e,
+              displayTitle: 'What networking can lead to — a professional asking a student for advice',
+              displayMeta: 'After building a genuine relationship, award-winning documentary filmmaker Stephen Bennett came back to Jamie (a student at the time) to ask for Sony A7III autofocus settings. Shows what happens when you make yourself useful.',
             }
           }
           return e
