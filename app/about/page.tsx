@@ -42,6 +42,9 @@ const btsImages = [
   { src: '/jamiecreative1.jpg', alt: 'Jamie working' },
   { src: '/jamiecreative2.jpg', alt: 'Jamie working' },
   { src: '/jamiewritingatdesk.jpg', alt: 'Jamie at desk' },
+  { src: '/jamiepavillionbutefilmingphoto.jpg', alt: 'Jamie filming at the Pavilion, Isle of Bute' },
+  { src: '/Rangersfilmingpitchside.jpg', alt: 'Jamie filming pitchside at Rangers' },
+  { src: '/jamiefilmingpovibrox.jpeg', alt: 'Jamie filming POV at Ibrox' },
 ]
 
 export default function About() {

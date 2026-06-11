@@ -57,20 +57,29 @@ export default function MasonryGallery({ images, className = '', uniform = false
           ))}
         </div>
       ) : (
-        <div className={`columns-2 sm:columns-3 lg:columns-4 gap-3 ${className}`}>
-          {images.map((img, i) => (
-            <div
-              key={i}
-              className="break-inside-avoid mb-3 overflow-hidden rounded-sm group cursor-zoom-in"
-              onClick={() => setOpen(i)}
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                width={600}
-                height={900}
-                className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
-              />
+        <div className={`flex gap-3 items-start ${className}`}>
+          {[0, 1, 2, 3].map((col) => (
+            <div key={col} className="flex-1 flex flex-col gap-3">
+              {images
+                .filter((_, i) => i % 4 === col)
+                .map((img, j) => {
+                  const origIdx = col + j * 4
+                  return (
+                    <div
+                      key={j}
+                      className="overflow-hidden rounded-sm group cursor-zoom-in"
+                      onClick={() => setOpen(origIdx)}
+                    >
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        width={600}
+                        height={900}
+                        className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                  )
+                })}
             </div>
           ))}
         </div>

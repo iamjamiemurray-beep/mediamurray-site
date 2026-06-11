@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import VideoCard from '@/components/VideoCard'
+import ReelCard from '@/components/ReelCard'
 import ScrollReveal from '@/components/ScrollReveal'
 import RotatingServices, { RotatingServicesInline } from '@/components/RotatingServices'
 import RotatingTestimonials from '@/components/RotatingTestimonials'
@@ -113,7 +114,7 @@ const services = [
   },
   {
     title: 'Content Day',
-    desc: 'One full production day — maximum content output. Walk away with weeks of professional video and photo content.',
+    desc: 'One full production day - maximum content output. Walk away with weeks of professional video and photo content.',
     href: '/services/content-day',
     photo: '/contentpackagesservicespicture.png',
     photoPosition: 'center center',
@@ -190,7 +191,7 @@ export default function Home() {
             <div className="hero-animate hero-animate-delay-3 relative hidden lg:block -mt-14">
               <Image
                 src="/jamie-portrait.png"
-                alt="Jamie Murray — MediaMurray videographer"
+                alt="Jamie Murray - MediaMurray videographer"
                 width={600}
                 height={700}
                 className="w-full h-auto object-cover rounded-sm"
@@ -204,7 +205,7 @@ export default function Home() {
       </section>
 
 
-      {/* Trusted By — Client Faces */}
+      {/* Trusted By - Client Faces */}
       <section className="bg-[#0a0a0a] py-12 border-b border-white/10">
         <ScrollReveal className="max-w-6xl mx-auto px-6 flex flex-col items-center gap-6 text-center">
           <p className="text-2xl sm:text-3xl font-light text-white">
@@ -268,14 +269,14 @@ export default function Home() {
             View All →
           </Link>
         </div>
-        {/* Featured — RJC */}
+        {/* Featured - RJC */}
         <div className="mb-8 max-w-3xl mx-auto">
           {/* Gradient border wrapper */}
           <div className="p-[2px] rounded-sm bg-gradient-to-r from-[#0052D4] to-[#00C6FF]">
             <div className="rounded-sm overflow-hidden">
               <VideoCard
                 id="APrjtZ7kTGk"
-                title="Working at Rothesay Joint Campus — Full Promo"
+                title="Working at Rothesay Joint Campus - Full Promo"
                 category="Corporate"
                 featured
                 stats={[
@@ -303,14 +304,14 @@ export default function Home() {
         </div>
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <VideoCard id="VVGPcQIk0cY" title="An Evening with Graeme Souness — BTS" category="Event" />
-          <VideoCard id="hDpazT7xfFc" title="The Whisky Journal — Promo Film" category="Commercial" />
+          <VideoCard id="VVGPcQIk0cY" title="An Evening with Graeme Souness - BTS" category="Event" />
+          <VideoCard id="hDpazT7xfFc" title="The Whisky Journal - Promo Film" category="Commercial" />
           <VideoCard id="B6dOtVrT6Bg" title="International Fair Trade Towns Conference 2025" category="Event" />
           <VideoCard id="T68PCvwUwH0" title="Visit Bute: Your Own Adventure Island" category="Commercial" />
-          <VideoCard id="9zONKRiBPm0" title="Warrior In Training — Pilates Promo" category="Commercial" />
+          <VideoCard id="9zONKRiBPm0" title="Warrior In Training - Pilates Promo" category="Commercial" />
           <VideoCard
             id="5cv1GW6mlm8"
-            title="West Lowland Battalion ACF — The Only Way Is Up"
+            title="West Lowland Battalion ACF - The Only Way Is Up"
             category="Corporate"
             stats={[
               { value: '23K', label: 'organic views' },
@@ -320,6 +321,24 @@ export default function Home() {
             ]}
           />
         </div>
+        </ScrollReveal>
+      </section>
+
+
+      {/* Reels */}
+      <section className="max-w-6xl mx-auto px-6 pb-24">
+        <ScrollReveal>
+          <div className="mb-10">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Social Content</p>
+            <h2 className="text-4xl font-black text-gray-900 dark:text-white">Reels</h2>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+            <ReelCard shortcode="C-pzdFnI1Co" title="Aerial Scotland" />
+            <ReelCard shortcode="C4tLFhUI3wv" title="Jimmy Bell Tribute Evening" />
+            <ReelCard shortcode="CpAqtUIDAos" title="Maison Dieu Coffee" />
+            <ReelCard shortcode="Cy6Cu_2rneV" title="Cortne - Glad Cafe Glasgow" />
+            <ReelCard shortcode="CwGA364M3Ut" title="The Highways - Concert Promo" />
+          </div>
         </ScrollReveal>
       </section>
 
@@ -367,14 +386,14 @@ export default function Home() {
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">The Process</p>
           <h2 className="text-4xl font-black mb-4 text-gray-900 dark:text-white">How It Works</h2>
           <p className="text-gray-500 dark:text-white/50 text-base mb-16 max-w-2xl">
-            Every project follows the same clear process — from first message to final delivery.
+            Every project follows the same clear process - from first message to final delivery.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-0">
             {[
               {
                 step: '01',
                 title: 'Brief',
-                desc: "Tell me what you need. The more detail the better — goals, audience, deadlines, any footage or assets you already have.",
+                desc: "Tell me what you need. The more detail the better - goals, audience, deadlines, any footage or assets you already have.",
               },
               {
                 step: '02',
@@ -384,17 +403,17 @@ export default function Home() {
               {
                 step: '03',
                 title: 'Shoot Day',
-                desc: "I handle everything on the day. Professional, efficient, and relaxed — clients consistently say it's easier than they expected.",
+                desc: "I handle everything on the day. Professional, efficient, and relaxed - clients consistently say it's easier than they expected.",
               },
               {
                 step: '04',
                 title: 'Edit & Review',
-                desc: 'I edit to the brief. You review the first cut and feed back — one round of revisions is included as standard.',
+                desc: 'I edit to the brief. You review the first cut and feed back - one round of revisions is included as standard.',
               },
               {
                 step: '05',
                 title: 'Delivery',
-                desc: 'Final files land in your inbox via a transfer link, optimised for wherever you need them — web, social, broadcast.',
+                desc: 'Final files land in your inbox via a transfer link, optimised for wherever you need them - web, social, broadcast.',
               },
             ].map((item, i, arr) => (
               <div
@@ -513,7 +532,7 @@ export default function Home() {
                     <div className="flex-1 bg-[#0052D4] p-6 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.02] cursor-default">
                       <Stars />
                       <p className="text-white leading-relaxed text-sm flex-1">&ldquo;It&rsquo;s amazing!! We shared it with the team and even had a few people a bit emotional.&rdquo;</p>
-                      <Attr name="Emily Beever" org="Scottish Youth Parliament" project="Dear Scotland's Future — SYP Manifesto Film" projectUrl="/work/video/kg3wpo3TTL0" />
+                      <Attr name="Emily Beever" org="Scottish Youth Parliament" project="Dear Scotland's Future - SYP Manifesto Film" projectUrl="/work/video/kg3wpo3TTL0" />
                     </div>
                     <div className="flex-1 bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 p-6 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.02] cursor-default">
                       <Stars />
@@ -532,7 +551,7 @@ export default function Home() {
                   </div>
                   <div className="bg-[#0a0a0a] border border-white/10 p-8 rounded-sm flex flex-col transition-transform duration-300 hover:scale-[1.01] cursor-default">
                     <Stars />
-                    <p className="text-white/80 leading-relaxed text-sm flex-1">&ldquo;Working with Jamie was excellent. He was very open to my ideas and we collaborated creatively. He very much put me at ease — I&rsquo;m not one for being in front of the camera. The service he provides is 10/10 and he got the images back to me very quickly. Highly recommend.&rdquo;</p>
+                    <p className="text-white/80 leading-relaxed text-sm flex-1">&ldquo;Working with Jamie was excellent. He was very open to my ideas and we collaborated creatively. He very much put me at ease - I&rsquo;m not one for being in front of the camera. The service he provides is 10/10 and he got the images back to me very quickly. Highly recommend.&rdquo;</p>
                     <Attr name="Kevin Lawrence" org="Kev Lawrence Design" project="Promotional Film & Portrait Photography" photo="/Kevin-Lawrence.png" />
                   </div>
                 </div>
@@ -556,7 +575,7 @@ export default function Home() {
               <h2 className="text-4xl font-black text-gray-900 dark:text-white">Professional Equipment</h2>
             </div>
             <p className="hidden sm:block text-sm text-gray-400 dark:text-white/30 max-w-xs text-right leading-relaxed">
-              Every shoot uses the same professional-grade kit — no compromise on quality.
+              Every shoot uses the same professional-grade kit - no compromise on quality.
             </p>
           </div>
 
@@ -615,7 +634,7 @@ export default function Home() {
             <div className="hidden lg:flex justify-start items-end">
               <Image
                 src="/jamiehero6.png"
-                alt="Jamie Murray — MediaMurray"
+                alt="Jamie Murray - MediaMurray"
                 width={800}
                 height={1000}
                 className="h-[500px] w-auto object-contain -ml-4"

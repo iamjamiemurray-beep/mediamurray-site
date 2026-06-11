@@ -15,11 +15,21 @@ const SERVICES = [
   'Other / Not Sure',
 ]
 
+const REFERRAL_SOURCES = [
+  'Google Search',
+  'Instagram',
+  'LinkedIn',
+  'Referral / Word of Mouth',
+  'Returning Client',
+  'Other',
+]
+
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>('idle')
   const [form, setForm] = useState({
     name: '', email: '', company: '', phone: '',
-    service: '', date: '', message: '',
+    service: '', date: '', location: '', deadline: '',
+    referral: '', message: '',
   })
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
@@ -88,16 +98,33 @@ export default function ContactForm() {
           </select>
         </div>
         <div>
-          <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2">Date / When</label>
-          <input type="text" value={form.date} onChange={set('date')} placeholder="e.g. June 2026 or TBC" className={inputClass} />
+          <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2">Preferred Date(s) *</label>
+          <input type="text" required value={form.date} onChange={set('date')} placeholder="e.g. 15 July 2026 or TBC" className={inputClass} />
+        </div>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2">Location *</label>
+          <input type="text" required value={form.location} onChange={set('location')} placeholder="e.g. Edinburgh, Glasgow, Bute" className={inputClass} />
+        </div>
+        <div>
+          <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2">Deadline for Final Files</label>
+          <input type="text" value={form.deadline} onChange={set('deadline')} placeholder="e.g. 30 July 2026 or ASAP" className={inputClass} />
         </div>
       </div>
       <div>
+        <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2">How Did You Find MediaMurray?</label>
+        <select value={form.referral} onChange={set('referral')} className={selectClass}>
+          <option value="">Select…</option>
+          {REFERRAL_SOURCES.map(s => <option key={s} value={s}>{s}</option>)}
+        </select>
+      </div>
+      <div>
         <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2">Project Details *</label>
-        <textarea required value={form.message} onChange={set('message')} placeholder="Tell me about your project — what you need, what you're trying to achieve, any specific requirements…" rows={6} className={`${inputClass} resize-none`} />
+        <textarea required value={form.message} onChange={set('message')} placeholder="Tell me about your project - what you need, what you're trying to achieve, any specific requirements…" rows={6} className={`${inputClass} resize-none`} />
       </div>
       {status === 'error' && (
-        <p className="text-red-500 text-sm">Something went wrong — please email <a href="mailto:mail@mediamurray.com" className="underline">mail@mediamurray.com</a> directly.</p>
+        <p className="text-red-500 text-sm">Something went wrong - please email <a href="mailto:mail@mediamurray.com" className="underline">mail@mediamurray.com</a> directly.</p>
       )}
       <button
         type="submit"

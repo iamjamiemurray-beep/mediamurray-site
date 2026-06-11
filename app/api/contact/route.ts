@@ -5,7 +5,7 @@ const CLIENT_DB = '90cc60d38cad4df7b621ba4509677559'
 
 export async function POST(req: NextRequest) {
   const body = await req.json()
-  const { name, email, company, message, phone, service, date } = body
+  const { name, email, company, message, phone, service, date, location, deadline, referral } = body
 
   if (!name || !email || !message) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
@@ -16,12 +16,15 @@ export async function POST(req: NextRequest) {
   const text = `
 New enquiry from mediamurray.com/contact
 
-Name:    ${name}
-Email:   ${email}
-${company ? `Company: ${company}` : ''}
-${phone ? `Phone:   ${phone}` : ''}
-${service ? `Service: ${service}` : ''}
-${date ? `Date:    ${date}` : ''}
+Name:     ${name}
+Email:    ${email}
+${company ? `Company:  ${company}` : ''}
+${phone ? `Phone:    ${phone}` : ''}
+${service ? `Service:  ${service}` : ''}
+${date ? `Date:     ${date}` : ''}
+${location ? `Location: ${location}` : ''}
+${deadline ? `Deadline: ${deadline}` : ''}
+${referral ? `Source:   ${referral}` : ''}
 
 Project Details:
 ${message}
@@ -47,6 +50,9 @@ ${message}
     const notesText = [
       phone ? `Phone: ${phone}` : null,
       date ? `Preferred date: ${date}` : null,
+      location ? `Location: ${location}` : null,
+      deadline ? `Deadline for final files: ${deadline}` : null,
+      referral ? `Source: ${referral}` : null,
       `Project details: ${message}`,
     ].filter(Boolean).join('\n')
 

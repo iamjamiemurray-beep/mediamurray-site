@@ -85,3 +85,18 @@ body {
 .hero-animate-delay-2 { animation-delay: 0.25s; }
 .hero-animate-delay-3 { animation-delay: 0.4s; }
 .hero-animate-delay-4 { animation-delay: 0.55s; }
+
+/* Animated gradient border wrapper */
+@keyframes spin-gradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-gradient-border {
+  background: linear-gradient(270deg, #0052D4, #00C6FF, #4facfe, #0052D4);
+  background-size: 300% 300%;
+  animation: spin-gradient 4s ease infinite;
+  padding: 2px;
+  border-radius: 4px;
+}

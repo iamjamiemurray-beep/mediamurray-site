@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ImageGallery from '@/components/ImageGallery'
 import VideoCard from '@/components/VideoCard'
+import ReelCard from '@/components/ReelCard'
 
 export const metadata: Metadata = {
   title: 'Work',
@@ -43,11 +44,11 @@ export default function Work() {
           170+ projects across commercial, event, documentary, sport and charity sectors.
         </p>
 
-        {/* RJC — Featured full width */}
+        {/* RJC - Featured full width */}
         <div className="mb-6">
           <VideoCard
             id="APrjtZ7kTGk"
-            title="Working at Rothesay Joint Campus — Full Promo"
+            title="Working at Rothesay Joint Campus - Full Promo"
             category="Corporate"
             featured
             stats={[
@@ -67,7 +68,7 @@ export default function Work() {
           <VideoCard id="T68PCvwUwH0" title="Visit Bute: Your Own Adventure Island" category="Commercial" />
           <VideoCard
             id="5cv1GW6mlm8"
-            title="West Lowland Battalion ACF — The Only Way Is Up"
+            title="West Lowland Battalion ACF - The Only Way Is Up"
             category="Corporate"
             stats={[
               { value: '23K', label: 'organic views' },
@@ -79,14 +80,29 @@ export default function Work() {
           <VideoCard id="lGnpNxBG4xU" title="Scottish Women's Wellbeing Summit 2025" category="Conference" />
           <VideoCard id="VV1P0zK_hP4" title="Inverclyde Whisky Festival 2025" category="Event" />
           <VideoCard id="B6dOtVrT6Bg" title="International Fair Trade Towns Conference 2025" category="Conference" />
-          <VideoCard id="hDpazT7xfFc" title="The Whisky Journal — Promo Film" category="Commercial" />
+          <VideoCard id="hDpazT7xfFc" title="The Whisky Journal - Promo Film" category="Commercial" />
           <VideoCard id="fVm0VBWuyt8" title="Rita Rusk Promo (Socially Creative)" category="Commercial" />
-          <VideoCard id="9zONKRiBPm0" title="Warrior In Training — Pilates Promo" category="Commercial" />
-          <VideoCard id="VVGPcQIk0cY" title="An Evening with Graeme Souness — BTS" category="Event" />
-          <VideoCard id="MuUrZOhwSAQ" title="The Highways — Stand Up And Be Counted" category="Music Video" />
-          <VideoCard id="v4sbb5wXikU" title="Bute Community Forest — Exhibition Promo" category="Charity" />
-          <VideoCard id="b9phaKPVKxY" title="Youth Collective — Scottish Fair Trade Film" category="Public Sector" />
-          <VideoCard id="7eQSVwN0oBU" title="IBAC — Promotional Film" category="Community" />
+          <VideoCard id="9zONKRiBPm0" title="Warrior In Training - Pilates Promo" category="Commercial" />
+          <VideoCard id="VVGPcQIk0cY" title="An Evening with Graeme Souness - BTS" category="Event" />
+          <VideoCard id="MuUrZOhwSAQ" title="The Highways - Stand Up And Be Counted" category="Music Video" />
+          <VideoCard id="v4sbb5wXikU" title="Bute Community Forest - Exhibition Promo" category="Charity" />
+          <VideoCard id="b9phaKPVKxY" title="Youth Collective - Scottish Fair Trade Film" category="Public Sector" />
+          <VideoCard id="7eQSVwN0oBU" title="IBAC - Promotional Film" category="Community" />
+        </div>
+      </section>
+
+      {/* Reels Section */}
+      <section className="border-t border-gray-200 dark:border-white/10 py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Social Content</p>
+          <h2 className="text-3xl font-black mb-12 text-gray-900 dark:text-white">Reels</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+            <ReelCard shortcode="C-pzdFnI1Co" title="Aerial Scotland" />
+            <ReelCard shortcode="C4tLFhUI3wv" title="Jimmy Bell Tribute Evening" />
+            <ReelCard shortcode="CpAqtUIDAos" title="Maison Dieu Coffee" />
+            <ReelCard shortcode="Cy6Cu_2rneV" title="Cortne - Glad Cafe Glasgow" />
+            <ReelCard shortcode="CwGA364M3Ut" title="The Highways - Concert Promo" />
+          </div>
         </div>
       </section>
 
