@@ -349,32 +349,33 @@ export default function Home() {
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">What I Do</p>
           <h2 className="text-4xl font-black mb-12 text-gray-900 dark:text-white">Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {services.map((s) => (
-              <Link
-                key={s.href}
-                href={s.href}
-                className="group relative overflow-hidden rounded-sm bg-gray-100 dark:bg-white/5 block transition-[box-shadow] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] hover:ring-2 hover:ring-[#0052D4] hover:ring-offset-0"
-              >
-                {/* Photo */}
-                <div className="relative h-52 overflow-hidden">
-                  <Image
-                    src={s.photo}
-                    alt={s.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    style={{ objectPosition: s.photoPosition || 'center center' }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                </div>
-                {/* Text */}
-                <div className="p-6 bg-white dark:bg-[#111] border border-t-0 border-gray-200 dark:border-white/10">
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <h3 className="font-black text-base text-gray-900 dark:text-white leading-tight">{s.title}</h3>
-                    <span className="text-[#0052D4] group-hover:text-[#00C6FF] transition-colors flex-shrink-0 mt-0.5">→</span>
+            {services.map((s, i) => (
+              <ScrollReveal key={s.href} delay={(i % 3) * 70}>
+                <Link
+                  href={s.href}
+                  className="group relative overflow-hidden rounded-sm bg-gray-100 dark:bg-white/5 block transition-[box-shadow,transform] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] hover:ring-2 hover:ring-[#0052D4] hover:ring-offset-0 hover:-translate-y-1"
+                >
+                  {/* Photo */}
+                  <div className="relative h-52 overflow-hidden">
+                    <Image
+                      src={s.photo}
+                      alt={s.title}
+                      fill
+                      className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-105"
+                      style={{ objectPosition: s.photoPosition || 'center center' }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                   </div>
-                  <p className="text-sm text-gray-500 dark:text-white/50 leading-relaxed">{s.desc}</p>
-                </div>
-              </Link>
+                  {/* Text */}
+                  <div className="p-6 bg-white dark:bg-[#111] border border-t-0 border-gray-200 dark:border-white/10">
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <h3 className="font-black text-base text-gray-900 dark:text-white leading-tight">{s.title}</h3>
+                      <span className="text-[#0052D4] group-hover:text-[#00C6FF] group-hover:translate-x-1 transition-all flex-shrink-0 mt-0.5 inline-block">→</span>
+                    </div>
+                    <p className="text-sm text-gray-500 dark:text-white/50 leading-relaxed">{s.desc}</p>
+                  </div>
+                </Link>
+              </ScrollReveal>
             ))}
           </div>
         </ScrollReveal>
@@ -416,17 +417,18 @@ export default function Home() {
                 desc: 'Final files land in your inbox via a transfer link, optimised for wherever you need them - web, social, broadcast.',
               },
             ].map((item, i, arr) => (
-              <div
-                key={item.step}
-                className={`relative flex flex-col p-8 border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] ${i < arr.length - 1 ? 'lg:border-r-0' : ''} ${i > 0 ? 'border-t-0 lg:border-t lg:border-l-0 lg:border-r-0' : ''} first:border-t last:lg:border-r`}
-              >
-                <span className="text-5xl font-black gradient-text leading-none mb-6 select-none">{item.step}</span>
-                <h3 className="font-black text-lg text-gray-900 dark:text-white mb-3 uppercase tracking-wide">{item.title}</h3>
-                <p className="text-sm text-gray-500 dark:text-white/50 leading-relaxed">{item.desc}</p>
-                {i < arr.length - 1 && (
-                  <span className="hidden lg:block absolute top-1/2 -right-3 -translate-y-1/2 z-10 text-gray-300 dark:text-white/20 text-xl select-none">→</span>
-                )}
-              </div>
+              <ScrollReveal key={item.step} delay={i * 80} className={i < arr.length - 1 ? 'lg:border-r-0' : ''}>
+                <div
+                  className={`group relative flex flex-col p-8 border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] transition-colors duration-300 hover:bg-gray-50 dark:hover:bg-white/[0.04] ${i > 0 ? 'border-t-0 lg:border-t lg:border-l-0 lg:border-r-0' : ''} first:border-t last:lg:border-r`}
+                >
+                  <span className="text-5xl font-black gradient-text leading-none mb-6 select-none transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:-translate-y-1">{item.step}</span>
+                  <h3 className="font-black text-lg text-gray-900 dark:text-white mb-3 uppercase tracking-wide">{item.title}</h3>
+                  <p className="text-sm text-gray-500 dark:text-white/50 leading-relaxed">{item.desc}</p>
+                  {i < arr.length - 1 && (
+                    <span className="hidden lg:block absolute top-1/2 -right-3 -translate-y-1/2 z-10 text-gray-300 dark:text-white/20 text-xl select-none">→</span>
+                  )}
+                </div>
+              </ScrollReveal>
             ))}
           </div>
           <div className="mt-10 text-center">
