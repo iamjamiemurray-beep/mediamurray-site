@@ -104,7 +104,7 @@ const services = [
     title: 'Retainer Packages',
     desc: 'Consistent, high-quality video and social content on a monthly retainer. Predictable output, delivered on schedule.',
     href: '/services/retainer',
-    photo: '/retainerpackagesservicepicture.png',
+    photo: '/retainerpackagesservicepicture.jpg',
     photoPosition: 'center center',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
@@ -116,7 +116,7 @@ const services = [
     title: 'Content Day',
     desc: 'One full production day - maximum content output. Walk away with weeks of professional video and photo content.',
     href: '/services/content-day',
-    photo: '/contentpackagesservicespicture.png',
+    photo: '/contentpackagesservicespicture.jpg',
     photoPosition: 'center center',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
@@ -175,20 +175,20 @@ export default function Home() {
               <div className="hero-animate hero-animate-delay-4 flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/work"
-                  className="gradient-bg text-white font-bold px-8 py-4 rounded-sm hover:opacity-90 transition-opacity text-sm uppercase tracking-wider"
+                  className="btn-press gradient-bg text-white font-bold px-8 py-4 rounded-sm hover:opacity-90 transition-opacity text-sm uppercase tracking-wider"
                 >
                   View Work
                 </Link>
                 <Link
                   href="/start"
-                  className="border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white font-bold px-8 py-4 rounded-sm hover:border-gray-500 dark:hover:border-white/50 transition-colors text-sm uppercase tracking-wider"
+                  className="btn-press border border-gray-300 dark:border-white/20 text-gray-900 dark:text-white font-bold px-8 py-4 rounded-sm hover:border-gray-500 dark:hover:border-white/50 transition-colors text-sm uppercase tracking-wider"
                 >
                   Get a Quote
                 </Link>
               </div>
               <RotatingServicesInline />
             </div>
-            <div className="hero-animate hero-animate-delay-3 relative hidden lg:block -mt-14">
+            <div className="hero-animate hero-animate-delay-3 relative lg:-mt-14">
               <Image
                 src="/jamie-portrait.png"
                 alt="Jamie Murray - MediaMurray videographer"
@@ -353,7 +353,7 @@ export default function Home() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="group relative overflow-hidden rounded-sm bg-gray-100 dark:bg-white/5 block transition-all duration-300 hover:ring-2 hover:ring-[#0052D4] hover:ring-offset-0"
+                className="group relative overflow-hidden rounded-sm bg-gray-100 dark:bg-white/5 block transition-[box-shadow] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] hover:ring-2 hover:ring-[#0052D4] hover:ring-offset-0"
               >
                 {/* Photo */}
                 <div className="relative h-52 overflow-hidden">
@@ -430,14 +430,12 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-10 text-center">
-            <a
-              href="https://tally.so/r/W0YkPN"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="gradient-bg text-white font-bold px-8 py-4 rounded-sm hover:opacity-90 transition-opacity text-sm uppercase tracking-wider inline-block"
+            <Link
+              href="/start"
+              className="btn-press gradient-bg text-white font-bold px-8 py-4 rounded-sm hover:opacity-90 transition-opacity text-sm uppercase tracking-wider inline-block"
             >
               Start a Project →
-            </a>
+            </Link>
           </div>
         </ScrollReveal>
       </section>
@@ -591,7 +589,7 @@ export default function Home() {
             ].map((item) => (
               <div
                 key={item.name}
-                className="group flex-shrink-0 w-[130px] sm:flex-1 relative rounded-sm overflow-hidden bg-gray-100 dark:bg-white/[0.04] border border-gray-200 dark:border-white/10 transition-all duration-300 hover:border-[#0052D4] dark:hover:border-white/30 hover:-translate-y-1 hover:shadow-lg"
+                className="group flex-shrink-0 w-[130px] sm:flex-1 relative rounded-sm overflow-hidden bg-gray-100 dark:bg-white/[0.04] border border-gray-200 dark:border-white/10 transition-[border-color,transform,box-shadow] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] hover:border-[#0052D4] dark:hover:border-white/30 hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="relative aspect-square overflow-hidden bg-gray-100 dark:bg-white/[0.06]">
                   <Image
@@ -626,7 +624,7 @@ export default function Home() {
               </p>
               <Link
                 href="/start"
-                className="bg-white text-[#0052D4] font-black px-10 py-4 rounded-sm hover:bg-white/90 transition-colors text-sm uppercase tracking-wider inline-block"
+                className="btn-press bg-white text-[#0052D4] font-black px-10 py-4 rounded-sm hover:bg-white/90 transition-colors text-sm uppercase tracking-wider inline-block"
               >
                 Get a Free Quote
               </Link>
