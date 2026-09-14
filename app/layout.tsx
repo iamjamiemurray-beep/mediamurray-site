@@ -3,6 +3,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import LocalBusinessSchema from '@/components/LocalBusinessSchema'
 
 export const metadata: Metadata = {
   title: {
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-GB" suppressHydrationWarning>
       <body className="antialiased bg-white dark:bg-[#0a0a0a] transition-colors duration-200">
+        <LocalBusinessSchema />
         <ThemeProvider>
           <Navbar />
           <main className="pt-9">{children}</main>
