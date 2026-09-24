@@ -15,14 +15,6 @@ const SERVICE_TYPES = [
   { id: 'unsure', label: "I'm not sure yet", sub: 'Happy to be guided' },
 ]
 
-const BUDGET_OPTIONS = [
-  { id: 'under300', label: 'Under £300' },
-  { id: '300_600', label: '£300 – £600' },
-  { id: '600_1200', label: '£600 – £1,200' },
-  { id: '1200plus', label: '£1,200+' },
-  { id: 'unsure', label: "I don't know yet" },
-]
-
 const TIMELINE_OPTIONS = [
   { id: 'urgent', label: 'Within 2 weeks' },
   { id: 'month', label: '2–4 weeks' },
@@ -158,47 +150,12 @@ function OptionCard({ selected, onClick, label, sub }: {
 }
 
 /* ────────────────────────────────────────────────────────── */
-/* Disqualified screen                                         */
-/* ────────────────────────────────────────────────────────── */
-
-function Disqualified({ onBack }: { onBack: () => void }) {
-  return (
-    <div className="text-center max-w-lg mx-auto py-8">
-      <p className="text-4xl mb-6">👋</p>
-      <h2 className="text-2xl font-black mb-4 text-gray-900 dark:text-white">Thanks for Getting in Touch</h2>
-      <p className="text-gray-500 dark:text-white/50 leading-relaxed mb-6">
-        Based on your budget, this project may be below the minimum day rate of £300. MediaMurray focuses on professional, brief-to-delivery projects — not volume work at low rates.
-      </p>
-      <p className="text-gray-500 dark:text-white/50 leading-relaxed mb-10">
-        If your budget is flexible or you're planning a larger project, get in touch directly and we can discuss what's possible.
-      </p>
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="mailto:mail@mediamurray.com"
-          className="gradient-bg text-white font-bold px-8 py-4 text-sm uppercase tracking-wider hover:opacity-90 transition-opacity rounded-sm text-center"
-        >
-          Email Directly
-        </a>
-        <button
-          onClick={onBack}
-          className="text-sm font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 hover:text-gray-700 dark:hover:text-white transition-colors"
-        >
-          Go Back
-        </button>
-      </div>
-    </div>
-  )
-}
-
-/* ────────────────────────────────────────────────────────── */
 /* Main wizard                                                 */
 /* ────────────────────────────────────────────────────────── */
 
 export default function OnboardingWizard() {
   const [step, setStep] = useState(0)
-  const [disqualified, setDisqualified] = useState(false)
   const [service, setService] = useState('')
-  const [budget, setBudget] = useState('')
   const [timeline, setTimeline] = useState('')
   const [agreements, setAgreements] = useState<Record<string, boolean>>({})
   const [brief, setBrief] = useState({ name: '', email: '', company: '', description: '', deliverables: '', dates: '', location: '', extras: '' })
@@ -216,7 +173,12 @@ export default function OnboardingWizard() {
       const res = await fetch('/api/brief', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...brief, service }),
+        body: JSON.stringify({
+          ...brief,
+          service,
+          timeline,
+          agreements: AGREEMENTS.filter((a) => agreements[a.id]).map((a) => a.label),
+        }),
       })
       if (res.ok) { setBriefStatus('sent'); next() }
       else setBriefStatus('error')
@@ -227,21 +189,6 @@ export default function OnboardingWizard() {
 
   const next = () => setStep((s) => Math.min(s + 1, STEPS.length - 1))
   const back = () => setStep((s) => Math.max(s - 1, 0))
-
-  const handleBudget = (id: string) => {
-    setBudget(id)
-    if (id === 'under300') {
-      setDisqualified(true)
-    }
-  }
-
-  if (disqualified) {
-    return (
-      <div className="max-w-2xl mx-auto px-6">
-        <Disqualified onBack={() => { setDisqualified(false); setBudget('') }} />
-      </div>
-    )
-  }
 
   return (
     <div className="max-w-2xl mx-auto px-6">

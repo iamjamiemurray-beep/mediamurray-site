@@ -6,12 +6,15 @@ export async function POST(req: NextRequest) {
   const {
     name, email, company, service,
     description, deliverables, dates,
-    location, budget, extras,
+    location, timeline, extras,
+    agreements,
   } = body
 
   if (!name || !email || !service || !description) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
   }
+
+  const signedAt = new Date().toISOString()
 
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -38,10 +41,13 @@ Description: ${description}
 Deliverables: ${deliverables || '—'}
 Preferred dates: ${dates || '—'}
 Location / venue: ${location || '—'}
-Budget indication: ${budget || '—'}
+Timeline: ${timeline || '—'}
 
 Additional info:
 ${extras || '—'}
+
+AGREEMENTS CONFIRMED (${signedAt})
+${(agreements || []).length ? agreements.map((a: string) => `- ${a}`).join('\n') : '— none recorded —'}
 ─────────────────────
 `.trim()
 
