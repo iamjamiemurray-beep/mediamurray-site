@@ -22,12 +22,6 @@ const TIMELINE_OPTIONS = [
   { id: 'flexible', label: 'Flexible / planning ahead' },
 ]
 
-const RATES = [
-  { type: 'Video', half: '£500', full: '£800' },
-  { type: 'Photography', half: '£400', full: '£700' },
-  { type: 'Video + Photo', half: '£600', full: '£900' },
-]
-
 const PROCESS_STEPS = [
   { n: '01', title: 'Brief', body: 'We align on what you need — goal, audience, deliverables, and timeline. Usually a 20-min call or email exchange.' },
   { n: '02', title: 'Quote', body: 'You receive a written quote within 24 hours. A 50% deposit secures your date.' },
@@ -59,15 +53,17 @@ const AGREEMENTS = [
 
 const STEPS = [
   'Welcome',
+  'Your Details',
   'Your Project',
   'About Us',
-  'Services',
   'Process',
   'Policies',
   'Agreements',
-  'Your Brief',
   'Complete',
 ]
+
+const inputClass = "w-full bg-transparent border border-gray-200 dark:border-white/10 px-5 py-4 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-white/30 focus:outline-none focus:border-[#0052D4] transition-colors rounded-sm"
+const labelClass = "block text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2"
 
 /* ────────────────────────────────────────────────────────── */
 /* Helpers                                                     */
@@ -158,11 +154,12 @@ export default function OnboardingWizard() {
   const [service, setService] = useState('')
   const [timeline, setTimeline] = useState('')
   const [agreements, setAgreements] = useState<Record<string, boolean>>({})
-  const [brief, setBrief] = useState({ name: '', email: '', company: '', description: '', deliverables: '', dates: '', location: '', extras: '' })
+  const [brief, setBrief] = useState({ name: '', email: '', phone: '', company: '', description: '', deliverables: '', dates: '', location: '', extras: '' })
   const [briefStatus, setBriefStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
   const allAgreed = AGREEMENTS.every((a) => agreements[a.id])
-  const briefValid = brief.name && brief.email && brief.description
+  const detailsValid = brief.name.trim() !== '' && /^\S+@\S+\.\S+$/.test(brief.email)
+  const projectValid = service && timeline && brief.description.trim() !== ''
 
   const setB = (k: keyof typeof brief) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setBrief(prev => ({ ...prev, [k]: e.target.value }))
@@ -187,6 +184,16 @@ export default function OnboardingWizard() {
     }
   }
 
+  // Email the contact details as soon as they are given, so an enquiry
+  // isn't lost if the client drops out before submitting the full brief.
+  const sendLead = () => {
+    fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: brief.name, email: brief.email, phone: brief.phone, company: brief.company }),
+    }).catch(() => {})
+  }
+
   const next = () => setStep((s) => Math.min(s + 1, STEPS.length - 1))
   const back = () => setStep((s) => Math.max(s - 1, 0))
 
@@ -205,7 +212,7 @@ export default function OnboardingWizard() {
             This is where you start your project with me. It takes around 3 minutes.
           </p>
           <p className="text-gray-500 dark:text-white/50 leading-relaxed mb-10">
-            You'll cover: what you need, how MediaMurray works, services and pricing, and the key policies. At the end, you'll confirm your agreements before we move forward.
+            You'll cover: your details, what you need, how MediaMurray works and the key policies. At the end, you'll confirm your agreements and I'll come back to you with a tailored quote.
           </p>
           <div className="flex gap-4 items-center flex-wrap">
             <Btn onClick={next}>Start Onboarding</Btn>
@@ -216,8 +223,44 @@ export default function OnboardingWizard() {
         </div>
       )}
 
-      {/* Step 1 — Your Project */}
+      {/* Step 1 — Your Details */}
       {step === 1 && (
+        <div>
+          <h2 className="text-3xl font-black mb-2 text-gray-900 dark:text-white">Your Details</h2>
+          <p className="text-gray-500 dark:text-white/50 mb-8">So I know who I'm speaking to and how to reach you.</p>
+
+          <div className="space-y-4 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className={labelClass}>Full Name *</label>
+                <input type="text" required value={brief.name} onChange={setB('name')} placeholder="Your name" className={inputClass} />
+              </div>
+              <div>
+                <label className={labelClass}>Email *</label>
+                <input type="email" required value={brief.email} onChange={setB('email')} placeholder="your@email.com" className={inputClass} />
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className={labelClass}>Phone</label>
+                <input type="tel" value={brief.phone} onChange={setB('phone')} placeholder="Optional" className={inputClass} />
+              </div>
+              <div>
+                <label className={labelClass}>Company / Organisation</label>
+                <input type="text" value={brief.company} onChange={setB('company')} placeholder="Optional" className={inputClass} />
+              </div>
+            </div>
+          </div>
+
+          <div className="flex gap-6 items-center">
+            <Btn onClick={() => { sendLead(); next() }} disabled={!detailsValid}>Continue</Btn>
+            <Btn onClick={back} variant="ghost">Back</Btn>
+          </div>
+        </div>
+      )}
+
+      {/* Step 2 — Your Project */}
+      {step === 2 && (
         <div>
           <h2 className="text-3xl font-black mb-2 text-gray-900 dark:text-white">Your Project</h2>
           <p className="text-gray-500 dark:text-white/50 mb-8">A few quick questions so I understand what you're after.</p>
@@ -231,7 +274,7 @@ export default function OnboardingWizard() {
             </div>
           </div>
 
-          <div className="mb-10">
+          <div className="mb-8">
             <p className="text-sm font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-4">Timeline?</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {TIMELINE_OPTIONS.map((t) => (
@@ -240,15 +283,40 @@ export default function OnboardingWizard() {
             </div>
           </div>
 
+          <div className="space-y-4 mb-10">
+            <div>
+              <label className={labelClass}>Project Description *</label>
+              <textarea required value={brief.description} onChange={setB('description')} placeholder="What do you need? What's the goal?" rows={4} className={`${inputClass} resize-none`} />
+            </div>
+            <div>
+              <label className={labelClass}>Key Deliverables</label>
+              <input type="text" value={brief.deliverables} onChange={setB('deliverables')} placeholder="e.g. 2-min promo film + 3 social clips" className={inputClass} />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className={labelClass}>Preferred Date(s)</label>
+                <input type="text" value={brief.dates} onChange={setB('dates')} placeholder="e.g. mid-May, flexible" className={inputClass} />
+              </div>
+              <div>
+                <label className={labelClass}>Location / Venue</label>
+                <input type="text" value={brief.location} onChange={setB('location')} placeholder="Where will filming take place?" className={inputClass} />
+              </div>
+            </div>
+            <div>
+              <label className={labelClass}>Anything else?</label>
+              <textarea value={brief.extras} onChange={setB('extras')} placeholder="Special requirements, questions…" rows={3} className={`${inputClass} resize-none`} />
+            </div>
+          </div>
+
           <div className="flex gap-6 items-center">
-            <Btn onClick={next} disabled={!service || !timeline}>Continue</Btn>
+            <Btn onClick={next} disabled={!projectValid}>Continue</Btn>
             <Btn onClick={back} variant="ghost">Back</Btn>
           </div>
         </div>
       )}
 
-      {/* Step 2 — About Us */}
-      {step === 2 && (
+      {/* Step 3 — About Us */}
+      {step === 3 && (
         <div>
           <h2 className="text-3xl font-black mb-2 text-gray-900 dark:text-white">About MediaMurray</h2>
           <p className="text-gray-500 dark:text-white/50 mb-8">Who you're working with.</p>
@@ -284,65 +352,6 @@ export default function OnboardingWizard() {
             <p className="text-sm text-gray-600 dark:text-white/60 leading-relaxed">
               BBC Scotland, BBC Sport, BBC Social, LowlandRFCA, Scottish Parliament, RangersTV, Scottish Fair Trade, Frame, Visit Bute, Rothesay Joint Campus, and 160+ others.
             </p>
-          </div>
-
-          <div className="flex gap-6 items-center">
-            <Btn onClick={next}>Continue</Btn>
-            <Btn onClick={back} variant="ghost">Back</Btn>
-          </div>
-        </div>
-      )}
-
-      {/* Step 3 — Services */}
-      {step === 3 && (
-        <div>
-          <h2 className="text-3xl font-black mb-2 text-gray-900 dark:text-white">Services & Pricing</h2>
-          <p className="text-gray-500 dark:text-white/50 mb-8">What's available and what it costs.</p>
-
-          <div className="space-y-4 mb-10">
-            {[
-              { title: 'Promotional Video', desc: 'Story-led films for businesses, charities and organisations. Brief to finished film, end-to-end.' },
-              { title: 'Event Coverage', desc: 'Conferences, awards, ceremonies and live events filmed and edited professionally.' },
-              { title: 'Photography', desc: 'Corporate portraits, event photography, product and location shoots across Scotland.' },
-              { title: 'Retainer Package', desc: 'Monthly video and social content on a retainer — consistent output, agreed in advance.' },
-              { title: 'Content Days', desc: 'A full day producing multiple assets — video, reels, photography — in one session.' },
-              { title: 'Editing Only', desc: "Post-production on your own footage — you provide the raw files, I deliver the edit." },
-            ].map((s) => (
-              <div key={s.title} className="flex gap-4 items-start">
-                <div className="w-1 flex-shrink-0 bg-[#0052D4] self-stretch rounded-full mt-1" />
-                <div>
-                  <p className="font-black text-gray-900 dark:text-white text-sm">{s.title}</p>
-                  <p className="text-sm text-gray-500 dark:text-white/50 mt-0.5">{s.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="border border-gray-200 dark:border-white/10 rounded-sm overflow-hidden mb-10">
-            <div className="bg-gray-50 dark:bg-white/[0.03] px-5 py-3 border-b border-gray-200 dark:border-white/10">
-              <p className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40">Standard Day Rates</p>
-            </div>
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-gray-100 dark:border-white/5">
-                  <th className="text-left px-5 py-3 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/30">Service</th>
-                  <th className="text-right px-5 py-3 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/30">Half Day</th>
-                  <th className="text-right px-5 py-3 text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/30">Full Day</th>
-                </tr>
-              </thead>
-              <tbody>
-                {RATES.map((r, i) => (
-                  <tr key={r.type} className={i < RATES.length - 1 ? 'border-b border-gray-100 dark:border-white/5' : ''}>
-                    <td className="px-5 py-4 font-medium text-gray-900 dark:text-white">{r.type}</td>
-                    <td className="px-5 py-4 text-right font-black gradient-text">{r.half}</td>
-                    <td className="px-5 py-4 text-right font-black gradient-text">{r.full}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            <div className="px-5 py-3 bg-gray-50 dark:bg-white/[0.02] border-t border-gray-100 dark:border-white/5">
-              <p className="text-xs text-gray-400 dark:text-white/30">Bespoke project rates quoted individually. All rates subject to scope — discussed at brief stage.</p>
-            </div>
           </div>
 
           <div className="flex gap-6 items-center">
@@ -435,7 +444,7 @@ export default function OnboardingWizard() {
       {step === 6 && (
         <div>
           <h2 className="text-3xl font-black mb-2 text-gray-900 dark:text-white">Your Agreements</h2>
-          <p className="text-gray-500 dark:text-white/50 mb-8">Please confirm each of the following before completing your onboarding.</p>
+          <p className="text-gray-500 dark:text-white/50 mb-8">Please confirm each of the following, then submit your brief.</p>
 
           <div className="space-y-4 mb-10">
             {AGREEMENTS.map((a) => (
@@ -468,79 +477,24 @@ export default function OnboardingWizard() {
           </div>
 
           {!allAgreed && (
-            <p className="text-xs text-gray-400 dark:text-white/30 mb-6">Please confirm all agreements to continue.</p>
+            <p className="text-xs text-gray-400 dark:text-white/30 mb-6">Please confirm all agreements to submit.</p>
+          )}
+
+          {briefStatus === 'error' && (
+            <p className="text-red-500 text-sm mb-6">Something went wrong. Please email <a href="mailto:mail@mediamurray.com" className="underline">mail@mediamurray.com</a> directly.</p>
           )}
 
           <div className="flex gap-6 items-center">
-            <Btn onClick={next} disabled={!allAgreed}>Complete Onboarding</Btn>
+            <Btn onClick={submitBrief} disabled={!allAgreed || briefStatus === 'sending'}>
+              {briefStatus === 'sending' ? 'Sending…' : 'Submit Brief'}
+            </Btn>
             <Btn onClick={back} variant="ghost">Back</Btn>
           </div>
         </div>
       )}
 
-      {/* Step 7 — Your Brief */}
+      {/* Step 7 — Complete */}
       {step === 7 && (
-        <div>
-          <h2 className="text-3xl font-black mb-2 text-gray-900 dark:text-white">Your Project Brief</h2>
-          <p className="text-gray-500 dark:text-white/50 mb-8">Fill this in and I'll come back with a tailored quote within 24 hours.</p>
-
-          {(() => {
-            const inputClass = "w-full bg-transparent border border-gray-200 dark:border-white/10 px-5 py-4 text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-white/30 focus:outline-none focus:border-[#0052D4] transition-colors rounded-sm"
-            return (
-              <div className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2">Full Name *</label>
-                    <input type="text" required value={brief.name} onChange={setB('name')} placeholder="Your name" className={inputClass} />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2">Email *</label>
-                    <input type="email" required value={brief.email} onChange={setB('email')} placeholder="your@email.com" className={inputClass} />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2">Company / Organisation</label>
-                  <input type="text" value={brief.company} onChange={setB('company')} placeholder="Optional" className={inputClass} />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2">Project Description *</label>
-                  <textarea required value={brief.description} onChange={setB('description')} placeholder="What do you need? What's the goal?" rows={4} className={`${inputClass} resize-none`} />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2">Key Deliverables</label>
-                  <input type="text" value={brief.deliverables} onChange={setB('deliverables')} placeholder="e.g. 2-min promo film + 3 social clips" className={inputClass} />
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2">Preferred Date(s)</label>
-                    <input type="text" value={brief.dates} onChange={setB('dates')} placeholder="e.g. mid-May, flexible" className={inputClass} />
-                  </div>
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2">Location / Venue</label>
-                    <input type="text" value={brief.location} onChange={setB('location')} placeholder="Where will filming take place?" className={inputClass} />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2">Anything else?</label>
-                  <textarea value={brief.extras} onChange={setB('extras')} placeholder="Budget, special requirements, questions…" rows={3} className={`${inputClass} resize-none`} />
-                </div>
-                {briefStatus === 'error' && (
-                  <p className="text-red-500 text-sm">Something went wrong. Please email <a href="mailto:mail@mediamurray.com" className="underline">mail@mediamurray.com</a> directly.</p>
-                )}
-                <div className="flex gap-6 items-center pt-2">
-                  <Btn onClick={submitBrief} disabled={!briefValid || briefStatus === 'sending'}>
-                    {briefStatus === 'sending' ? 'Sending…' : 'Submit Brief'}
-                  </Btn>
-                  <Btn onClick={back} variant="ghost">Back</Btn>
-                </div>
-              </div>
-            )
-          })()}
-        </div>
-      )}
-
-      {/* Step 8 — Complete */}
-      {step === 8 && (
         <div className="text-center py-8">
           <div className="w-16 h-16 gradient-bg rounded-sm flex items-center justify-center mx-auto mb-8">
             <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -549,24 +503,9 @@ export default function OnboardingWizard() {
           </div>
           <h2 className="text-3xl font-black mb-4 text-gray-900 dark:text-white">You're All Set</h2>
           <p className="text-gray-500 dark:text-white/50 leading-relaxed mb-3 max-w-md mx-auto">
-            Onboarding complete. Your agreements are confirmed. The next step is to get in touch with your project details so I can send a written quote.
+            Your brief has been sent and your agreements are confirmed. I'll review everything and come back to you with a tailored quote.
           </p>
           <p className="text-gray-500 dark:text-white/50 text-sm mb-10">I aim to respond within 24 hours.</p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="mailto:mail@mediamurray.com?subject=New Project Enquiry"
-              className="gradient-bg text-white font-bold px-8 py-4 text-sm uppercase tracking-wider hover:opacity-90 transition-opacity rounded-sm"
-            >
-              Email Your Brief
-            </a>
-            <Link
-              href="/contact"
-              className="border border-gray-200 dark:border-white/10 text-gray-700 dark:text-white/70 font-bold px-8 py-4 text-sm uppercase tracking-wider hover:border-gray-400 dark:hover:border-white/30 transition-colors rounded-sm"
-            >
-              Use Contact Form
-            </Link>
-          </div>
 
           <div className="mt-12 pt-8 border-t border-gray-200 dark:border-white/10">
             <p className="text-xs text-gray-400 dark:text-white/30 mb-4">Quick links</p>

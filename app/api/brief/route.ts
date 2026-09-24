@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer'
 export async function POST(req: NextRequest) {
   const body = await req.json()
   const {
-    name, email, company, service,
+    name, email, phone, company, service,
     description, deliverables, dates,
     location, timeline, extras,
     agreements,
@@ -33,6 +33,7 @@ New project brief from mediamurray.com/onboarding
 CONTACT
 Name:    ${name}
 Email:   ${email}
+Phone:   ${phone || '—'}
 Company: ${company || '—'}
 
 PROJECT
