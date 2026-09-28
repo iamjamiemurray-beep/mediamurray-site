@@ -7,7 +7,7 @@ export function middleware(req: NextRequest) {
     if (pathname === '/api/dashboard/auth') return NextResponse.next()
 
     const auth = req.cookies.get('mm_dashboard_auth')?.value
-    if (!auth || auth !== process.env.DASHBOARD_PASSWORD) {
+    if (!auth || auth !== process.env.DASHBOARD_PASSWORD?.trim()) {
       return NextResponse.json({ error: 'Unauthorised' }, { status: 401 })
     }
   }
@@ -16,7 +16,7 @@ export function middleware(req: NextRequest) {
     if (pathname === '/dashboard/login') return NextResponse.next()
 
     const auth = req.cookies.get('mm_dashboard_auth')?.value
-    if (!auth || auth !== process.env.DASHBOARD_PASSWORD) {
+    if (!auth || auth !== process.env.DASHBOARD_PASSWORD?.trim()) {
       const url = req.nextUrl.clone()
       url.pathname = '/dashboard/login'
       return NextResponse.redirect(url)
