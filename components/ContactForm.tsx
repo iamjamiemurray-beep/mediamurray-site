@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Honeypot from '@/components/Honeypot'
 
 type Status = 'idle' | 'sending' | 'sent' | 'error'
 
@@ -29,7 +30,7 @@ export default function ContactForm() {
   const [form, setForm] = useState({
     name: '', email: '', company: '', phone: '',
     service: '', date: '', location: '', deadline: '',
-    referral: '', message: '',
+    referral: '', message: '', website: '',
   })
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
@@ -69,6 +70,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={submit} className="space-y-4 max-w-2xl">
+      <Honeypot value={form.website} onChange={set('website')} />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2">Name *</label>

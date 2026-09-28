@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Honeypot from '@/components/Honeypot'
 
 type Status = 'idle' | 'sending' | 'sent' | 'error'
 
@@ -24,6 +25,7 @@ export default function ContentDayBookingForm() {
     businessType: '',
     location: '',
     month: '',
+    website: '',
   })
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
@@ -43,6 +45,7 @@ export default function ContentDayBookingForm() {
           service: 'Content Day',
           location: form.location,
           date: form.month,
+          website: form.website,
           message: `Content Day enquiry.\nBusiness type: ${form.businessType}\nPreferred month: ${form.month}`,
         }),
       })
@@ -71,6 +74,7 @@ export default function ContentDayBookingForm() {
 
   return (
     <form onSubmit={submit} className="space-y-4">
+      <Honeypot value={form.website} onChange={set('website')} />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2">Your Name *</label>

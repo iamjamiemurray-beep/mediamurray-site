@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Honeypot from '@/components/Honeypot'
 import Link from 'next/link'
 
 /* ────────────────────────────────────────────────────────── */
@@ -154,7 +155,7 @@ export default function OnboardingWizard() {
   const [service, setService] = useState('')
   const [timeline, setTimeline] = useState('')
   const [agreements, setAgreements] = useState<Record<string, boolean>>({})
-  const [brief, setBrief] = useState({ name: '', email: '', phone: '', company: '', description: '', deliverables: '', dates: '', location: '', extras: '' })
+  const [brief, setBrief] = useState({ name: '', email: '', phone: '', company: '', description: '', deliverables: '', dates: '', location: '', extras: '', website: '' })
   const [briefStatus, setBriefStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
   const allAgreed = AGREEMENTS.every((a) => agreements[a.id])
@@ -484,6 +485,7 @@ export default function OnboardingWizard() {
             <p className="text-red-500 text-sm mb-6">Something went wrong. Please email <a href="mailto:mail@mediamurray.com" className="underline">mail@mediamurray.com</a> directly.</p>
           )}
 
+          <Honeypot value={brief.website} onChange={setB('website')} />
           <div className="flex gap-6 items-center">
             <Btn onClick={submitBrief} disabled={!allAgreed || briefStatus === 'sending'}>
               {briefStatus === 'sending' ? 'Sending…' : 'Submit Brief'}

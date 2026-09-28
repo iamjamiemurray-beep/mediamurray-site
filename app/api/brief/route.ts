@@ -10,6 +10,8 @@ export async function POST(req: NextRequest) {
     agreements,
   } = body
 
+  if (body.website) return NextResponse.json({ success: true })
+
   if (!name || !email || !service || !description) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
   }

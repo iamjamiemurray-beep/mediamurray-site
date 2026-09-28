@@ -3,11 +3,20 @@ import { NextRequest, NextResponse } from 'next/server'
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl
 
+  if (pathname.startsWith('/api/dashboard')) {
+    if (pathname === '/api/dashboard/auth') return NextResponse.next()
+
+    const auth = req.cookies.get('mm_dashboard_auth')?.value
+    if (!auth || auth !== process.env.DASHBOARD_PASSWORD) {
+      return NextResponse.json({ error: 'Unauthorised' }, { status: 401 })
+    }
+  }
+
   if (pathname.startsWith('/dashboard')) {
     if (pathname === '/dashboard/login') return NextResponse.next()
 
     const auth = req.cookies.get('mm_dashboard_auth')?.value
-    if (auth !== process.env.DASHBOARD_PASSWORD) {
+    if (!auth || auth !== process.env.DASHBOARD_PASSWORD) {
       const url = req.nextUrl.clone()
       url.pathname = '/dashboard/login'
       return NextResponse.redirect(url)
@@ -18,5 +27,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/dashboard/:path*'],
+  matcher: ['/dashboard/:path*', '/api/dashboard/:path*'],
 }

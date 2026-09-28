@@ -48,8 +48,8 @@ const services = [
 
 export default function Footer() {
   const pathname = usePathname()
-  if (pathname.startsWith('/dashboard')) return null
   const { theme } = useTheme()
+  if (pathname.startsWith('/dashboard')) return null
   return (
     <footer className="border-t border-gray-200 dark:border-white/10 bg-white dark:bg-[#0a0a0a] mt-24 transition-colors duration-200">
 

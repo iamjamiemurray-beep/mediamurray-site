@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Honeypot from '@/components/Honeypot'
 
 type ProjectType = 'video' | 'photography' | 'event' | 'content-day'
 type Scale = 'half-day' | 'full-day' | 'multi-day'
@@ -131,6 +132,7 @@ export default function StartPage() {
   const [formEmail, setFormEmail] = useState('')
   const [formCompany, setFormCompany] = useState('')
   const [formNotes, setFormNotes] = useState('')
+  const [formWebsite, setFormWebsite] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState('')
@@ -196,6 +198,7 @@ export default function StartPage() {
           email: formEmail,
           company: formCompany,
           notes: formNotes,
+          website: formWebsite,
           answers: {
             type: answers.type,
             scale: answers.scale,
@@ -260,6 +263,7 @@ export default function StartPage() {
           </p>
 
           <form onSubmit={submitEnquiry} className="space-y-4">
+            <Honeypot value={formWebsite} onChange={e => setFormWebsite(e.target.value)} />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2">

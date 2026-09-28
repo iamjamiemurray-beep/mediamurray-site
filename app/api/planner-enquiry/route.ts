@@ -3,7 +3,9 @@ import { Resend } from 'resend'
 
 export async function POST(req: NextRequest) {
   const body = await req.json()
-  const { name, email, company, notes, answers } = body
+  const { name, email, company, notes, answers = {} } = body
+
+  if (body.website) return NextResponse.json({ success: true })
 
   if (!name || !email) {
     return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
