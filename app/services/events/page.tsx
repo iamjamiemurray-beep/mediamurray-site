@@ -14,7 +14,7 @@ const eventGroups = [
     photos: ['/eventphoto1.jpg', '/eventphoto2.jpg', '/eventphoto3.jpg', '/eventphoto4.jpg', '/eventphoto5.jpg'],
   },
   {
-    name: 'LowlandRFCA Awards — Paisley',
+    name: 'LowlandRFCA Awards - Paisley',
     photos: ['/awardspaisley1.jpg', '/awardspaisley2.jpg', '/awardspaisley3.jpg', '/awardspaisley4.jpg'],
   },
   {
@@ -38,11 +38,11 @@ export default function Events() {
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Services</p>
         <h1 className="text-5xl font-black mb-6 text-gray-900 dark:text-white">Event Coverage</h1>
         <p className="text-gray-500 dark:text-white/50 max-w-2xl text-xl mb-12 leading-relaxed">
-          Full event coverage — video and photography in one package, from a single operator who knows what they&apos;re doing.
+          Full event coverage - video and photography in one package, from a single operator who knows what they&apos;re doing.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-12">
           <div className="space-y-5 text-gray-600 dark:text-white/60 leading-relaxed">
-            <p>Awards evenings, conferences, ceremonies, community events — if it&apos;s happening, it&apos;s worth capturing professionally.</p>
+            <p>Awards evenings, conferences, ceremonies, community events - if it&apos;s happening, it&apos;s worth capturing professionally.</p>
             <p>I cover events solo with dual camera rigs and a run-and-gun approach, meaning you get broad coverage without needing a full crew. Photos and video highlights in one booking.</p>
             <p>Clients include LowlandRFCA, North Lanarkshire Council, Scottish Fair Trade Forum, and more. I understand how these events run and how to work unobtrusively within them.</p>
             <Link href="/contact" className="gradient-bg text-white font-bold px-8 py-4 rounded-sm hover:opacity-90 transition-opacity text-sm uppercase tracking-wider inline-block mt-4">
@@ -63,11 +63,11 @@ export default function Events() {
           <VideoCard id="B6dOtVrT6Bg" title="International Fair Trade Towns Conference 2025" category="Conference" />
           <VideoCard id="VV1P0zK_hP4" title="Inverclyde Whisky Festival 2025" category="Event" />
           <VideoCard id="rUWGAz0s5hw" title="LowlandRFCA Beating Retreat 2025" category="Event" />
-          <VideoCard id="VVGPcQIk0cY" title="An Evening with Graeme Souness — BTS" category="Event" />
+          <VideoCard id="VVGPcQIk0cY" title="An Evening with Graeme Souness - BTS" category="Event" />
         </div>
       </section>
 
-      {/* Event Gallery — Grouped */}
+      {/* Event Gallery - Grouped */}
       <section className="border-t border-gray-200 dark:border-white/10 py-20">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Gallery</p>

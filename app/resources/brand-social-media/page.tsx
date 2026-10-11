@@ -47,7 +47,7 @@ const parts: Part[] = [
 
 Example: *"I help Edinburgh-based businesses get professional video content without a big-agency budget."*
 
-If you can't write that sentence, your content will feel vague — because it is. Come back to it. Get it right.`,
+If you can't write that sentence, your content will feel vague - because it is. Come back to it. Get it right.`,
       },
       {
         heading: 'Know Exactly Who You\'re Talking To',
@@ -61,7 +61,7 @@ If you can't write that sentence, your content will feel vague — because it is
       },
       {
         heading: 'Define Your Brand Voice',
-        body: `Your voice is how you sound — and it should be consistent. Choose three words that describe how you want to come across.
+        body: `Your voice is how you sound - and it should be consistent. Choose three words that describe how you want to come across.
 
 Examples: *Professional but approachable. Direct and honest. Warm and expert.*
 
@@ -81,9 +81,9 @@ Write those words down. Read every caption and script against them before postin
 
 **What works:**
 - Short (7–30 seconds) beats long almost every time
-- The first 1–2 seconds decide everything — your hook must land instantly
+- The first 1–2 seconds decide everything - your hook must land instantly
 - Trending audio increases reach, but original audio builds brand
-- Consistent visual style matters — people recognise you before they read your name
+- Consistent visual style matters - people recognise you before they read your name
 
 **What to post:** Behind the scenes, results, how-to clips, talking to camera, client transformations.
 
@@ -95,9 +95,9 @@ Write those words down. Read every caption and script against them before postin
 
 **What works:**
 - Native, unpolished content often outperforms heavily produced content
-- Authenticity is rewarded algorithmically — be yourself, not a brand
+- Authenticity is rewarded algorithmically - be yourself, not a brand
 - Longer videos (1–3 min) are performing well if the content holds attention
-- Comment section engagement matters — reply to comments with videos
+- Comment section engagement matters - reply to comments with videos
 
 **What to post:** Stories, opinions, tutorials, day-in-the-life, reactions, niche expertise.
 
@@ -109,9 +109,9 @@ Write those words down. Read every caption and script against them before postin
 
 **What works:**
 - Long-form text posts (500–1,000 words, no links) consistently outperform
-- Video performs well but the bar is lower — you don't need cinematic quality
+- Video performs well but the bar is lower - you don't need cinematic quality
 - Share your perspective, not just updates. Opinions earn engagement; announcements don't
-- Your personal profile outperforms a company page — people connect with people
+- Your personal profile outperforms a company page - people connect with people
 
 **What to post:** Industry observations, lessons from projects, your process, client outcomes (with permission), honest career reflection.
 
@@ -126,7 +126,7 @@ Write those words down. Read every caption and script against them before postin
     intro: 'Every piece of content you make falls into one of three buckets. You need all three.',
     content: [
       {
-        heading: 'Bucket 1 — Authority Content',
+        heading: 'Bucket 1 - Authority Content',
         body: `*This positions you as the expert.*
 
 Shows what you know. Teaches something. Demonstrates your process. Makes people think "this person knows what they're talking about."
@@ -137,7 +137,7 @@ Shows what you know. Teaches something. Demonstrates your process. Makes people 
 - "What nobody tells you about hiring a videographer"`,
       },
       {
-        heading: 'Bucket 2 — Personality Content',
+        heading: 'Bucket 2 - Personality Content',
         body: `*This makes people like you and remember you.*
 
 Shows who you are. Behind the scenes. How you work. What you care about. The human behind the brand.
@@ -149,7 +149,7 @@ Shows who you are. Behind the scenes. How you work. What you care about. The hum
 - Why you started doing this`,
       },
       {
-        heading: 'Bucket 3 — Proof Content',
+        heading: 'Bucket 3 - Proof Content',
         body: `*This gives people a reason to trust you.*
 
 Results. Testimonials. Case studies. Before and after. Real work, real outcomes.
@@ -190,11 +190,11 @@ Avoid starting with: your name, your company, "so today I wanted to share," or a
       {
         heading: 'The Script Structure That Works Every Time',
         list: [
-          'Hook — grab them in the first 2 seconds',
-          'Problem — name the pain they recognise',
-          'Solution — what you do / what they should do',
-          'Proof — one example, one result, one testimonial',
-          'CTA — one clear action ("DM me," "link in bio," "save this post")',
+          'Hook - grab them in the first 2 seconds',
+          'Problem - name the pain they recognise',
+          'Solution - what you do / what they should do',
+          'Proof - one example, one result, one testimonial',
+          'CTA - one clear action ("DM me," "link in bio," "save this post")',
         ],
       },
     ],
@@ -213,7 +213,7 @@ Avoid starting with: your name, your company, "so today I wanted to share," or a
             ['Square', '1:1', 'Instagram feed, LinkedIn'],
             ['Landscape', '16:9', 'YouTube, LinkedIn video, website'],
           ],
-          note: 'Shoot vertical if you\'re primarily posting to Instagram and TikTok. Shoot landscape for YouTube or your website. If you need both, shoot landscape and crop for vertical — but vertical-native footage always looks better on mobile.',
+          note: 'Shoot vertical if you\'re primarily posting to Instagram and TikTok. Shoot landscape for YouTube or your website. If you need both, shoot landscape and crop for vertical - but vertical-native footage always looks better on mobile.',
         },
       },
       {
@@ -221,18 +221,18 @@ Avoid starting with: your name, your company, "so today I wanted to share," or a
         body: `You don't need a professional camera to start. You need:`,
         list: [
           'A smartphone with a decent camera (iPhone 12+ or Android equivalent)',
-          'Natural light — face a window, don\'t stand with it behind you',
-          'Any lapel mic or EarPod microphone — audio matters more than video quality',
-          'A consistent background — your desk, your logo on a wall, outside — somewhere clean',
+          'Natural light - face a window, don\'t stand with it behind you',
+          'Any lapel mic or EarPod microphone - audio matters more than video quality',
+          'A consistent background - your desk, your logo on a wall, outside - somewhere clean',
         ],
       },
       {
         heading: 'Batch Filming',
         body: `Don't film once a week. Film once a month.
 
-Set aside one morning. Script 8–12 pieces of content. Film them all in one session — change your top between batches if you want visual variety. Edit across the week. Schedule them out.
+Set aside one morning. Script 8–12 pieces of content. Film them all in one session - change your top between batches if you want visual variety. Edit across the week. Schedule them out.
 
-This is how solo operators and small teams actually keep up with posting consistently. It's not volume of sessions — it's efficiency per session.`,
+This is how solo operators and small teams actually keep up with posting consistently. It's not volume of sessions - it's efficiency per session.`,
       },
     ],
   },
@@ -242,7 +242,7 @@ This is how solo operators and small teams actually keep up with posting consist
     tag: 'Action Plan',
     content: [
       {
-        heading: 'Week 1 — Foundation',
+        heading: 'Week 1 - Foundation',
         checklist: [
           'Write your one-line positioning statement',
           'Define your one target audience person',
@@ -252,17 +252,17 @@ This is how solo operators and small teams actually keep up with posting consist
         ],
       },
       {
-        heading: 'Week 2 — First 5 Posts',
+        heading: 'Week 2 - First 5 Posts',
         checklist: [
-          'Post 1: Introduce yourself — who you are, what you do, why you do it',
-          'Post 2: Authority — teach one thing you know',
-          'Post 3: Personality — behind the scenes or your process',
-          'Post 4: Proof — a result, testimonial or project outcome',
-          'Post 5: Authority — answer the question you get asked most',
+          'Post 1: Introduce yourself - who you are, what you do, why you do it',
+          'Post 2: Authority - teach one thing you know',
+          'Post 3: Personality - behind the scenes or your process',
+          'Post 4: Proof - a result, testimonial or project outcome',
+          'Post 5: Authority - answer the question you get asked most',
         ],
       },
       {
-        heading: 'Week 3 — Build the Habit',
+        heading: 'Week 3 - Build the Habit',
         checklist: [
           'Film a batch of 6–8 videos in one session',
           'Post 3–5 times this week',
@@ -271,7 +271,7 @@ This is how solo operators and small teams actually keep up with posting consist
         ],
       },
       {
-        heading: 'Week 4 — Review and Adjust',
+        heading: 'Week 4 - Review and Adjust',
         checklist: [
           'Check your analytics: which posts got the most reach, saves, and profile visits?',
           'Do more of what worked. Drop what didn\'t.',
@@ -288,7 +288,7 @@ This is how solo operators and small teams actually keep up with posting consist
     content: [
       {
         heading: 'Posting without a strategy',
-        body: `If you don't know why you're posting something, your audience won't either. Every post should serve a purpose — authority, personality, or proof. If it doesn't fit any of those, it probably shouldn't go out.`,
+        body: `If you don't know why you're posting something, your audience won't either. Every post should serve a purpose - authority, personality, or proof. If it doesn't fit any of those, it probably shouldn't go out.`,
       },
       {
         heading: 'Giving up after 30 days',
@@ -296,7 +296,7 @@ This is how solo operators and small teams actually keep up with posting consist
       },
       {
         heading: 'Chasing trends instead of building a brand',
-        body: `Trending audio and formats can boost reach. But if your content is entirely trend-dependent, you build an audience for the trend — not for you. Use trends as vehicles for your message, not as the message itself.`,
+        body: `Trending audio and formats can boost reach. But if your content is entirely trend-dependent, you build an audience for the trend - not for you. Use trends as vehicles for your message, not as the message itself.`,
       },
       {
         heading: 'Making it all about you',
@@ -304,7 +304,7 @@ This is how solo operators and small teams actually keep up with posting consist
       },
       {
         heading: "Waiting until it's perfect",
-        body: `Done is better than perfect. Publish the imperfect video. Improve the next one. Nobody's watching as closely as you think. The people who win at content are the ones who publish consistently and get better in public — not the ones who spend three weeks on a single post.`,
+        body: `Done is better than perfect. Publish the imperfect video. Improve the next one. Nobody's watching as closely as you think. The people who win at content are the ones who publish consistently and get better in public - not the ones who spend three weeks on a single post.`,
       },
     ],
   },
@@ -433,7 +433,7 @@ export default function BrandSocialMedia() {
               href={`#part-${p.number}`}
               className="text-xs font-bold uppercase tracking-wider px-4 py-2 border border-gray-200 dark:border-white/20 text-gray-600 dark:text-white/60 hover:border-[#0052D4] hover:text-[#0052D4] transition-colors rounded-sm"
             >
-              {p.number} — {p.tag}
+              {p.number} - {p.tag}
             </a>
           ))}
         </div>
@@ -529,10 +529,10 @@ export default function BrandSocialMedia() {
           <div className="max-w-2xl">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-4">A Note</p>
             <p className="text-gray-600 dark:text-white/60 leading-relaxed mb-4">
-              Social media is one of the most powerful tools a small business has — and one of the most consistently misused. The principles in this guide aren&apos;t complicated, but they do require consistency and patience to work. If you apply them properly over 90 days, you will see results.
+              Social media is one of the most powerful tools a small business has - and one of the most consistently misused. The principles in this guide aren&apos;t complicated, but they do require consistency and patience to work. If you apply them properly over 90 days, you will see results.
             </p>
             <p className="text-gray-600 dark:text-white/60 leading-relaxed mb-8">
-              If you want to take it further — professional video content that gives you months of material from a single day — that&apos;s exactly what a <Link href="/services/content-day" className="text-[#0052D4] hover:underline">Content Day</Link> is designed for. Get in touch and we can talk through what that would look like for your business.
+              If you want to take it further - professional video content that gives you months of material from a single day - that&apos;s exactly what a <Link href="/services/content-day" className="text-[#0052D4] hover:underline">Content Day</Link> is designed for. Get in touch and we can talk through what that would look like for your business.
             </p>
             <p className="font-black text-gray-900 dark:text-white">Jamie Murray</p>
             <p className="text-sm text-gray-400 dark:text-white/40">MediaMurray</p>

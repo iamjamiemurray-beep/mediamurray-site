@@ -109,7 +109,7 @@ export default function ContentDayBookingForm() {
         </div>
       </div>
       {status === 'error' && (
-        <p className="text-red-500 text-sm">Something went wrong — please email <a href="mailto:mail@mediamurray.com" className="underline">mail@mediamurray.com</a> directly.</p>
+        <p className="text-red-500 text-sm">Something went wrong - please email <a href="mailto:mail@mediamurray.com" className="underline">mail@mediamurray.com</a> directly.</p>
       )}
       <button
         type="submit"

@@ -226,7 +226,7 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap gap-2 justify-center">
             {['Public Sector', 'Corporate Events', 'Creative Agencies', 'Charities', 'Small Businesses', 'Individuals'].map((tag) => (
-              <span key={tag} className="text-[10px] font-bold uppercase tracking-[0.15em] border border-white/20 text-white/50 px-3 py-1 rounded-full">
+              <span key={tag} className="text-xs font-bold uppercase tracking-[0.15em] border border-white/20 text-white/50 px-3 py-1 rounded-full">
                 {tag}
               </span>
             ))}
@@ -263,7 +263,7 @@ export default function Home() {
         <div className="flex items-end justify-between mb-12">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Portfolio</p>
-            <h2 className="text-4xl font-black text-gray-900 dark:text-white">Recent Work</h2>
+            <h2 className="text-4xl font-black tracking-tight text-gray-900 dark:text-white">Recent Work</h2>
           </div>
           <Link href="/work" className="text-sm font-bold text-gray-500 dark:text-white/50 hover:text-gray-900 dark:hover:text-white transition-colors uppercase tracking-wider">
             View All →
@@ -330,7 +330,7 @@ export default function Home() {
         <ScrollReveal>
           <div className="mb-10">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Social Content</p>
-            <h2 className="text-4xl font-black text-gray-900 dark:text-white">Reels</h2>
+            <h2 className="text-4xl font-black tracking-tight text-gray-900 dark:text-white">Reels</h2>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
             <ReelCard shortcode="C-pzdFnI1Co" title="Aerial Scotland" />
@@ -347,7 +347,7 @@ export default function Home() {
       <section className="bg-gray-50 dark:bg-white/[0.02] border-y border-gray-200 dark:border-white/10 py-24">
         <ScrollReveal className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">What I Do</p>
-          <h2 className="text-4xl font-black mb-12 text-gray-900 dark:text-white">Services</h2>
+          <h2 className="text-4xl font-black tracking-tight mb-12 text-gray-900 dark:text-white">Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((s) => (
               <Link
@@ -369,7 +369,7 @@ export default function Home() {
                 {/* Text */}
                 <div className="p-6 bg-white dark:bg-[#111] border border-t-0 border-gray-200 dark:border-white/10">
                   <div className="flex items-start justify-between gap-2 mb-2">
-                    <h3 className="font-black text-base text-gray-900 dark:text-white leading-tight">{s.title}</h3>
+                    <h3 className="font-bold text-base text-gray-900 dark:text-white leading-tight">{s.title}</h3>
                     <span className="text-[#0052D4] group-hover:text-[#00C6FF] transition-colors flex-shrink-0 mt-0.5">→</span>
                   </div>
                   <p className="text-sm text-gray-500 dark:text-white/50 leading-relaxed">{s.desc}</p>
@@ -384,7 +384,7 @@ export default function Home() {
       <section className="py-24 border-b border-gray-200 dark:border-white/10">
         <ScrollReveal className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">The Process</p>
-          <h2 className="text-4xl font-black mb-4 text-gray-900 dark:text-white">How It Works</h2>
+          <h2 className="text-4xl font-black tracking-tight mb-4 text-gray-900 dark:text-white">How It Works</h2>
           <p className="text-gray-500 dark:text-white/50 text-base mb-16 max-w-2xl">
             Every project follows the same clear process - from first message to final delivery.
           </p>
@@ -421,7 +421,7 @@ export default function Home() {
                 className={`relative flex flex-col p-8 border border-gray-200 dark:border-white/10 bg-white dark:bg-white/[0.02] ${i < arr.length - 1 ? 'lg:border-r-0' : ''} ${i > 0 ? 'border-t-0 lg:border-t lg:border-l-0 lg:border-r-0' : ''} first:border-t last:lg:border-r`}
               >
                 <span className="text-5xl font-black gradient-text leading-none mb-6 select-none">{item.step}</span>
-                <h3 className="font-black text-lg text-gray-900 dark:text-white mb-3 uppercase tracking-wide">{item.title}</h3>
+                <h3 className="font-bold text-lg text-gray-900 dark:text-white mb-3 uppercase tracking-wide">{item.title}</h3>
                 <p className="text-sm text-gray-500 dark:text-white/50 leading-relaxed">{item.desc}</p>
                 {i < arr.length - 1 && (
                   <span className="hidden lg:block absolute top-1/2 -right-3 -translate-y-1/2 z-10 text-gray-300 dark:text-white/20 text-xl select-none">→</span>
@@ -446,7 +446,7 @@ export default function Home() {
       <section className="py-24 border-b border-gray-200 dark:border-white/10">
         <ScrollReveal className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Reviews</p>
-          <h2 className="text-4xl font-black mb-12 text-gray-900 dark:text-white">What Clients Say</h2>
+          <h2 className="text-4xl font-black tracking-tight mb-12 text-gray-900 dark:text-white">What Clients Say</h2>
 
           {/* Stars helper */}
           {(() => {
@@ -572,7 +572,7 @@ export default function Home() {
           <div className="flex items-end justify-between mb-10">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">The Kit</p>
-              <h2 className="text-4xl font-black text-gray-900 dark:text-white">Professional Equipment</h2>
+              <h2 className="text-4xl font-black tracking-tight text-gray-900 dark:text-white">Professional Equipment</h2>
             </div>
             <p className="hidden sm:block text-sm text-gray-400 dark:text-white/30 max-w-xs text-right leading-relaxed">
               Every shoot uses the same professional-grade kit - no compromise on quality.
@@ -604,7 +604,7 @@ export default function Home() {
                 </div>
                 <div className="p-2">
                   <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#0052D4] dark:text-white/40 mb-0.5">{item.category}</p>
-                  <p className="text-[11px] font-black text-gray-900 dark:text-white leading-tight">{item.name}</p>
+                  <p className="text-xs font-black text-gray-900 dark:text-white leading-tight">{item.name}</p>
                 </div>
               </div>
             ))}
@@ -617,7 +617,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div className="py-10">
-              <h2 className="text-4xl font-black mb-4 text-white">Ready to start your <span className="text-white/60">project?</span></h2>
+              <h2 className="text-4xl font-black tracking-tight mb-4 text-white">Ready to start your <span className="text-white/60">project?</span></h2>
               <p className="text-white/90 mb-3 text-lg font-medium">
                 170+ projects. Clients across Scotland and the UK.
               </p>

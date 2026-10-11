@@ -49,9 +49,9 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Availability bar */}
-      <div className="bg-[#0052D4] text-white text-[11px] font-bold uppercase tracking-[0.18em] text-center py-2 px-4">
-        Limited availability this month —{' '}
-        <Link href="/start" className="underline underline-offset-2 hover:text-white/80 transition-colors">
+      <div className="bg-[#0052D4] text-white text-xs font-bold uppercase tracking-[0.14em] text-center py-2.5 px-4">
+        Limited availability this month -{' '}
+        <Link href="/start" className="inline-block py-1 underline underline-offset-2 hover:text-white/80 transition-colors">
           book for next month, enquire now →
         </Link>
       </div>
@@ -74,21 +74,21 @@ export default function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-white/70 hover:text-[#0052D4] dark:hover:text-white px-4 py-2 rounded-full hover:bg-[#0052D4]/10 dark:hover:bg-white/10 transition-all"
+              className="text-[13px] font-bold uppercase tracking-wider text-gray-700 dark:text-white/70 hover:text-[#0052D4] dark:hover:text-white px-4 py-3 rounded-full hover:bg-[#0052D4]/10 dark:hover:bg-white/10 transition-all"
             >
               {l.label}
             </Link>
           ))}
           <button
             onClick={toggle}
-            className="p-2 text-gray-500 dark:text-white/50 hover:text-gray-900 dark:hover:text-white transition-colors ml-2"
+            className="p-3 text-gray-500 dark:text-white/50 hover:text-gray-900 dark:hover:text-white transition-colors ml-2"
             aria-label="Toggle theme"
           >
             {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
           </button>
           <Link
             href="/start"
-            className="gradient-bg text-white text-xs font-bold uppercase tracking-wider px-5 py-2 rounded-full hover:opacity-90 transition-opacity ml-2"
+            className="gradient-bg text-white text-[13px] font-bold uppercase tracking-wider px-5 py-3 rounded-full hover:opacity-90 transition-opacity ml-2"
           >
             Get a Quote
           </Link>

@@ -86,7 +86,7 @@ export default function VideoCard({ id, title, category, featured, stats, facebo
           </svg>
         </div>
       </div>
-      {/* Stats at top — featured only */}
+      {/* Stats at top - featured only */}
       {featured && stats && (
         <div className="absolute top-0 left-0 right-0 p-4 bg-gradient-to-b from-black/90 via-black/40 to-transparent">
           <div className="flex gap-5 flex-wrap">
@@ -99,7 +99,7 @@ export default function VideoCard({ id, title, category, featured, stats, facebo
           </div>
         </div>
       )}
-      {/* Info overlay — bottom */}
+      {/* Info overlay - bottom */}
       <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
         <p className="text-xs font-bold uppercase tracking-wider text-[#00C6FF] mb-1">{category}</p>
         <p className="text-sm font-bold text-white">{title}</p>

@@ -8,17 +8,17 @@ export const metadata: Metadata = {
 }
 
 const frames = [
-  { src: '/whiskyjournalframes1.png', alt: 'The Whisky Journal — project frame' },
-  { src: '/whiskyjournalframes2.png', alt: 'The Whisky Journal — project frame' },
-  { src: '/whiskyjournalframes3.png', alt: 'The Whisky Journal — project frame' },
-  { src: '/whiskyjournalframes4.png', alt: 'The Whisky Journal — project frame' },
-  { src: '/whiskyjournalframes5.png', alt: 'The Whisky Journal — project frame' },
-  { src: '/whiskyjournalframes6.png', alt: 'The Whisky Journal — project frame' },
-  { src: '/rjcprojectframe1.png', alt: 'Rothesay Joint Campus — project frame' },
-  { src: '/rjcprojectframe3.png', alt: 'Rothesay Joint Campus — project frame' },
-  { src: '/rjcprojectframe4.png', alt: 'Rothesay Joint Campus — project frame' },
-  { src: '/rjcprojectframe5.png', alt: 'Rothesay Joint Campus — project frame' },
-  { src: '/rjcprojectframe6.png', alt: 'Rothesay Joint Campus — project frame' },
+  { src: '/whiskyjournalframes1.png', alt: 'The Whisky Journal - project frame' },
+  { src: '/whiskyjournalframes2.png', alt: 'The Whisky Journal - project frame' },
+  { src: '/whiskyjournalframes3.png', alt: 'The Whisky Journal - project frame' },
+  { src: '/whiskyjournalframes4.png', alt: 'The Whisky Journal - project frame' },
+  { src: '/whiskyjournalframes5.png', alt: 'The Whisky Journal - project frame' },
+  { src: '/whiskyjournalframes6.png', alt: 'The Whisky Journal - project frame' },
+  { src: '/rjcprojectframe1.png', alt: 'Rothesay Joint Campus - project frame' },
+  { src: '/rjcprojectframe3.png', alt: 'Rothesay Joint Campus - project frame' },
+  { src: '/rjcprojectframe4.png', alt: 'Rothesay Joint Campus - project frame' },
+  { src: '/rjcprojectframe5.png', alt: 'Rothesay Joint Campus - project frame' },
+  { src: '/rjcprojectframe6.png', alt: 'Rothesay Joint Campus - project frame' },
   { src: '/kateframe1.png', alt: 'Project frame' },
 ]
 
@@ -34,7 +34,7 @@ export default function Videography() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
           <div className="space-y-5 text-gray-600 dark:text-white/60 leading-relaxed">
-            <p>Every shoot is covered on a Sony a7IV or a7III — broadcast-quality sensors with cinematic colour profiles. Drone footage available via DJI Mini 5 Pro where required.</p>
+            <p>Every shoot is covered on a Sony a7IV or a7III - broadcast-quality sensors with cinematic colour profiles. Drone footage available via DJI Mini 5 Pro where required.</p>
             <p>I edit using Adobe Premiere Pro, with colour grading and audio mixing included as standard. You get polished, ready-to-publish deliverables.</p>
             <p>Half-day bookings cover up to 3 hours on location. Full-day bookings cover up to 5 hours on location. Turnaround is typically 2–4 weeks. Express delivery is available and agreed per project.</p>
           </div>
@@ -49,7 +49,7 @@ export default function Videography() {
             </div>
             <div className="border-l-4 border-gray-200 dark:border-white/10 pl-6">
               <h3 className="font-black text-lg mb-1 text-gray-900 dark:text-white">Editing Only</h3>
-              <p className="text-gray-500 dark:text-white/50 text-sm">Standalone edit services available — quoted per project</p>
+              <p className="text-gray-500 dark:text-white/50 text-sm">Standalone edit services available - quoted per project</p>
             </div>
             <Link href="/contact" className="gradient-bg text-white font-bold px-8 py-4 rounded-sm hover:opacity-90 transition-opacity text-sm uppercase tracking-wider block text-center mt-6">
               Get a Free Quote
@@ -74,10 +74,10 @@ export default function Videography() {
           <h2 className="text-3xl font-black mb-12 text-gray-900 dark:text-white">Video Examples</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { id: 'APrjtZ7kTGk', title: 'Working at Rothesay Joint Campus — Full Promo' },
-              { id: '5cv1GW6mlm8', title: 'West Lowland Battalion ACF — The Only Way Is Up' },
-              { id: 'hDpazT7xfFc', title: 'The Whisky Journal — Promo Film' },
-              { id: 'VVGPcQIk0cY', title: 'An Evening with Graeme Souness — BTS' },
+              { id: 'APrjtZ7kTGk', title: 'Working at Rothesay Joint Campus - Full Promo' },
+              { id: '5cv1GW6mlm8', title: 'West Lowland Battalion ACF - The Only Way Is Up' },
+              { id: 'hDpazT7xfFc', title: 'The Whisky Journal - Promo Film' },
+              { id: 'VVGPcQIk0cY', title: 'An Evening with Graeme Souness - BTS' },
             ].map((v) => (
               <div key={v.id}>
                 <div className="aspect-video rounded-sm overflow-hidden bg-gray-100 dark:bg-white/5">

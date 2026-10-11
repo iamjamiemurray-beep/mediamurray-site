@@ -23,7 +23,7 @@ const questions = [
     options: [
       { value: 'video', label: 'Video & Editing', desc: 'Corporate, promotional and brand films' },
       { value: 'photography', label: 'Photography', desc: 'Events, portraits, product and lifestyle' },
-      { value: 'event', label: 'Event Coverage', desc: 'Full event — video and photo combined' },
+      { value: 'event', label: 'Event Coverage', desc: 'Full event - video and photo combined' },
       { value: 'content-day', label: 'Content Day', desc: 'Maximum output for weeks of social content' },
     ],
   },
@@ -42,7 +42,7 @@ const questions = [
     label: 'Where is the project?',
     multi: false,
     options: [
-      { value: 'central-belt', label: 'Central Belt', desc: 'Glasgow or Edinburgh — no travel costs' },
+      { value: 'central-belt', label: 'Central Belt', desc: 'Glasgow or Edinburgh - no travel costs' },
       { value: 'scotland', label: 'Wider Scotland', desc: 'Highlands, Islands, or remote locations' },
       { value: 'uk', label: 'Rest of UK', desc: 'England, Wales, Northern Ireland' },
     ],
@@ -210,7 +210,7 @@ export default function StartPage() {
       if (!res.ok) throw new Error('Send failed')
       setSubmitted(true)
     } catch {
-      setSubmitError('Something went wrong — please email mail@mediamurray.com directly.')
+      setSubmitError('Something went wrong - please email mail@mediamurray.com directly.')
     } finally {
       setSubmitting(false)
     }
@@ -367,7 +367,7 @@ export default function StartPage() {
           {current.label}
         </h2>
         <p className="text-sm text-gray-400 dark:text-white/40 mb-8">
-          {current.multi ? 'Select all that apply — or skip if none apply.' : 'Select one option.'}
+          {current.multi ? 'Select all that apply - or skip if none apply.' : 'Select one option.'}
         </p>
 
         <div className="grid grid-cols-1 gap-3 mb-10">

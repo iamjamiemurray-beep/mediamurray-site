@@ -25,7 +25,7 @@ const clientLogos = [
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Jamie Murray — Scotland-based videographer, photographer and editor. 170+ projects, 6 years in business. Broadcast quality without the agency overhead.',
+  description: 'Jamie Murray - Scotland-based videographer, photographer and editor. 170+ projects, 6 years in business. Broadcast quality without the agency overhead.',
 }
 
 const btsImages = [
@@ -51,11 +51,11 @@ export default function About() {
   return (
     <div className="pt-24">
 
-      {/* Hero — About */}
+      {/* Hero - About */}
       <section className="max-w-6xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-          {/* Left — text + specs + buttons */}
+          {/* Left - text + specs + buttons */}
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">About</p>
             <h1 className="text-5xl font-black mb-2 text-gray-900 dark:text-white">Jamie Murray</h1>
@@ -73,7 +73,7 @@ export default function About() {
                 I&apos;m originally from the Isle of Bute, where I was born and grew up, and I now work across Scotland producing professional video and photography for businesses, organisations, creative agencies, charities and individuals.
               </p>
               <p>
-                Since graduating with a First Class degree in Television Production from Edinburgh Napier University in 2020, I&apos;ve worked on over 170 client projects, filming and editing a wide range of content — promotional films, event coverage, interviews, organisational and public-sector work, product content, and documentary-style projects in live environments.
+                Since graduating with a First Class degree in Television Production from Edinburgh Napier University in 2020, I&apos;ve worked on over 170 client projects, filming and editing a wide range of content - promotional films, event coverage, interviews, organisational and public-sector work, product content, and documentary-style projects in live environments.
               </p>
               <p>
                 A lot of my work involves real people who aren&apos;t always used to being on camera. My role is to make the process feel straightforward and well handled, while delivering work that looks professional and represents people and organisations properly.
@@ -107,7 +107,7 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right — photos */}
+          {/* Right - photos */}
           <HeroPhotoGrid />
 
         </div>
@@ -128,13 +128,13 @@ export default function About() {
             <div className="border-l-4 border-[#00C6FF] pl-6">
               <h3 className="font-black text-xl mb-3 text-gray-900 dark:text-white">Bespoke Projects</h3>
               <p className="text-gray-600 dark:text-white/60 leading-relaxed">
-                More involved, story-led pieces — promotional films, campaigns and structured content where I help shape the narrative from the start, then handle filming and post-production to deliver a finished piece that holds together properly.
+                More involved, story-led pieces - promotional films, campaigns and structured content where I help shape the narrative from the start, then handle filming and post-production to deliver a finished piece that holds together properly.
               </p>
             </div>
             <div className="border-l-4 border-gray-300 dark:border-white/20 pl-6">
               <h3 className="font-black text-xl mb-3 text-gray-900 dark:text-white">Agency & Crew Work</h3>
               <p className="text-gray-600 dark:text-white/60 leading-relaxed">
-                I regularly work in videographer-only roles for creative agencies — arriving on set with my kit and functioning as an additional camera operator or specialist. This includes podcast shoots, larger event productions, and behind-the-scenes filming where the agency leads creative and I deliver the footage.
+                I regularly work in videographer-only roles for creative agencies - arriving on set with my kit and functioning as an additional camera operator or specialist. This includes podcast shoots, larger event productions, and behind-the-scenes filming where the agency leads creative and I deliver the footage.
               </p>
             </div>
           </div>
@@ -153,7 +153,7 @@ export default function About() {
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Experience</p>
               <h2 className="text-3xl font-black mb-8 text-gray-900 dark:text-white">Since Going Freelance</h2>
               <p className="text-gray-600 dark:text-white/60 leading-relaxed mb-8">
-                Projects have grown in scale consistently year on year. More varied clients, more ambitious briefs, and more work each year since graduating. The variety is a big part of what I enjoy — working with new people on projects that are genuinely different from one another keeps the standard high.
+                Projects have grown in scale consistently year on year. More varied clients, more ambitious briefs, and more work each year since graduating. The variety is a big part of what I enjoy - working with new people on projects that are genuinely different from one another keeps the standard high.
               </p>
               <div className="flex gap-8">
                 <div>
@@ -175,7 +175,7 @@ export default function About() {
               </div>
               <div className="gradient-bg p-6 rounded-sm">
                 <p className="text-white font-medium leading-relaxed text-sm">
-                  If you&apos;re looking for experience, reliability, and someone who&apos;s easy to work with, takes the work seriously, and delivers what&apos;s agreed — we are likely a good fit.
+                  If you&apos;re looking for experience, reliability, and someone who&apos;s easy to work with, takes the work seriously, and delivers what&apos;s agreed - we are likely a good fit.
                 </p>
               </div>
             </div>

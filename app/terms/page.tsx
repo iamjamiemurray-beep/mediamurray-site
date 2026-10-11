@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
-  description: 'MediaMurray terms of service — the rules governing use of this website.',
+  description: 'MediaMurray terms of service - the rules governing use of this website.',
 }
 
 export default function TermsOfService() {
@@ -34,7 +34,7 @@ export default function TermsOfService() {
 
           <div>
             <h2 className="text-xl font-black text-gray-900 dark:text-white mb-4">3. Intellectual Property</h2>
-            <p>All content on this website — including text, images, video, graphics, logos and design — is the property of Jamie Murray (trading as MediaMurray) or is used with permission. All rights are reserved.</p>
+            <p>All content on this website - including text, images, video, graphics, logos and design - is the property of Jamie Murray (trading as MediaMurray) or is used with permission. All rights are reserved.</p>
             <p className="mt-3">You may not reproduce, distribute, modify or republish any content from this website without prior written permission from MediaMurray.</p>
           </div>
 

@@ -405,7 +405,7 @@ export default function CreatorStarterKit() {
                         className="inline-flex items-center gap-2 mt-4 text-sm font-bold text-[#0052D4] hover:text-[#00C6FF] transition-colors"
                       >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                        What Camera Should I Buy? — Full Guide
+                        What Camera Should I Buy? - Full Guide
                       </Link>
                     )}
                   </div>

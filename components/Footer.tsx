@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
         <p className="text-gray-500 dark:text-white/50 text-sm leading-relaxed max-w-md mx-auto">
           Professional videography, photography and editing.<br />
-          Based in Edinburgh — available across Scotland and the United Kingdom.
+          Based in Edinburgh - available across Scotland and the United Kingdom.
         </p>
         <p className="mt-1 text-xs text-gray-400 dark:text-white/30">
           Trusted by over 100 clients across Scotland and the UK.

@@ -24,10 +24,10 @@ const TIMELINE_OPTIONS = [
 ]
 
 const PROCESS_STEPS = [
-  { n: '01', title: 'Brief', body: 'We align on what you need — goal, audience, deliverables, and timeline. Usually a 20-min call or email exchange.' },
+  { n: '01', title: 'Brief', body: 'We align on what you need - goal, audience, deliverables, and timeline. Usually a 20-min call or email exchange.' },
   { n: '02', title: 'Quote', body: 'You receive a written quote within 24 hours. A 50% deposit secures your date.' },
   { n: '03', title: 'Shoot', body: 'I arrive prepared, handle everything on the day, and make the process smooth for you and your team.' },
-  { n: '04', title: 'Deliver', body: 'Edited files delivered digitally — typically 3–4 weeks for video, 1–2 weeks for photography. One revision round included.' },
+  { n: '04', title: 'Deliver', body: 'Edited files delivered digitally - typically 3–4 weeks for video, 1–2 weeks for photography. One revision round included.' },
 ]
 
 const TERMS_SUMMARY = [
@@ -202,7 +202,7 @@ export default function OnboardingWizard() {
     <div className="max-w-2xl mx-auto px-6">
       <ProgressBar step={step} total={STEPS.length} />
 
-      {/* Step 0 — Welcome */}
+      {/* Step 0 - Welcome */}
       {step === 0 && (
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-3">Client Onboarding</p>
@@ -218,13 +218,13 @@ export default function OnboardingWizard() {
           <div className="flex gap-4 items-center flex-wrap">
             <Btn onClick={next}>Start Onboarding</Btn>
             <Link href="/contact" className="text-sm font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 hover:text-gray-700 dark:hover:text-white transition-colors">
-              Skip — just contact me
+              Skip - just contact me
             </Link>
           </div>
         </div>
       )}
 
-      {/* Step 1 — Your Details */}
+      {/* Step 1 - Your Details */}
       {step === 1 && (
         <div>
           <h2 className="text-3xl font-black mb-2 text-gray-900 dark:text-white">Your Details</h2>
@@ -260,7 +260,7 @@ export default function OnboardingWizard() {
         </div>
       )}
 
-      {/* Step 2 — Your Project */}
+      {/* Step 2 - Your Project */}
       {step === 2 && (
         <div>
           <h2 className="text-3xl font-black mb-2 text-gray-900 dark:text-white">Your Project</h2>
@@ -316,7 +316,7 @@ export default function OnboardingWizard() {
         </div>
       )}
 
-      {/* Step 3 — About Us */}
+      {/* Step 3 - About Us */}
       {step === 3 && (
         <div>
           <h2 className="text-3xl font-black mb-2 text-gray-900 dark:text-white">About MediaMurray</h2>
@@ -324,13 +324,13 @@ export default function OnboardingWizard() {
 
           <div className="space-y-5 text-gray-600 dark:text-white/60 leading-relaxed mb-8">
             <p>
-              I'm Jamie Murray — a Scottish-based videographer, photographer and editor working with businesses, organisations, agencies, charities and individuals across Scotland and the UK.
+              I'm Jamie Murray - a Scottish-based videographer, photographer and editor working with businesses, organisations, agencies, charities and individuals across Scotland and the UK.
             </p>
             <p>
               Since graduating with a First Class degree in Television Production from Edinburgh Napier University in 2020, I've delivered over 170 client projects. Work spans promotional films, event coverage, social media content, photography and post-production.
             </p>
             <p>
-              On most projects I handle filming and editing myself — one point of accountability, brief through to delivery.
+              On most projects I handle filming and editing myself - one point of accountability, brief through to delivery.
             </p>
           </div>
 
@@ -362,7 +362,7 @@ export default function OnboardingWizard() {
         </div>
       )}
 
-      {/* Step 4 — Process */}
+      {/* Step 4 - Process */}
       {step === 4 && (
         <div>
           <h2 className="text-3xl font-black mb-2 text-gray-900 dark:text-white">How It Works</h2>
@@ -385,10 +385,10 @@ export default function OnboardingWizard() {
           <div className="bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-white/10 p-5 rounded-sm mb-10">
             <p className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mb-2">What to expect</p>
             <ul className="space-y-2 text-sm text-gray-600 dark:text-white/60">
-              <li className="flex gap-2"><span className="text-[#0052D4] font-bold flex-shrink-0">—</span> Response within 24 hours of initial enquiry</li>
-              <li className="flex gap-2"><span className="text-[#0052D4] font-bold flex-shrink-0">—</span> Written quote with clear scope before any work begins</li>
-              <li className="flex gap-2"><span className="text-[#0052D4] font-bold flex-shrink-0">—</span> Single point of contact throughout</li>
-              <li className="flex gap-2"><span className="text-[#0052D4] font-bold flex-shrink-0">—</span> Files delivered via download link, ready to use</li>
+              <li className="flex gap-2"><span className="text-[#0052D4] font-bold flex-shrink-0">-</span> Response within 24 hours of initial enquiry</li>
+              <li className="flex gap-2"><span className="text-[#0052D4] font-bold flex-shrink-0">-</span> Written quote with clear scope before any work begins</li>
+              <li className="flex gap-2"><span className="text-[#0052D4] font-bold flex-shrink-0">-</span> Single point of contact throughout</li>
+              <li className="flex gap-2"><span className="text-[#0052D4] font-bold flex-shrink-0">-</span> Files delivered via download link, ready to use</li>
             </ul>
           </div>
 
@@ -399,7 +399,7 @@ export default function OnboardingWizard() {
         </div>
       )}
 
-      {/* Step 5 — Policies */}
+      {/* Step 5 - Policies */}
       {step === 5 && (
         <div>
           <h2 className="text-3xl font-black mb-2 text-gray-900 dark:text-white">Policies & Terms</h2>
@@ -441,7 +441,7 @@ export default function OnboardingWizard() {
         </div>
       )}
 
-      {/* Step 6 — Agreements */}
+      {/* Step 6 - Agreements */}
       {step === 6 && (
         <div>
           <h2 className="text-3xl font-black mb-2 text-gray-900 dark:text-white">Your Agreements</h2>
@@ -495,7 +495,7 @@ export default function OnboardingWizard() {
         </div>
       )}
 
-      {/* Step 7 — Complete */}
+      {/* Step 7 - Complete */}
       {step === 7 && (
         <div className="text-center py-8">
           <div className="w-16 h-16 gradient-bg rounded-sm flex items-center justify-center mx-auto mb-8">

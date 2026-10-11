@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Testimonials',
-  description: 'What clients say about working with MediaMurray — videography, photography and editing across Scotland.',
+  description: 'What clients say about working with MediaMurray - videography, photography and editing across Scotland.',
 }
 
 const testimonials = [
@@ -54,7 +54,7 @@ const testimonials = [
     quote: "It's amazing!! We shared it with the team and even had a few people a bit emotional.",
     name: 'Emily Beever',
     org: 'Scottish Youth Parliament',
-    project: 'Dear Scotland\'s Future — SYP Manifesto Film',
+    project: 'Dear Scotland\'s Future - SYP Manifesto Film',
     projectUrl: '/work/video/kg3wpo3TTL0',
     category: 'Public Sector',
   },
@@ -77,7 +77,7 @@ const testimonials = [
     photo: '/Richard-Whitcomb.png',
   },
   {
-    quote: "Working with Jamie was excellent. He was very open to my ideas and we collaborated creatively. He very much put me at ease — I'm not one for being in front of the camera. The service he provides is 10/10 and he got the images back to me very quickly. Highly recommend.",
+    quote: "Working with Jamie was excellent. He was very open to my ideas and we collaborated creatively. He very much put me at ease - I'm not one for being in front of the camera. The service he provides is 10/10 and he got the images back to me very quickly. Highly recommend.",
     name: 'Kevin Lawrence',
     org: 'Kev Lawrence Design',
     project: 'Promotional Film & Portrait Photography',
@@ -177,7 +177,7 @@ export default function Testimonials() {
                     )}
                   </div>
                 )}
-                <span className="inline-block mt-3 text-[10px] font-bold uppercase tracking-[0.15em] border border-gray-200 dark:border-white/10 text-gray-400 dark:text-white/30 px-2 py-0.5 rounded-full">
+                <span className="inline-block mt-3 text-xs font-bold uppercase tracking-[0.15em] border border-gray-200 dark:border-white/10 text-gray-400 dark:text-white/30 px-2 py-0.5 rounded-full">
                   {t.category}
                 </span>
                 </div>

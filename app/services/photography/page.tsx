@@ -33,11 +33,11 @@ export default function Photography() {
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Services</p>
         <h1 className="text-5xl font-black mb-6 text-gray-900 dark:text-white">Photography</h1>
         <p className="text-gray-500 dark:text-white/50 max-w-2xl text-xl mb-12 leading-relaxed">
-          Professional photography for events, portraits, products and lifestyle — edited and delivered quickly.
+          Professional photography for events, portraits, products and lifestyle - edited and delivered quickly.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
           <div className="space-y-5 text-gray-600 dark:text-white/60 leading-relaxed">
-            <p>Shot on Sony a7IV — a full-frame mirrorless camera with exceptional low-light performance, making it ideal for indoor events, dim venues and natural-light portraits.</p>
+            <p>Shot on Sony a7IV - a full-frame mirrorless camera with exceptional low-light performance, making it ideal for indoor events, dim venues and natural-light portraits.</p>
             <p>All images are delivered fully edited in a consistent style. Turnaround is typically 1–2 weeks, with express delivery available if needed.</p>
             <p>Half-day bookings cover up to 3 hours on location. Full-day bookings cover up to 5 hours on location. Suitable for corporate events, awards evenings, headshots, brand content, and product shoots.</p>
           </div>
@@ -52,7 +52,7 @@ export default function Photography() {
             </div>
             <div className="border-l-4 border-gray-200 dark:border-white/10 pl-6">
               <h3 className="font-black text-lg mb-1 text-gray-900 dark:text-white">Event Add-On</h3>
-              <p className="text-gray-500 dark:text-white/50 text-sm">Photography alongside video coverage — quoted together</p>
+              <p className="text-gray-500 dark:text-white/50 text-sm">Photography alongside video coverage - quoted together</p>
             </div>
             <Link href="/contact" className="gradient-bg text-white font-bold px-8 py-4 rounded-sm hover:opacity-90 transition-opacity text-sm uppercase tracking-wider block text-center mt-8">
               Get a Free Quote
@@ -75,7 +75,7 @@ export default function Photography() {
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Personal</p>
           <h2 className="text-3xl font-black mb-4 text-gray-900 dark:text-white">Favourite Shots</h2>
-          <p className="text-gray-500 dark:text-white/50 mb-12 max-w-xl">A personal selection — photos taken for no brief in particular, just because they were worth taking.</p>
+          <p className="text-gray-500 dark:text-white/50 mb-12 max-w-xl">A personal selection - photos taken for no brief in particular, just because they were worth taking.</p>
           <MasonryGallery images={[
             { src: '/nyc1.jpg', alt: 'New York City' },
             { src: '/nyc2.jpg', alt: 'New York City' },

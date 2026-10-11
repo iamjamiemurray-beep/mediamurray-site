@@ -3,15 +3,15 @@ import VideoCard from '@/components/VideoCard'
 import FacebookEmbed from './FacebookEmbed'
 
 export const metadata: Metadata = {
-  title: 'West Lowland Battalion ACF — Media Portfolio',
-  description: 'Video portfolio for West Lowland Battalion ACF — produced by Jamie Murray, MediaMurray.',
+  title: 'West Lowland Battalion ACF - Media Portfolio',
+  description: 'Video portfolio for West Lowland Battalion ACF - produced by Jamie Murray, MediaMurray.',
   robots: { index: false, follow: false },
 }
 
 const promoYT = [
   { id: 'JxP550xgQAU', title: 'Army Cadets – Join Today', category: 'Promotional' },
   { id: 'pR7JaGdOXEY', title: 'Stirling Castle Visit', category: 'Promotional' },
-  { id: 'X_iEPDmfBwk', title: 'Rachel Howie — Reflecting On Her Cadet Career', category: 'Promotional' },
+  { id: 'X_iEPDmfBwk', title: 'Rachel Howie - Reflecting On Her Cadet Career', category: 'Promotional' },
 ]
 
 const promoFB = [
@@ -42,7 +42,7 @@ export default function WLBNMedia() {
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">West Lowland Battalion ACF</p>
         <h1 className="text-5xl font-black mb-4 text-gray-900 dark:text-white">Media Portfolio</h1>
         <p className="text-gray-500 dark:text-white/50 max-w-2xl mb-12 text-lg leading-relaxed">
-          Films and content produced for West Lowland Battalion ACF over the past five years — 18 films accumulating over 127,000 combined views.
+          Films and content produced for West Lowland Battalion ACF over the past five years - 18 films accumulating over 127,000 combined views.
         </p>
 
         <div className="flex gap-10 pb-12 border-b border-gray-200 dark:border-white/10 mb-16">

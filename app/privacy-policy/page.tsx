@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'MediaMurray privacy policy — how we collect, use and protect your personal data in accordance with UK GDPR.',
+  description: 'MediaMurray privacy policy - how we collect, use and protect your personal data in accordance with UK GDPR.',
 }
 
 export default function PrivacyPolicy() {
@@ -48,9 +48,9 @@ export default function PrivacyPolicy() {
             <h2 className="text-xl font-black text-gray-900 dark:text-white mb-4">4. Legal Basis for Processing</h2>
             <p>We process your personal data on the following legal bases under UK GDPR:</p>
             <ul className="list-disc list-inside mt-3 space-y-2">
-              <li><strong className="text-gray-900 dark:text-white">Contract</strong> — processing is necessary to fulfil a contract with you or to take steps prior to entering into one</li>
-              <li><strong className="text-gray-900 dark:text-white">Legitimate interests</strong> — responding to general enquiries and maintaining business records</li>
-              <li><strong className="text-gray-900 dark:text-white">Legal obligation</strong> — retaining financial records as required under UK tax and accounting law</li>
+              <li><strong className="text-gray-900 dark:text-white">Contract</strong> - processing is necessary to fulfil a contract with you or to take steps prior to entering into one</li>
+              <li><strong className="text-gray-900 dark:text-white">Legitimate interests</strong> - responding to general enquiries and maintaining business records</li>
+              <li><strong className="text-gray-900 dark:text-white">Legal obligation</strong> - retaining financial records as required under UK tax and accounting law</li>
             </ul>
           </div>
 
@@ -66,19 +66,19 @@ export default function PrivacyPolicy() {
 
           <div>
             <h2 className="text-xl font-black text-gray-900 dark:text-white mb-4">6. Sharing Your Data</h2>
-            <p>We do not sell, rent or trade your personal data. We may share data with third parties only where strictly necessary — for example, an accountant or bookkeeper acting on our behalf under a data processing agreement. All such parties are bound by confidentiality obligations and UK GDPR requirements.</p>
+            <p>We do not sell, rent or trade your personal data. We may share data with third parties only where strictly necessary - for example, an accountant or bookkeeper acting on our behalf under a data processing agreement. All such parties are bound by confidentiality obligations and UK GDPR requirements.</p>
           </div>
 
           <div>
             <h2 className="text-xl font-black text-gray-900 dark:text-white mb-4">7. Your Rights</h2>
             <p>Under UK GDPR, you have the following rights in relation to your personal data:</p>
             <ul className="list-disc list-inside mt-3 space-y-2">
-              <li><strong className="text-gray-900 dark:text-white">Right of access</strong> — to request a copy of the data we hold about you</li>
-              <li><strong className="text-gray-900 dark:text-white">Right to rectification</strong> — to ask us to correct inaccurate data</li>
-              <li><strong className="text-gray-900 dark:text-white">Right to erasure</strong> — to request deletion of your data, subject to legal obligations</li>
-              <li><strong className="text-gray-900 dark:text-white">Right to restriction</strong> — to limit how we use your data in certain circumstances</li>
-              <li><strong className="text-gray-900 dark:text-white">Right to portability</strong> — to receive your data in a structured, machine-readable format</li>
-              <li><strong className="text-gray-900 dark:text-white">Right to object</strong> — to processing based on legitimate interests</li>
+              <li><strong className="text-gray-900 dark:text-white">Right of access</strong> - to request a copy of the data we hold about you</li>
+              <li><strong className="text-gray-900 dark:text-white">Right to rectification</strong> - to ask us to correct inaccurate data</li>
+              <li><strong className="text-gray-900 dark:text-white">Right to erasure</strong> - to request deletion of your data, subject to legal obligations</li>
+              <li><strong className="text-gray-900 dark:text-white">Right to restriction</strong> - to limit how we use your data in certain circumstances</li>
+              <li><strong className="text-gray-900 dark:text-white">Right to portability</strong> - to receive your data in a structured, machine-readable format</li>
+              <li><strong className="text-gray-900 dark:text-white">Right to object</strong> - to processing based on legitimate interests</li>
             </ul>
             <p className="mt-3">To exercise any of these rights, contact us at <a href="mailto:mail@mediamurray.com" className="text-[#0052D4] hover:text-[#00C6FF] transition-colors">mail@mediamurray.com</a>.</p>
           </div>

@@ -471,7 +471,7 @@ export default function ContentDay() {
         <div className="max-w-4xl mx-auto px-6">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Book a Content Day</p>
           <h2 className="text-4xl font-black mb-4 text-gray-900 dark:text-white">Let&apos;s Get Started</h2>
-          <p className="text-gray-500 dark:text-white/50 max-w-xl mb-12">Fill in the short form below and I&apos;ll be in touch within 24 hours to discuss your Content Day. 50% deposit secures your date — the balance is due on delivery.</p>
+          <p className="text-gray-500 dark:text-white/50 max-w-xl mb-12">Fill in the short form below and I&apos;ll be in touch within 24 hours to discuss your Content Day. 50% deposit secures your date - the balance is due on delivery.</p>
           <ContentDayBookingForm />
         </div>
       </section>

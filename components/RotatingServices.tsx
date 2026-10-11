@@ -16,15 +16,21 @@ function useRotating() {
   const [phase, setPhase] = useState<'visible' | 'out' | 'in'>('visible')
 
   useEffect(() => {
+    // Respect reduced motion: show the first service and stop rotating
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const timers: ReturnType<typeof setTimeout>[] = []
     const tick = setInterval(() => {
       setPhase('out')
-      setTimeout(() => {
+      timers.push(setTimeout(() => {
         setIndex(i => (i + 1) % services.length)
         setPhase('in')
-        setTimeout(() => setPhase('visible'), 200)
-      }, 200)
+        timers.push(setTimeout(() => setPhase('visible'), 200))
+      }, 200))
     }, 1800)
-    return () => clearInterval(tick)
+    return () => {
+      clearInterval(tick)
+      timers.forEach(clearTimeout)
+    }
   }, [])
 
   const style =
@@ -37,7 +43,7 @@ function useRotating() {
   return { service: services[index], style }
 }
 
-// Compact version — sits inside the hero section
+// Compact version - sits inside the hero section
 export function RotatingServicesInline() {
   const { service, style } = useRotating()
 

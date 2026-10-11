@@ -41,7 +41,7 @@ const services = [
   {
     href: '/services/content-day',
     title: 'Content Day',
-    desc: 'One full production day — maximum content output. Walk away with weeks of professional video and photo content.',
+    desc: 'One full production day - maximum content output. Walk away with weeks of professional video and photo content.',
     img: '/contentpackagesservicespicture.png',
   },
 ]
@@ -61,7 +61,7 @@ export default function Services() {
           <div className="hidden lg:flex justify-end">
             <Image
               src="/jamiehero5.png"
-              alt="Jamie Murray — MediaMurray videographer"
+              alt="Jamie Murray - MediaMurray videographer"
               width={400}
               height={500}
               className="h-64 w-auto object-contain"

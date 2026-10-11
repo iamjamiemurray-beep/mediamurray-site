@@ -1,12 +1,15 @@
 import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from '@/components/ThemeProvider'
 
+const inter = Inter({ subsets: ['latin'], weight: ['400', '600', '700', '900'], display: 'swap', variable: '--font-inter' })
+
 export const metadata: Metadata = {
   title: {
-    default: 'MediaMurray — Video, Photo & Editing | Scotland',
+    default: 'MediaMurray - Video, Photo & Editing | Scotland',
     template: '%s | MediaMurray',
   },
   description:
@@ -22,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" suppressHydrationWarning>
+    <html lang="en-GB" suppressHydrationWarning className={inter.variable}>
       <body className="antialiased bg-white dark:bg-[#0a0a0a] transition-colors duration-200">
         <ThemeProvider>
           <Navbar />

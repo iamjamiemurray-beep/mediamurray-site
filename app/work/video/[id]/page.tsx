@@ -2,24 +2,24 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 const videoMeta: Record<string, { title: string; category: string }> = {
-  '7eQSVwN0oBU': { title: 'IBAC — Promotional Film', category: 'Community' },
-  'MuUrZOhwSAQ': { title: 'The Highways — Stand Up And Be Counted', category: 'Music Video' },
+  '7eQSVwN0oBU': { title: 'IBAC - Promotional Film', category: 'Community' },
+  'MuUrZOhwSAQ': { title: 'The Highways - Stand Up And Be Counted', category: 'Music Video' },
   'kg3wpo3TTL0': { title: '2026–2031 SYP Manifesto: Dear Scotland\'s Future', category: 'Public Sector' },
-  'PII_t68w8Jg': { title: 'Scottish Fair Trade — Youth Collective Film', category: 'Public Sector' },
-  'b9phaKPVKxY': { title: 'Youth Collective — Scottish Fair Trade Film', category: 'Public Sector' },
-  'v4sbb5wXikU': { title: 'Bute Community Forest — Exhibition Promo', category: 'Charity' },
-  'APrjtZ7kTGk': { title: 'Working at Rothesay Joint Campus — Full Promo', category: 'Corporate' },
-  '5cv1GW6mlm8': { title: 'West Lowland Battalion ACF — The Only Way Is Up', category: 'Corporate' },
+  'PII_t68w8Jg': { title: 'Scottish Fair Trade - Youth Collective Film', category: 'Public Sector' },
+  'b9phaKPVKxY': { title: 'Youth Collective - Scottish Fair Trade Film', category: 'Public Sector' },
+  'v4sbb5wXikU': { title: 'Bute Community Forest - Exhibition Promo', category: 'Charity' },
+  'APrjtZ7kTGk': { title: 'Working at Rothesay Joint Campus - Full Promo', category: 'Corporate' },
+  '5cv1GW6mlm8': { title: 'West Lowland Battalion ACF - The Only Way Is Up', category: 'Corporate' },
   'rUWGAz0s5hw': { title: 'LowlandRFCA Beating Retreat 2025', category: 'Event' },
   'T68PCvwUwH0': { title: 'Visit Bute: Your Own Adventure Island', category: 'Commercial' },
   'lGnpNxBG4xU': { title: 'Scottish Women\'s Wellbeing Summit 2025', category: 'Conference' },
   'VV1P0zK_hP4': { title: 'Inverclyde Whisky Festival 2025', category: 'Event' },
   'B6dOtVrT6Bg': { title: 'International Fair Trade Towns Conference 2025', category: 'Conference' },
-  'hDpazT7xfFc': { title: 'The Whisky Journal — Promo Film', category: 'Commercial' },
+  'hDpazT7xfFc': { title: 'The Whisky Journal - Promo Film', category: 'Commercial' },
   'fVm0VBWuyt8': { title: 'Rita Rusk Promo (Socially Creative)', category: 'Commercial' },
-  '9zONKRiBPm0': { title: 'Warrior In Training — Pilates Promo', category: 'Commercial' },
-  'VVGPcQIk0cY': { title: 'An Evening with Graeme Souness — BTS', category: 'Event' },
-  'acscOlaQAcA': { title: 'All Sewn Up — Content Day Film', category: 'Commercial' },
+  '9zONKRiBPm0': { title: 'Warrior In Training - Pilates Promo', category: 'Commercial' },
+  'VVGPcQIk0cY': { title: 'An Evening with Graeme Souness - BTS', category: 'Event' },
+  'acscOlaQAcA': { title: 'All Sewn Up - Content Day Film', category: 'Commercial' },
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const meta = videoMeta[id]
   return {
     title: meta?.title ?? 'Video',
-    description: `Watch ${meta?.title ?? 'this project'} — produced by MediaMurray, Scotland.`,
+    description: `Watch ${meta?.title ?? 'this project'} - produced by MediaMurray, Scotland.`,
   }
 }
 

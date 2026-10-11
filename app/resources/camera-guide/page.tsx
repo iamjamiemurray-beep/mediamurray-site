@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'What Camera Should I Buy First? | MediaMurray',
-  description: 'A practical guide to starter cameras for content creation — from budget options to the kit professionals actually use. Written by a working videographer.',
+  description: 'A practical guide to starter cameras for content creation - from budget options to the kit professionals actually use. Written by a working videographer.',
 }
 
 interface Camera {
@@ -52,7 +52,7 @@ const tiers: Tier[] = [
         price: '~£500 used',
         sensor: 'APS-C',
         video: '4K30 / 8-bit',
-        description: 'Still one of the best autofocus systems at this price point — real-time eye and subject tracking. Available used for sensible money. A genuine bargain.',
+        description: 'Still one of the best autofocus systems at this price point - real-time eye and subject tracking. Available used for sensible money. A genuine bargain.',
         amazonUrl: 'https://www.amazon.co.uk/s?k=Sony+A6400',
       },
       {
@@ -60,7 +60,7 @@ const tiers: Tier[] = [
         price: '~£400',
         sensor: 'APS-C',
         video: '4K (cropped) / 1080p60',
-        description: 'A well-rounded beginner camera with excellent face tracking and a flip-out screen. The 4K is heavily cropped so most people shoot 1080p — but for social content it holds up well.',
+        description: 'A well-rounded beginner camera with excellent face tracking and a flip-out screen. The 4K is heavily cropped so most people shoot 1080p - but for social content it holds up well.',
         amazonUrl: 'https://www.amazon.co.uk/s?k=Canon+EOS+M50+Mark+II',
       },
       {
@@ -68,7 +68,7 @@ const tiers: Tier[] = [
         price: '~£350',
         sensor: 'Micro Four Thirds',
         video: '4K30 / V-LogL',
-        description: 'Tiny, lightweight, with a built-in directional mic system — unusually useful for solo creators. V-LogL support at this price point is rare. Small sensor, but punches above its weight.',
+        description: 'Tiny, lightweight, with a built-in directional mic system - unusually useful for solo creators. V-LogL support at this price point is rare. Small sensor, but punches above its weight.',
         amazonUrl: 'https://www.amazon.co.uk/s?k=Panasonic+G100',
       },
     ],
@@ -83,7 +83,7 @@ const tiers: Tier[] = [
         price: '~£750',
         sensor: 'APS-C',
         video: '4K30 / 10-bit',
-        description: 'The upgrade that actually matters over the original — 10-bit log footage gives real flexibility in post. Same compact form factor, significantly more capable file.',
+        description: 'The upgrade that actually matters over the original - 10-bit log footage gives real flexibility in post. Same compact form factor, significantly more capable file.',
         amazonUrl: 'https://www.amazon.co.uk/s?k=Sony+ZV-E10+II',
       },
       {
@@ -99,7 +99,7 @@ const tiers: Tier[] = [
         price: '~£800',
         sensor: 'APS-C',
         video: '4K60 / 6.2K',
-        description: 'The best specs-per-pound in this range. 4K60 and 6.2K open-gate are unusual at this price. Fuji\'s film simulations are genuinely useful — some shooters use them straight to camera with no grading.',
+        description: 'The best specs-per-pound in this range. 4K60 and 6.2K open-gate are unusual at this price. Fuji\'s film simulations are genuinely useful - some shooters use them straight to camera with no grading.',
         amazonUrl: 'https://www.amazon.co.uk/s?k=Fujifilm+X-S20',
       },
       {
@@ -107,7 +107,7 @@ const tiers: Tier[] = [
         price: '~£700',
         sensor: 'Micro Four Thirds',
         video: '4K30 / 10-bit',
-        description: 'Weather-sealed, compact, and impressively stabilised. The 7.5-stop IBIS is class-leading — useful if you\'re shooting handheld outdoors. 10-bit log internal at this price is a genuine bonus.',
+        description: 'Weather-sealed, compact, and impressively stabilised. The 7.5-stop IBIS is class-leading - useful if you\'re shooting handheld outdoors. 10-bit log internal at this price is a genuine bonus.',
         amazonUrl: 'https://www.amazon.co.uk/s?k=OM+System+OM-5',
       },
       {
@@ -123,7 +123,7 @@ const tiers: Tier[] = [
   {
     label: 'Mid-Range',
     range: '£800 – £1,500',
-    description: 'Cameras at this price point can handle almost anything. If you\'re planning to take on paid work, start here — these are cameras you won\'t grow out of quickly.',
+    description: 'Cameras at this price point can handle almost anything. If you\'re planning to take on paid work, start here - these are cameras you won\'t grow out of quickly.',
     cameras: [
       {
         name: 'Sony A6700',
@@ -138,7 +138,7 @@ const tiers: Tier[] = [
         price: '~£1,300',
         sensor: 'Full-frame',
         video: '4K60 / 10-bit',
-        description: 'Full-frame at mid-range money. The larger sensor gives you shallow depth of field and low-light performance that APS-C cameras can\'t quite match. No in-body stabilisation — pair with a gimbal.',
+        description: 'Full-frame at mid-range money. The larger sensor gives you shallow depth of field and low-light performance that APS-C cameras can\'t quite match. No in-body stabilisation - pair with a gimbal.',
         amazonUrl: 'https://www.amazon.co.uk/s?k=Canon+EOS+R8',
       },
       {
@@ -170,14 +170,14 @@ const tiers: Tier[] = [
   {
     label: 'What I Shoot On',
     range: '£1,000 – £2,500',
-    description: 'These are the cameras in my own kit. If you\'re asking what I\'d recommend for someone serious about videography — this is the range.',
+    description: 'These are the cameras in my own kit. If you\'re asking what I\'d recommend for someone serious about videography - this is the range.',
     cameras: [
       {
         name: 'Sony A7 III',
         price: '~£1,000 used',
         sensor: 'Full-frame',
         video: '4K30 / 8-bit',
-        description: 'Still one of the best used-market buys in full-frame. The 8-bit limitation is its only weakness — everything else is excellent. Low light, autofocus, dynamic range. This is what I started with.',
+        description: 'Still one of the best used-market buys in full-frame. The 8-bit limitation is its only weakness - everything else is excellent. Low light, autofocus, dynamic range. This is what I started with.',
         image: '/gear/gear-sony-a7iii.jpg',
         amazonUrl: 'https://www.amazon.co.uk/s?k=Sony+A7+III',
       },
@@ -186,7 +186,7 @@ const tiers: Tier[] = [
         price: '~£1,800',
         sensor: 'Full-frame',
         video: '4K60 / 10-bit',
-        description: 'My main camera. The jump from the A7III to this was meaningful — 4K60 in 10-bit is a proper working tool. 33MP stills, excellent dual-card slots, and significantly improved IBIS. Built for hybrid work.',
+        description: 'My main camera. The jump from the A7III to this was meaningful - 4K60 in 10-bit is a proper working tool. 33MP stills, excellent dual-card slots, and significantly improved IBIS. Built for hybrid work.',
         image: '/gear/gear-sony-a7iv.jpg',
         highlight: true,
         amazonUrl: 'https://www.amazon.co.uk/s?k=Sony+A7+IV',
@@ -196,7 +196,7 @@ const tiers: Tier[] = [
         price: '~£1,700',
         sensor: 'Full-frame',
         video: '4K60 / 10-bit',
-        description: 'Essentially A7IV internals in a significantly smaller body. If you\'re run-and-gun, one-person-band, or vlogging — the compact form factor matters. Same sensor and codec, just built differently.',
+        description: 'Essentially A7IV internals in a significantly smaller body. If you\'re run-and-gun, one-person-band, or vlogging - the compact form factor matters. Same sensor and codec, just built differently.',
         amazonUrl: 'https://www.amazon.co.uk/s?k=Sony+A7C+II',
       },
       {
@@ -212,7 +212,7 @@ const tiers: Tier[] = [
         price: '~£2,000',
         sensor: 'Full-frame',
         video: '4K60 / 6K RAW',
-        description: 'Canon\'s hybrid workhorse. Subject tracking is probably the most reliable in the business — anything that moves, it locks onto. 6K RAW internal and a sensor that handles high ISO beautifully.',
+        description: 'Canon\'s hybrid workhorse. Subject tracking is probably the most reliable in the business - anything that moves, it locks onto. 6K RAW internal and a sensor that handles high ISO beautifully.',
         amazonUrl: 'https://www.amazon.co.uk/s?k=Canon+EOS+R6+Mark+II',
       },
     ],
@@ -227,7 +227,7 @@ const tiers: Tier[] = [
         price: '~£2,500',
         sensor: 'Full-frame',
         video: '4K120 / AI AF',
-        description: 'Sony\'s latest A7-series flagship. AI autofocus recognises subjects at a granular level — individual body parts, not just faces. 4K120 opens up slow motion the A7IV cannot do.',
+        description: 'Sony\'s latest A7-series flagship. AI autofocus recognises subjects at a granular level - individual body parts, not just faces. 4K120 opens up slow motion the A7IV cannot do.',
         amazonUrl: 'https://www.amazon.co.uk/s?k=Sony+A7+V',
       },
       {
@@ -235,7 +235,7 @@ const tiers: Tier[] = [
         price: '~£3,200',
         sensor: 'Full-frame',
         video: '4K120 / 12-bit RAW',
-        description: 'Sony\'s Cinema Line in a compact body. Designed for professional video first — full-time cooling fan, XLR audio, and Cinema Line colour science. The go-to for solo documentary and commercial work.',
+        description: 'Sony\'s Cinema Line in a compact body. Designed for professional video first - full-time cooling fan, XLR audio, and Cinema Line colour science. The go-to for solo documentary and commercial work.',
         amazonUrl: 'https://www.amazon.co.uk/s?k=Sony+FX3+camera',
       },
       {
@@ -243,7 +243,7 @@ const tiers: Tier[] = [
         price: '~£4,000',
         sensor: 'Full-frame',
         video: '8K / 4K120',
-        description: 'Top of the prosumer Canon range. 8K RAW internal, 4K120, 45MP stills, and Canon\'s best autofocus system. If you\'re earning from your camera and need every tool available — this is it.',
+        description: 'Top of the prosumer Canon range. 8K RAW internal, 4K120, 45MP stills, and Canon\'s best autofocus system. If you\'re earning from your camera and need every tool available - this is it.',
         amazonUrl: 'https://www.amazon.co.uk/s?k=Canon+EOS+R5+Mark+II',
       },
       {
@@ -251,7 +251,7 @@ const tiers: Tier[] = [
         price: '~£3,200',
         sensor: 'Full-frame (stacked)',
         video: '8K30 / 4K120',
-        description: 'A Z9 in a smaller shell — same stacked sensor, same pro-grade specs, significantly less bulk. 8K internal RAW, no blackout, and a mechanical shutter that doesn\'t wear out. Outstanding value at the pro end.',
+        description: 'A Z9 in a smaller shell - same stacked sensor, same pro-grade specs, significantly less bulk. 8K internal RAW, no blackout, and a mechanical shutter that doesn\'t wear out. Outstanding value at the pro end.',
         amazonUrl: 'https://www.amazon.co.uk/s?k=Nikon+Z8',
       },
       {
@@ -273,7 +273,7 @@ const features = [
   },
   {
     label: 'Good autofocus',
-    body: 'Face and eye tracking is not a luxury — it\'s essential for solo shooters. Look for real-time subject tracking.',
+    body: 'Face and eye tracking is not a luxury - it\'s essential for solo shooters. Look for real-time subject tracking.',
   },
   {
     label: 'Flip-out screen',
@@ -339,7 +339,7 @@ export default function CameraGuide() {
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Equipment Guide</p>
         <h1 className="text-5xl font-black mb-4 text-gray-900 dark:text-white">What Camera Should<br />I Buy First?</h1>
         <p className="text-gray-500 dark:text-white/50 max-w-2xl mb-4 text-lg">
-          A practical guide to starter cameras for content creation — from budget options to the kit professionals actually use. No affiliate links, no sponsored picks. Just honest recommendations from someone who earns their living with this gear.
+          A practical guide to starter cameras for content creation - from budget options to the kit professionals actually use. No affiliate links, no sponsored picks. Just honest recommendations from someone who earns their living with this gear.
         </p>
         <p className="text-xs text-gray-400 dark:text-white/30">By Jamie Murray, MediaMurray · Updated 2026</p>
       </section>
@@ -392,7 +392,7 @@ export default function CameraGuide() {
               If you&apos;re starting out: buy the cheapest thing on this list you can afford and learn it completely. Shoot everything. Get obsessed with light, not gear. The upgrade will make more sense when you know exactly what you&apos;re missing.
             </p>
             <p>
-              If you&apos;re planning to take on paid work: start at the mid-range or buy used from the &ldquo;What I Shoot On&rdquo; tier. Clients notice the difference between a polished, graded full-frame image and a flat, 8-bit APS-C file — even if they can&apos;t name it.
+              If you&apos;re planning to take on paid work: start at the mid-range or buy used from the &ldquo;What I Shoot On&rdquo; tier. Clients notice the difference between a polished, graded full-frame image and a flat, 8-bit APS-C file - even if they can&apos;t name it.
             </p>
             <p>
               And if you&apos;re genuinely unsure which one to choose: the Sony A7 IV is the camera I&apos;d buy again today. I&apos;ve shot over 170 paid client projects on it. It hasn&apos;t been the limiting factor in any of them.

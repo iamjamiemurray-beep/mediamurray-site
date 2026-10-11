@@ -9,28 +9,28 @@ export const metadata: Metadata = {
 const resources = [
   {
     title: 'Introduction to Content Creation',
-    desc: 'Six sections covering equipment, filming, editing, and publishing. Written from personal experience — practical, no-nonsense, and free.',
+    desc: 'Six sections covering equipment, filming, editing, and publishing. Written from personal experience - practical, no-nonsense, and free.',
     tag: 'Free Guide',
     href: '/resources/creator-starter-kit',
     meta: '~10 min read',
   },
   {
     title: 'What Camera Should I Buy First?',
-    desc: 'A practical guide to starter cameras for content creation — from budget options to the kit professionals actually use.',
+    desc: 'A practical guide to starter cameras for content creation - from budget options to the kit professionals actually use.',
     tag: 'Equipment Guide',
     href: '/resources/camera-guide',
     meta: '~8 min read',
   },
   {
     title: 'Establishing or Re-establishing Your Brand on Social Media',
-    desc: 'Formats, aspect ratios and basic principles for getting video content right across Instagram, TikTok and LinkedIn — with script examples and real-world references.',
+    desc: 'Formats, aspect ratios and basic principles for getting video content right across Instagram, TikTok and LinkedIn - with script examples and real-world references.',
     tag: 'Social Media',
     href: '/resources/brand-social-media',
     meta: '~12 min read',
   },
   {
     title: '5 Things to Know Before Hiring a Videographer in Scotland',
-    desc: 'What to ask, what to check, and what to watch out for — written from 170+ client projects and eight years of freelance work across Scotland.',
+    desc: 'What to ask, what to check, and what to watch out for - written from 170+ client projects and eight years of freelance work across Scotland.',
     tag: 'Client Guide',
     href: '/resources/hiring-guide',
     meta: '~5 min read',
