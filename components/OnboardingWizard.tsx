@@ -337,7 +337,7 @@ export default function OnboardingWizard() {
           <div className="grid grid-cols-2 gap-4 mb-8">
             {[
               { label: 'Projects', value: '180+' },
-              { label: 'Years active', value: '6+' },
+              { label: 'Years active', value: '8+' },
               { label: 'Camera', value: 'Sony a7IV + a7III' },
               { label: 'Aerial', value: 'DJI Mini 5 Pro' },
             ].map((d) => (
