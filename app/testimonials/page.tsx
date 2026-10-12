@@ -126,7 +126,7 @@ export default function Testimonials() {
           {[
             { value: '180+', label: 'Projects delivered' },
             { value: '5★', label: 'Average rating' },
-            { value: '8+', label: 'Years freelance' },
+            { value: '6+', label: 'Years freelance' },
             { value: '100+', label: 'Happy clients' },
           ].map((s) => (
             <div key={s.label}>

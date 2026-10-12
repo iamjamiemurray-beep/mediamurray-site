@@ -30,7 +30,7 @@ const resources = [
   },
   {
     title: '5 Things to Know Before Hiring a Videographer in Scotland',
-    desc: 'What to ask, what to check, and what to watch out for - written from 180+ client projects and eight years of freelance work across Scotland.',
+    desc: 'What to ask, what to check, and what to watch out for - written from 180+ client projects and six years of freelance work across Scotland.',
     tag: 'Client Guide',
     href: '/resources/hiring-guide',
     meta: '~5 min read',

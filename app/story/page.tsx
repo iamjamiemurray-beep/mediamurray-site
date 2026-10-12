@@ -139,7 +139,7 @@ export default function Story() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { value: '180+', label: 'Client Projects' },
-              { value: '8+', label: 'Years Freelance' },
+              { value: '6+', label: 'Years Freelance' },
               { value: '2020', label: 'First Class Graduate' },
               { value: '11wk', label: 'Unpaid Work Experience' },
             ].map((s) => (

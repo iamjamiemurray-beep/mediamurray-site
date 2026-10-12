@@ -9,7 +9,7 @@ import RotatingLogos from '@/components/RotatingLogos'
 
 const statItems = [
   { value: '180+', label: 'Client Projects' },
-  { value: '8', label: 'Years Freelancing in the Industry' },
+  { value: '6', label: 'Years Freelancing in the Industry' },
   { value: '4K', label: 'Premium Footage, Every Shoot' },
   { value: 'Sony', label: 'Professional Full-Frame Cameras' },
   { value: '5,000+', label: 'Hours in the Edit Suite' },

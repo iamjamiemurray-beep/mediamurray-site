@@ -74,7 +74,7 @@ export default function HiringGuide() {
           Most businesses commission video once every year or two. That is not enough repetition to learn from experience what to ask, what to check, and what to watch out for.
         </p>
         <p className="text-lg text-gray-500 dark:text-white/50 leading-relaxed mb-10">
-          This guide is written from the other side of the camera. 180+ client projects, eight years of freelance work across Scotland. Here is what I wish every client knew before we spoke.
+          This guide is written from the other side of the camera. 180+ client projects, six years of freelance work across Scotland. Here is what I wish every client knew before we spoke.
         </p>
         <div className="flex items-center gap-4 text-sm text-gray-400 dark:text-white/30 border-t border-gray-200 dark:border-white/10 pt-6">
           <span>Jamie Murray - MediaMurray</span>

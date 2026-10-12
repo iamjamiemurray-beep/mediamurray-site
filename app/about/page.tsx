@@ -25,7 +25,7 @@ const clientLogos = [
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Jamie Murray - Scotland-based videographer, photographer and editor. 180+ projects, 8 years in business. Broadcast quality without the agency overhead.',
+  description: 'Jamie Murray - Scotland-based videographer, photographer and editor. 180+ projects, 6 years in business. Broadcast quality without the agency overhead.',
 }
 
 const btsImages = [
