@@ -116,7 +116,7 @@ export default function Testimonials() {
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Reviews</p>
         <h1 className="text-5xl font-black mb-4 text-gray-900 dark:text-white">What Clients Say</h1>
         <p className="text-gray-500 dark:text-white/50 text-lg max-w-xl">
-          170+ projects delivered. Here&apos;s what some of the people behind them had to say.
+          180+ projects delivered. Here&apos;s what some of the people behind them had to say.
         </p>
       </section>
 
@@ -124,7 +124,7 @@ export default function Testimonials() {
       <section className="border-t border-b border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/[0.02]">
         <div className="max-w-6xl mx-auto px-6 py-8 grid grid-cols-2 sm:grid-cols-4 gap-8">
           {[
-            { value: '170+', label: 'Projects delivered' },
+            { value: '180+', label: 'Projects delivered' },
             { value: '5★', label: 'Average rating' },
             { value: '6+', label: 'Years freelance' },
             { value: '100+', label: 'Happy clients' },

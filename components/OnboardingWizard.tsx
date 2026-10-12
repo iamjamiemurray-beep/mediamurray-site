@@ -327,7 +327,7 @@ export default function OnboardingWizard() {
               I'm Jamie Murray - a Scottish-based videographer, photographer and editor working with businesses, organisations, agencies, charities and individuals across Scotland and the UK.
             </p>
             <p>
-              Since graduating with a First Class degree in Television Production from Edinburgh Napier University in 2020, I've delivered over 170 client projects. Work spans promotional films, event coverage, social media content, photography and post-production.
+              Since graduating with a First Class degree in Television Production from Edinburgh Napier University in 2020, I've delivered over 180 client projects. Work spans promotional films, event coverage, social media content, photography and post-production.
             </p>
             <p>
               On most projects I handle filming and editing myself - one point of accountability, brief through to delivery.
@@ -336,7 +336,7 @@ export default function OnboardingWizard() {
 
           <div className="grid grid-cols-2 gap-4 mb-8">
             {[
-              { label: 'Projects', value: '170+' },
+              { label: 'Projects', value: '180+' },
               { label: 'Years active', value: '6+' },
               { label: 'Camera', value: 'Sony a7IV + a7III' },
               { label: 'Aerial', value: 'DJI Mini 5 Pro' },

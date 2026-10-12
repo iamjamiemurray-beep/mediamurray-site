@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: '5 Things to Know Before Hiring a Videographer in Scotland | MediaMurray',
-  description: 'A practical, honest guide to commissioning video in Scotland. Written by a working videographer with 170+ client projects delivered.',
+  description: 'A practical, honest guide to commissioning video in Scotland. Written by a working videographer with 180+ client projects delivered.',
 }
 
 const points = [
@@ -74,7 +74,7 @@ export default function HiringGuide() {
           Most businesses commission video once every year or two. That is not enough repetition to learn from experience what to ask, what to check, and what to watch out for.
         </p>
         <p className="text-lg text-gray-500 dark:text-white/50 leading-relaxed mb-10">
-          This guide is written from the other side of the camera. 170+ client projects, eight years of freelance work across Scotland. Here is what I wish every client knew before we spoke.
+          This guide is written from the other side of the camera. 180+ client projects, eight years of freelance work across Scotland. Here is what I wish every client knew before we spoke.
         </p>
         <div className="flex items-center gap-4 text-sm text-gray-400 dark:text-white/30 border-t border-gray-200 dark:border-white/10 pt-6">
           <span>Jamie Murray - MediaMurray</span>
@@ -121,7 +121,7 @@ export default function HiringGuide() {
         <div className="max-w-xl mx-auto px-6">
           <h2 className="text-3xl font-black mb-4 text-gray-900 dark:text-white">Ready to talk about a project?</h2>
           <p className="text-gray-500 dark:text-white/50 mb-8">
-            Edinburgh-based. Available across Scotland and the UK. 170+ projects delivered.
+            Edinburgh-based. Available across Scotland and the UK. 180+ projects delivered.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

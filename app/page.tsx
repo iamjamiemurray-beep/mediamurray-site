@@ -8,7 +8,7 @@ import RotatingTestimonials from '@/components/RotatingTestimonials'
 import RotatingLogos from '@/components/RotatingLogos'
 
 const statItems = [
-  { value: '170+', label: 'Client Projects' },
+  { value: '180+', label: 'Client Projects' },
   { value: '6', label: 'Years Freelancing in the Industry' },
   { value: '4K', label: 'Premium Footage, Every Shoot' },
   { value: 'Sony', label: 'Professional Full-Frame Cameras' },
@@ -25,7 +25,7 @@ const statItems = [
 
 const trustItems = [
   {
-    label: '170+ Projects Delivered',
+    label: '180+ Projects Delivered',
     icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>,
   },
   {
@@ -619,7 +619,7 @@ export default function Home() {
             <div className="py-10">
               <h2 className="text-4xl font-black tracking-tight mb-4 text-white">Ready to start your <span className="text-white/60">project?</span></h2>
               <p className="text-white/90 mb-3 text-lg font-medium">
-                170+ projects. Clients across Scotland and the UK.
+                180+ projects. Clients across Scotland and the UK.
               </p>
               <p className="text-white/75 mb-8 text-base leading-relaxed">
                 If you&apos;ve been let down by content you&apos;d never want to share, or by suppliers who didn&apos;t deliver - this is the alternative. Trusted results from someone experienced, with countless clients who can vouch for it.

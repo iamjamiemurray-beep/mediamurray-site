@@ -6,7 +6,7 @@ import ReelCard from '@/components/ReelCard'
 
 export const metadata: Metadata = {
   title: 'Work',
-  description: 'Portfolio of video production, photography and editing work across Scotland. 170+ projects for BBC Scotland, Scottish Parliament, RangersTV and more.',
+  description: 'Portfolio of video production, photography and editing work across Scotland. 180+ projects for BBC Scotland, Scottish Parliament, RangersTV and more.',
 }
 
 const photos = [
@@ -41,7 +41,7 @@ export default function Work() {
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-white/40 mb-2">Portfolio</p>
         <h1 className="text-5xl font-black mb-4 text-gray-900 dark:text-white">Work</h1>
         <p className="text-gray-500 dark:text-white/50 max-w-xl mb-16 text-lg">
-          170+ projects across commercial, event, documentary, sport and charity sectors.
+          180+ projects across commercial, event, documentary, sport and charity sectors.
         </p>
 
         {/* RJC - Featured full width */}

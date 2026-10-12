@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: '%s | MediaMurray',
   },
   description:
-    "I'm a Scottish-based videographer, photographer and editor specialising in promotional and corporate video, event coverage, social media content and photography. 170+ projects delivered. Based in Edinburgh, available across Scotland.",
+    "I'm a Scottish-based videographer, photographer and editor specialising in promotional and corporate video, event coverage, social media content and photography. 180+ projects delivered. Based in Edinburgh, available across Scotland.",
   keywords: ['videographer Scotland', 'videographer Edinburgh', 'videographer Glasgow', 'video production Scotland', 'photographer Edinburgh', 'photographer Glasgow', 'corporate video Scotland', 'drone videographer Scotland', 'Central Belt videographer', 'event videographer Scotland'],
   metadataBase: new URL('https://mediamurray.com'),
   openGraph: {

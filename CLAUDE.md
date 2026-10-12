@@ -19,7 +19,7 @@ Jamie Murray's business site (MediaMurray - solo Edinburgh videographer/photogra
 - UK English, DD/MM/YYYY dates
 - Never use em dashes. Use a plain hyphen.
 - Scottish audience: direct and factual, no soppy personal branding, no "one person, one point of contact, no agency markup" lines
-- Project count is 170+
+- Project count is 180+
 - Business is listed as "Media Murray" on Google Business Profile
 - Never mention cadets/ACF in business copy (the /wlbn-media portfolio page is the exception)
 - No political clients in marketing (e.g. David Green/Lib Dems, Martin Rhodes, Eunis Jassemi)

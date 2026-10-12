@@ -25,7 +25,7 @@ const clientLogos = [
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Jamie Murray - Scotland-based videographer, photographer and editor. 170+ projects, 6 years in business. Broadcast quality without the agency overhead.',
+  description: 'Jamie Murray - Scotland-based videographer, photographer and editor. 180+ projects, 6 years in business. Broadcast quality without the agency overhead.',
 }
 
 const btsImages = [
@@ -73,7 +73,7 @@ export default function About() {
                 I&apos;m originally from the Isle of Bute, where I was born and grew up, and I now work across Scotland producing professional video and photography for businesses, organisations, creative agencies, charities and individuals.
               </p>
               <p>
-                Since graduating with a First Class degree in Television Production from Edinburgh Napier University in 2020, I&apos;ve worked on over 170 client projects, filming and editing a wide range of content - promotional films, event coverage, interviews, organisational and public-sector work, product content, and documentary-style projects in live environments.
+                Since graduating with a First Class degree in Television Production from Edinburgh Napier University in 2020, I&apos;ve worked on over 180 client projects, filming and editing a wide range of content - promotional films, event coverage, interviews, organisational and public-sector work, product content, and documentary-style projects in live environments.
               </p>
               <p>
                 A lot of my work involves real people who aren&apos;t always used to being on camera. My role is to make the process feel straightforward and well handled, while delivering work that looks professional and represents people and organisations properly.
@@ -157,7 +157,7 @@ export default function About() {
               </p>
               <div className="flex gap-8">
                 <div>
-                  <p className="text-3xl font-black gradient-text">170+</p>
+                  <p className="text-3xl font-black gradient-text">180+</p>
                   <p className="text-xs uppercase tracking-widest text-gray-400 dark:text-white/40 mt-1">Projects delivered</p>
                 </div>
                 <div>

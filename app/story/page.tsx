@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'The Story',
-  description: 'From the Isle of Bute to 170+ client projects - the journey behind MediaMurray.',
+  description: 'From the Isle of Bute to 180+ client projects - the journey behind MediaMurray.',
   robots: { index: false, follow: false },
 }
 
@@ -63,7 +63,7 @@ const milestones = [
     year: '2020–',
     label: 'Scotland',
     title: 'MediaMurray - Going Freelance',
-    body: "Built MediaMurray from scratch - solo operator, no agency, no support structure. 170+ client projects since graduating. Broadcast-quality work for BBC Scotland, the Scottish Parliament, LowlandRFCA, RangersTV, Scottish Fair Trade, Scottish Youth Parliament, and many more. Army Cadet background directly informed early access-led work with RFCA. ERS Bronze Award recipient. Equipment built up gradually to Sony a7IV + a7III, DJI Mini 5 Pro, full Adobe suite.",
+    body: "Built MediaMurray from scratch - solo operator, no agency, no support structure. 180+ client projects since graduating. Broadcast-quality work for BBC Scotland, the Scottish Parliament, LowlandRFCA, RangersTV, Scottish Fair Trade, Scottish Youth Parliament, and many more. Army Cadet background directly informed early access-led work with RFCA. ERS Bronze Award recipient. Equipment built up gradually to Sony a7IV + a7III, DJI Mini 5 Pro, full Adobe suite.",
     photo: '/jamiebts4.jpeg',
     accent: '#0052D4',
     quote: '"Without the journey, there is no joy."',
@@ -81,7 +81,7 @@ export default function Story() {
           The Story
         </h1>
         <p className="text-gray-500 dark:text-white/50 max-w-2xl text-xl leading-relaxed">
-          From a small island off the west coast of Scotland to 170+ professional projects - this is the journey behind the work.
+          From a small island off the west coast of Scotland to 180+ professional projects - this is the journey behind the work.
         </p>
       </section>
 
@@ -138,7 +138,7 @@ export default function Story() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: '170+', label: 'Client Projects' },
+              { value: '180+', label: 'Client Projects' },
               { value: '6+', label: 'Years Freelance' },
               { value: '2020', label: 'First Class Graduate' },
               { value: '11wk', label: 'Unpaid Work Experience' },
